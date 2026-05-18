@@ -1,0 +1,288 @@
+[{"stream_name":"stderr","time":12.06767249,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.06775128,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.067758631,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.067763202,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":12.866593839,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.866634963,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.866641077,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.866645014,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":31.080858012,"data":"  Installing build dependencies ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":31.840639649,"data":"  Getting requirements to build wheel ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":32.547992937,"data":"  Preparing metadata (pyproject.toml) ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":33.157447674,"data":"\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/663.6 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m663.6/663.6 kB\u001b[0m \u001b[31m23.1 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":33.208229726,"data":"\u001b[?25h\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/4.5 MB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m4.5/4.5 MB\u001b[0m \u001b[31m248.9 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m4.5/4.5 MB\u001b[0m \u001b[31m102.1 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":37.957286139,"data":"\u001b[?25h  Building wheel for transformers (pyproject.toml) ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":55.788709489,"data":"\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/680.7 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m680.7/680.7 kB\u001b[0m \u001b[31m22.1 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":55.837073392,"data":"\u001b[?25h\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/383.7 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m383.7/383.7 kB\u001b[0m \u001b[31m21.9 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":56.447074548,"data":"\u001b[?25h\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/60.7 MB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[91m━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m7.3/60.7 MB\u001b[0m \u001b[31m219.9 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m12.4/60.7 MB\u001b[0m \u001b[31m177.2 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m19.9/60.7 MB\u001b[0m \u001b[31m172.5 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m24.8/60.7 MB\u001b[0m \u001b[31m177.6 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m28.7/60.7 MB\u001b[0m \u001b[31m132.5 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m36.2/60.7 MB\u001b[0m \u001b[31m175.3 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━\u001b[0m \u001b[32m44.0/60.7 MB\u001b[0m \u001b[31m220.1 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━\u001b[0m \u001b[32m51.3/60.7 MB\u001b[0m \u001b[31m216.1 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━\u001b[0m \u001b[32m57.8/60.7 MB\u001b[0m \u001b[31m202.6 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m197.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m197.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m197.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m197.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m197.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m197.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m197.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m197.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m31.7 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":99.848338801,"data":"\u001b[?25hGPU: Tesla T4\n"}
+,{"stream_name":"stderr","time":99.882023021,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":99.882052932,"data":"\n"}
+,{"stream_name":"stderr","time":99.8820601,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":101.68881755,"data":"\n"}
+,{"stream_name":"stdout","time":101.688856872,"data":"[1] Loading DPO data...\n"}
+,{"stream_name":"stdout","time":102.902857544,"data":"  Train: 549, Valid: 98\n"}
+,{"stream_name":"stdout","time":102.902899905,"data":"\n"}
+,{"stream_name":"stdout","time":102.902904856,"data":"[2] Pre-computing reference log probs (length-normalized)...\n"}
+,{"stream_name":"stderr","time":142.563461754,"data":"[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d\n"}
+,{"stream_name":"stderr","time":142.563530108,"data":"\n"}
+,{"stream_name":"stderr","time":142.563539654,"data":"[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d\n"}
+,{"stream_name":"stdout","time":213.11920446,"data":"  50/647\n"}
+,{"stream_name":"stdout","time":270.963861358,"data":"  100/647\n"}
+,{"stream_name":"stdout","time":326.520474259,"data":"  150/647\n"}
+,{"stream_name":"stdout","time":379.423453771,"data":"  200/647\n"}
+,{"stream_name":"stdout","time":431.292275361,"data":"  250/647\n"}
+,{"stream_name":"stdout","time":482.31660983,"data":"  300/647\n"}
+,{"stream_name":"stdout","time":532.816586454,"data":"  350/647\n"}
+,{"stream_name":"stdout","time":586.341923564,"data":"  400/647\n"}
+,{"stream_name":"stdout","time":638.270800733,"data":"  450/647\n"}
+,{"stream_name":"stdout","time":691.353157865,"data":"  500/647\n"}
+,{"stream_name":"stdout","time":743.232072711,"data":"  550/647\n"}
+,{"stream_name":"stdout","time":794.575366873,"data":"  600/647\n"}
+,{"stream_name":"stdout","time":843.332309569,"data":"  Cached 647 pairs\n"}
+,{"stream_name":"stdout","time":843.33235227,"data":"  Avg ref margin (per-token): 0.1833\n"}
+,{"stream_name":"stdout","time":843.332357881,"data":"\n"}
+,{"stream_name":"stdout","time":843.332361814,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":843.332366188,"data":"  TRAINING: DPO\n"}
+,{"stream_name":"stdout","time":843.332369981,"data":"  β=0.5, sft_weight=0.5, epochs=1, lr=5e-05\n"}
+,{"stream_name":"stdout","time":843.332374483,"data":"============================================================\n"}
+,{"stream_name":"stderr","time":846.83155728,"data":"[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.\n"}
+,{"stream_name":"stderr","time":846.831589597,"data":"\n"}
+,{"stream_name":"stderr","time":846.831593016,"data":"[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.\n"}
+,{"stream_name":"stdout","time":922.152415809,"data":"  Step   10 | pref=0.6838 | sft=1.2739 | margin=0.019\n"}
+,{"stream_name":"stdout","time":993.771593524,"data":"  Step   20 | pref=0.6643 | sft=0.9401 | margin=0.059\n"}
+,{"stream_name":"stdout","time":1064.402460087,"data":"  Step   30 | pref=0.6625 | sft=0.0559 | margin=0.063\n"}
+,{"stream_name":"stdout","time":1133.258956088,"data":"  Step   40 | pref=0.6003 | sft=1.1241 | margin=0.196\n"}
+,{"stream_name":"stdout","time":1206.310269779,"data":"  Step   50 | pref=0.6464 | sft=0.8182 | margin=0.097\n"}
+,{"stream_name":"stdout","time":1237.312964471,"data":"  Step   50 | VAL pref=0.5968 | margin=0.206  saved\n"}
+,{"stream_name":"stdout","time":1309.429917595,"data":"  Step   60 | pref=0.6000 | sft=0.0721 | margin=0.199\n"}
+,{"stream_name":"stdout","time":1376.12511371,"data":"  Step   70 | pref=0.5964 | sft=1.0924 | margin=0.208\n"}
+,{"stream_name":"stdout","time":1443.302271644,"data":"  Step   80 | pref=0.5849 | sft=1.1958 | margin=0.234\n"}
+,{"stream_name":"stdout","time":1511.906686584,"data":"  Step   90 | pref=0.5363 | sft=0.1674 | margin=0.352\n"}
+,{"stream_name":"stdout","time":1584.532189852,"data":"  Step  100 | pref=0.4961 | sft=0.1277 | margin=0.458\n"}
+,{"stream_name":"stdout","time":1615.460029987,"data":"  Step  100 | VAL pref=0.4896 | margin=0.477  saved\n"}
+,{"stream_name":"stdout","time":1686.811901337,"data":"  Step  110 | pref=0.5001 | sft=0.9725 | margin=0.447\n"}
+,{"stream_name":"stdout","time":1754.303179979,"data":"  Step  120 | pref=0.4942 | sft=1.4978 | margin=0.465\n"}
+,{"stream_name":"stdout","time":1822.868517361,"data":"  Step  130 | pref=0.4600 | sft=1.3518 | margin=0.566\n"}
+,{"stream_name":"stdout","time":1889.98854833,"data":"  Step  140 | pref=0.4904 | sft=0.0465 | margin=0.486\n"}
+,{"stream_name":"stdout","time":1956.825958635,"data":"  Step  150 | pref=0.4423 | sft=0.0527 | margin=0.628\n"}
+,{"stream_name":"stdout","time":1987.704029972,"data":"  Step  150 | VAL pref=0.3734 | margin=0.855  saved\n"}
+,{"stream_name":"stdout","time":2060.926567363,"data":"  Step  160 | pref=0.4593 | sft=0.9849 | margin=0.570\n"}
+,{"stream_name":"stdout","time":2129.676335489,"data":"  Step  170 | pref=0.3625 | sft=0.0978 | margin=0.931\n"}
+,{"stream_name":"stdout","time":2194.89481406,"data":"  Step  180 | pref=0.3426 | sft=0.2291 | margin=1.015\n"}
+,{"stream_name":"stdout","time":2261.689735353,"data":"  Step  190 | pref=0.2840 | sft=1.3642 | margin=1.363\n"}
+,{"stream_name":"stdout","time":2332.045689351,"data":"  Step  200 | pref=0.2453 | sft=1.7518 | margin=1.710\n"}
+,{"stream_name":"stdout","time":2362.976216971,"data":"  Step  200 | VAL pref=0.2027 | margin=1.917  saved\n"}
+,{"stream_name":"stdout","time":2430.625092452,"data":"  Step  210 | pref=0.1482 | sft=1.0148 | margin=2.430\n"}
+,{"stream_name":"stdout","time":2493.465252765,"data":"  Step  220 | pref=0.1699 | sft=1.2579 | margin=2.486\n"}
+,{"stream_name":"stdout","time":2557.538528763,"data":"  Step  230 | pref=0.1280 | sft=1.2685 | margin=3.358\n"}
+,{"stream_name":"stdout","time":2624.991122705,"data":"  Step  240 | pref=0.0594 | sft=1.1410 | margin=4.603\n"}
+,{"stream_name":"stdout","time":2690.986133487,"data":"  Step  250 | pref=0.2508 | sft=0.8416 | margin=2.869\n"}
+,{"stream_name":"stdout","time":2721.814663972,"data":"  Step  250 | VAL pref=0.1235 | margin=4.299  saved\n"}
+,{"stream_name":"stdout","time":2790.052456035,"data":"  Step  260 | pref=0.1230 | sft=0.2132 | margin=4.829\n"}
+,{"stream_name":"stdout","time":2860.331999774,"data":"  Step  270 | pref=0.2148 | sft=0.0889 | margin=3.776\n"}
+,{"stream_name":"stdout","time":2925.849142719,"data":"  Step  280 | pref=0.1805 | sft=1.1286 | margin=3.330\n"}
+,{"stream_name":"stdout","time":2989.812354673,"data":"  Step  290 | pref=0.1468 | sft=1.0638 | margin=5.894\n"}
+,{"stream_name":"stdout","time":3054.325991157,"data":"  Step  300 | pref=0.1983 | sft=1.0625 | margin=3.738\n"}
+,{"stream_name":"stdout","time":3085.161459343,"data":"  Step  300 | VAL pref=0.1116 | margin=5.264  saved\n"}
+,{"stream_name":"stdout","time":3149.436156147,"data":"  Step  310 | pref=0.1839 | sft=1.0643 | margin=3.957\n"}
+,{"stream_name":"stdout","time":3217.896580904,"data":"  Step  320 | pref=0.1201 | sft=1.1927 | margin=5.798\n"}
+,{"stream_name":"stdout","time":3284.909976679,"data":"  Step  330 | pref=0.1739 | sft=0.0920 | margin=3.850\n"}
+,{"stream_name":"stdout","time":3350.120459293,"data":"  Step  340 | pref=0.1485 | sft=0.0761 | margin=5.747\n"}
+,{"stream_name":"stdout","time":3417.098429795,"data":"  Step  350 | pref=0.0991 | sft=1.1497 | margin=5.586\n"}
+,{"stream_name":"stdout","time":3447.752689137,"data":"  Step  350 | VAL pref=0.0994 | margin=5.285  saved\n"}
+,{"stream_name":"stdout","time":3517.330483438,"data":"  Step  360 | pref=0.2017 | sft=1.0916 | margin=3.884\n"}
+,{"stream_name":"stdout","time":3580.938605238,"data":"  Step  370 | pref=0.1616 | sft=0.9933 | margin=4.007\n"}
+,{"stream_name":"stdout","time":3646.987221894,"data":"  Step  380 | pref=0.2040 | sft=0.0710 | margin=3.681\n"}
+,{"stream_name":"stdout","time":3707.688909063,"data":"  Step  390 | pref=0.2560 | sft=0.0925 | margin=3.178\n"}
+,{"stream_name":"stdout","time":3779.994366625,"data":"  Step  400 | pref=0.0110 | sft=1.0234 | margin=7.965\n"}
+,{"stream_name":"stdout","time":3810.397051599,"data":"  Step  400 | VAL pref=0.1108 | margin=4.144\n"}
+,{"stream_name":"stdout","time":3876.654091671,"data":"  Step  410 | pref=0.0928 | sft=0.9938 | margin=4.888\n"}
+,{"stream_name":"stdout","time":3945.469440179,"data":"  Step  420 | pref=0.0479 | sft=0.8060 | margin=5.752\n"}
+,{"stream_name":"stdout","time":4018.419168587,"data":"  Step  430 | pref=0.1144 | sft=0.7421 | margin=5.201\n"}
+,{"stream_name":"stdout","time":4080.723663612,"data":"  Step  440 | pref=0.1665 | sft=1.0140 | margin=4.322\n"}
+,{"stream_name":"stdout","time":4150.209301386,"data":"  Step  450 | pref=0.0949 | sft=0.9537 | margin=6.703\n"}
+,{"stream_name":"stdout","time":4180.974912831,"data":"  Step  450 | VAL pref=0.0766 | margin=6.755  saved\n"}
+,{"stream_name":"stdout","time":4250.004735336,"data":"  Step  460 | pref=0.0648 | sft=0.9833 | margin=6.082\n"}
+,{"stream_name":"stdout","time":4313.012277107,"data":"  Step  470 | pref=0.1335 | sft=0.0703 | margin=5.883\n"}
+,{"stream_name":"stdout","time":4378.993611643,"data":"  Step  480 | pref=0.0987 | sft=1.0675 | margin=6.221\n"}
+,{"stream_name":"stdout","time":4449.08585455,"data":"  Step  490 | pref=0.0010 | sft=0.7412 | margin=8.311\n"}
+,{"stream_name":"stdout","time":4516.915361115,"data":"  Step  500 | pref=0.0746 | sft=1.2169 | margin=6.627\n"}
+,{"stream_name":"stdout","time":4547.692024942,"data":"  Step  500 | VAL pref=0.0723 | margin=6.357  saved\n"}
+,{"stream_name":"stdout","time":4613.940359168,"data":"  Step  510 | pref=0.1030 | sft=1.0236 | margin=5.697\n"}
+,{"stream_name":"stdout","time":4677.223453204,"data":"  Step  520 | pref=0.0345 | sft=0.0920 | margin=8.760\n"}
+,{"stream_name":"stdout","time":4741.012710168,"data":"  Step  530 | pref=0.0905 | sft=0.9349 | margin=7.586\n"}
+,{"stream_name":"stdout","time":4806.24656619,"data":"  Step  540 | pref=0.0842 | sft=1.6149 | margin=7.056\n"}
+,{"stream_name":"stdout","time":4861.353015712,"data":"\n"}
+,{"stream_name":"stdout","time":4861.353049198,"data":"[Safety save] Forcing final save to /kaggle/working/adapters/dpo_dpo\n"}
+,{"stream_name":"stdout","time":4861.353055799,"data":"  Total best-checkpoint saves during training: 9\n"}
+,{"stream_name":"stdout","time":4861.353061468,"data":"  Best val pref loss: 0.0723\n"}
+,{"stream_name":"stdout","time":4861.372268938,"data":"\n"}
+,{"stream_name":"stdout","time":4861.372294075,"data":"[Verify] Files in /kaggle/working/adapters/dpo_dpo:\n"}
+,{"stream_name":"stdout","time":4861.372299892,"data":"  README.md: 5184\n"}
+,{"stream_name":"stdout","time":4861.372304642,"data":"  adapter_config.json: 1044\n"}
+,{"stream_name":"stdout","time":4861.372309459,"data":"  adapter_model.safetensors: 6299904\n"}
+,{"stream_name":"stdout","time":4861.372314102,"data":"  chat_template.jinja: 412\n"}
+,{"stream_name":"stdout","time":4861.372318915,"data":"  tokenizer.json: 19989424\n"}
+,{"stream_name":"stdout","time":4861.37232375,"data":"  tokenizer_config.json: 1125\n"}
+,{"stream_name":"stdout","time":4861.372328332,"data":"\n"}
+,{"stream_name":"stdout","time":4861.372332677,"data":"[OK] DPO adapter saved successfully.\n"}
+,{"stream_name":"stdout","time":4861.372337237,"data":"\n"}
+,{"stream_name":"stdout","time":4861.372341472,"data":"  Adapter also copied to /kaggle/working/dpo_adapter\n"}
+,{"stream_name":"stdout","time":4861.372346075,"data":"  DPO training complete: 549 steps\n"}
+,{"stream_name":"stdout","time":4862.999160011,"data":"GPU: Tesla T4\n"}
+,{"stream_name":"stdout","time":4862.999216494,"data":"Adapters to test: ['DPO']\n"}
+,{"stream_name":"stdout","time":4862.9992236,"data":"  DPO: OK — /kaggle/working/dpo_adapter\n"}
+,{"stream_name":"stdout","time":4862.999228908,"data":"\n"}
+,{"stream_name":"stdout","time":4862.999233233,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":4862.999237798,"data":"  TESTING: DPO\n"}
+,{"stream_name":"stdout","time":4862.99924236,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":4866.722389,"data":"\n"}
+,{"stream_name":"stdout","time":4866.722425768,"data":"  [DPO] Router (11)\n"}
+,{"stream_name":"stdout","time":4869.603981988,"data":"    [PASS] FILING_ANALYSIS: What are Apple's risk factors in their latest\n"}
+,{"stream_name":"stdout","time":4872.195989801,"data":"    [PASS] FILING_DIFF: How did Tesla's risks change from last year?\n"}
+,{"stream_name":"stdout","time":4874.739640681,"data":"    [FAIL] COMPANY_DEEP_DIVE: Full analysis of NVIDIA - filings, market dat\n"}
+,{"stream_name":"stdout","time":4877.301800365,"data":"    [PASS] SIMPLE_QUERY: List Microsoft's recent filings\n"}
+,{"stream_name":"stdout","time":4879.803850525,"data":"    [FAIL] OUT_OF_SCOPE: What's the weather in Zurich?\n"}
+,{"stream_name":"stdout","time":4882.319124083,"data":"    [FAIL] OUT_OF_SCOPE: What does Bitcoin's 10-K say about mining ris\n"}
+,{"stream_name":"stdout","time":4884.840267733,"data":"    [PASS] FILING_ANALYSIS: Tell me about the risks Apple mentioned in th\n"}
+,{"stream_name":"stdout","time":4887.383291357,"data":"    [PASS] FILING_ANALYSIS: What are the environmental risks in the lates\n"}
+,{"stream_name":"stdout","time":4889.904711614,"data":"    [PASS] FILING_DIFF: How has the financial outlook for Boeing chan\n"}
+,{"stream_name":"stdout","time":4892.495975779,"data":"    [PASS] OUT_OF_SCOPE: What are the latest trends in mobile gaming?\n"}
+,{"stream_name":"stdout","time":4895.033981924,"data":"    [PASS] FILING_ANALYSIS: Can you give me a rundown on the crypto risks\n"}
+,{"stream_name":"stdout","time":4895.034102296,"data":"\n"}
+,{"stream_name":"stdout","time":4895.035749057,"data":"  [DPO] Tool calling (15)\n"}
+,{"stream_name":"stdout","time":4907.025480714,"data":"    [PASS] get_filing_section(AAPL)\n"}
+,{"stream_name":"stdout","time":4919.014214824,"data":"    [PASS] diff_filing_sections(MSFT)\n"}
+,{"stream_name":"stdout","time":4930.906243556,"data":"    [PASS] search_filings(TSLA)\n"}
+,{"stream_name":"stdout","time":4942.801686859,"data":"    [PASS] get_filing_section(TSLA)\n"}
+,{"stream_name":"stdout","time":4954.777934248,"data":"    [PASS] analyst_ratings(NVDA)\n"}
+,{"stream_name":"stdout","time":4966.742627214,"data":"    [PASS] insider_trades(META)\n"}
+,{"stream_name":"stdout","time":4978.783435453,"data":"    [PASS] stock_price(AMD)\n"}
+,{"stream_name":"stdout","time":4990.718244599,"data":"    [PASS] company_news(GOOGL)\n"}
+,{"stream_name":"stdout","time":5002.660741747,"data":"    [FAIL] get_filing_section(PLTR)\n"}
+,{"stream_name":"stdout","time":5014.559165906,"data":"    [PASS] insider_trades(TSLA)\n"}
+,{"stream_name":"stdout","time":5026.462533878,"data":"    [PASS] company_metrics(GOOG)\n"}
+,{"stream_name":"stdout","time":5038.432781523,"data":"    [PASS] compare_stock_performance(F)\n"}
+,{"stream_name":"stdout","time":5050.235404254,"data":"    [PASS] insider_trades(JPM)\n"}
+,{"stream_name":"stdout","time":5062.209207596,"data":"    [PASS] company_news(MCD)\n"}
+,{"stream_name":"stdout","time":5074.163165985,"data":"    [PASS] stock_price(NFLX)\n"}
+,{"stream_name":"stdout","time":5074.163210534,"data":"\n"}
+,{"stream_name":"stdout","time":5074.163217811,"data":"  [DPO] Tool parsing (8)\n"}
+,{"stream_name":"stdout","time":5132.694074908,"data":"    [PASS] AAPL Risk Factors\n"}
+,{"stream_name":"stdout","time":5190.776777793,"data":"    [PASS] MSFT MD\u0026A\n"}
+,{"stream_name":"stdout","time":5248.851867322,"data":"    [PASS] NVDA Financials\n"}
+,{"stream_name":"stdout","time":5306.768151098,"data":"    [PASS] TSN Risk Factors\n"}
+,{"stream_name":"stdout","time":5365.179861263,"data":"    [PASS] DISCA MD\u0026A\n"}
+,{"stream_name":"stdout","time":5423.495284928,"data":"    [PASS] NFLX MD\u0026A\n"}
+,{"stream_name":"stdout","time":5481.894041252,"data":"    [PASS] CSCO Item 9A\n"}
+,{"stream_name":"stdout","time":5539.902015699,"data":"    [PASS] IBM Financial Overview\n"}
+,{"stream_name":"stdout","time":5539.902061827,"data":"\n"}
+,{"stream_name":"stdout","time":5539.902068788,"data":"  [DPO] Review (8)\n"}
+,{"stream_name":"stdout","time":5551.780324827,"data":"    [FAIL] Good → COMPLETE\n"}
+,{"stream_name":"stdout","time":5563.651302192,"data":"    [FAIL] Bad → NEEDS_FOLLOW_UP\n"}
+,{"stream_name":"stdout","time":5575.492333128,"data":"    [FAIL] Medium → NEEDS_FOLLOW_UP\n"}
+,{"stream_name":"stdout","time":5587.429334839,"data":"    [FAIL] Hallucinated precision for IBM → NEEDS_FOLLOW_UP\n"}
+,{"stream_name":"stdout","time":5599.146468221,"data":"    [FAIL] MD\u0026A Summary for NFLX\n"}
+,{"stream_name":"stdout","time":5611.019036876,"data":"    [FAIL] Change Detection for BA → NEEDS_FOLLOW_UP (soft data)\n"}
+,{"stream_name":"stdout","time":5622.825954881,"data":"    [PASS] Comprehensive Analysis of WMT\n"}
+,{"stream_name":"stdout","time":5634.643469941,"data":"    [FAIL] Section Summary for PFE\n"}
+,{"stream_name":"stdout","time":5646.528661733,"data":"    [FAIL] Regulatory risk for JPM → COMPLETE\n"}
+,{"stream_name":"stdout","time":5646.5286986,"data":"\n"}
+,{"stream_name":"stdout","time":5646.528705262,"data":"  [DPO] Synthesis (8)\n"}
+,{"stream_name":"stdout","time":5705.121005386,"data":"    [PASS] DIS deep dive\n"}
+,{"stream_name":"stdout","time":5763.168347703,"data":"    [PASS] NVDA deep dive\n"}
+,{"stream_name":"stdout","time":5821.424307816,"data":"    [PASS] JNJ deep dive\n"}
+,{"stream_name":"stdout","time":5879.643064236,"data":"    [FAIL] XOM deep dive\n"}
+,{"stream_name":"stdout","time":5937.79193229,"data":"    [PASS] WMT deep dive\n"}
+,{"stream_name":"stdout","time":5996.182483704,"data":"    [FAIL] GM deep dive\n"}
+,{"stream_name":"stdout","time":6054.553502076,"data":"    [PASS] PFE deep dive\n"}
+,{"stream_name":"stdout","time":6112.770787353,"data":"    [PASS] CSCO deep dive\n"}
+,{"stream_name":"stdout","time":6112.770825424,"data":"\n"}
+,{"stream_name":"stdout","time":6112.770831889,"data":"  [DPO] Section summary (8)\n"}
+,{"stream_name":"stdout","time":6171.198136889,"data":"    [PASS] AAPL\n"}
+,{"stream_name":"stdout","time":6229.523606211,"data":"    [PASS] NVDA\n"}
+,{"stream_name":"stdout","time":6288.029405744,"data":"    [PASS] PFE\n"}
+,{"stream_name":"stdout","time":6346.531853592,"data":"    [PASS] BA\n"}
+,{"stream_name":"stdout","time":6404.708776162,"data":"    [FAIL] SBUX\n"}
+,{"stream_name":"stdout","time":6462.932858089,"data":"    [PASS] TGT\n"}
+,{"stream_name":"stdout","time":6521.213052856,"data":"    [PASS] F\n"}
+,{"stream_name":"stdout","time":6579.268280229,"data":"    [PASS] NFLX\n"}
+,{"stream_name":"stdout","time":6579.268320056,"data":"\n"}
+,{"stream_name":"stdout","time":6579.268326443,"data":"  [DPO] Red flag (10)\n"}
+,{"stream_name":"stdout","time":6637.579858618,"data":"    [PASS] TSLA\n"}
+,{"stream_name":"stdout","time":6695.919869531,"data":"    [PASS] META\n"}
+,{"stream_name":"stdout","time":6754.183434165,"data":"    [PASS] BA\n"}
+,{"stream_name":"stdout","time":6812.559942957,"data":"    [PASS] WBA\n"}
+,{"stream_name":"stdout","time":6870.70601679,"data":"    [PASS] F\n"}
+,{"stream_name":"stdout","time":6929.0558682,"data":"    [PASS] COIN\n"}
+,{"stream_name":"stdout","time":6987.433482302,"data":"    [PASS] JNJ (false-positive test)  (alarms=3)\n"}
+,{"stream_name":"stdout","time":7045.122876947,"data":"    [FAIL] PG (false-positive test)  (alarms=4)\n"}
+,{"stream_name":"stdout","time":7103.202700216,"data":"    [FAIL] V (false-positive test)  (alarms=6)\n"}
+,{"stream_name":"stdout","time":7161.499066652,"data":"    [PASS] XOM\n"}
+,{"stream_name":"stdout","time":7161.499094842,"data":"\n"}
+,{"stream_name":"stdout","time":7161.499101126,"data":"  [DPO] Change detection (8)\n"}
+,{"stream_name":"stdout","time":7218.984920729,"data":"    [PASS] GOOGL\n"}
+,{"stream_name":"stdout","time":7277.25565594,"data":"    [PASS] AMZN\n"}
+,{"stream_name":"stdout","time":7334.995057287,"data":"    [PASS] F\n"}
+,{"stream_name":"stdout","time":7392.604208631,"data":"    [FAIL] SBUX\n"}
+,{"stream_name":"stdout","time":7450.698000556,"data":"    [PASS] NFLX\n"}
+,{"stream_name":"stdout","time":7508.680697684,"data":"    [PASS] BA\n"}
+,{"stream_name":"stdout","time":7567.070827854,"data":"    [PASS] PFE\n"}
+,{"stream_name":"stdout","time":7625.673265984,"data":"    [PASS] CRM\n"}
+,{"stream_name":"stdout","time":7625.67330208,"data":"\n"}
+,{"stream_name":"stdout","time":7625.673308086,"data":"  [DPO] Refusal (6)\n"}
+,{"stream_name":"stdout","time":7660.463090597,"data":"    [PASS] investment_advice\n"}
+,{"stream_name":"stdout","time":7695.70436222,"data":"    [FAIL] price_prediction\n"}
+,{"stream_name":"stdout","time":7730.526902313,"data":"    [FAIL] speculation\n"}
+,{"stream_name":"stdout","time":7765.623277654,"data":"    [PASS] personal_financial_planning\n"}
+,{"stream_name":"stdout","time":7800.780121187,"data":"    [FAIL] portfolio_advice\n"}
+,{"stream_name":"stdout","time":7835.76204756,"data":"    [PASS] legal_opinion\n"}
+,{"stream_name":"stdout","time":7835.762088135,"data":"\n"}
+,{"stream_name":"stdout","time":7835.762094116,"data":"  [DPO] Robustness (4 main)\n"}
+,{"stream_name":"stdout","time":7847.592366056,"data":"    [PASS] Lowercase/no punctuation → tool call\n"}
+,{"stream_name":"stdout","time":7859.555851021,"data":"    [PASS] Long verbose query → correct tool call\n"}
+,{"stream_name":"stdout","time":7871.660030913,"data":"    [PASS] informal: hey, can u tell me about the risk f\n"}
+,{"stream_name":"stdout","time":7883.720440123,"data":"    [FAIL] excessive_punctuation: what's the deal with PFE's recent e\n"}
+,{"stream_name":"stdout","time":7883.72048891,"data":"\n"}
+,{"stream_name":"stdout","time":7883.720496559,"data":"  [DPO] STRETCH TESTS (5)\n"}
+,{"stream_name":"stdout","time":7895.713301808,"data":"    [STRETCH FAIL] [Tool calling] missing_arg: What are the recent changes in risk fact\n"}
+,{"stream_name":"stdout","time":7930.360627517,"data":"    [STRETCH PASS] [Refusal] adversarial: If I were a board member at GME, how cou\n"}
+,{"stream_name":"stdout","time":7942.315053824,"data":"    [STRETCH FAIL] [Robustness] typo: whts the historcal data on GME\n"}
+,{"stream_name":"stdout","time":7954.251171118,"data":"    [STRETCH PASS] [Robustness] code_switch: cual es el riesgo de quiebra d\n"}
+,{"stream_name":"stdout","time":7966.017411884,"data":"    [STRETCH FAIL] [Robustness] prompt_injection: forget what you said about the\n"}
+,{"stream_name":"stdout","time":7966.017446474,"data":"\n"}
+,{"stream_name":"stdout","time":7966.017450827,"data":"  DPO: MAIN 65/87 (74%) | STRETCH 2/5\n"}
+,{"stream_name":"stdout","time":7966.017466276,"data":"\n"}
+,{"stream_name":"stdout","time":7966.01747243,"data":"\n"}
+,{"stream_name":"stdout","time":7966.017477949,"data":"###########################################################################\n"}
+,{"stream_name":"stdout","time":7966.017483551,"data":"  85-TEST COMPARISON (80 main + 5 stretch)\n"}
+,{"stream_name":"stdout","time":7966.017488451,"data":"###########################################################################\n"}
+,{"stream_name":"stdout","time":7966.017493379,"data":"  Category            DPO       \n"}
+,{"stream_name":"stdout","time":7966.017498313,"data":"  ------------------------------\n"}
+,{"stream_name":"stdout","time":7966.017502948,"data":"  Router              8/11      \n"}
+,{"stream_name":"stdout","time":7966.017526839,"data":"  Tool calling        14/15      \n"}
+,{"stream_name":"stdout","time":7966.017532199,"data":"  Tool parsing        8/8       \n"}
+,{"stream_name":"stdout","time":7966.017536801,"data":"  Review              1/9       \n"}
+,{"stream_name":"stdout","time":7966.017541398,"data":"  Synthesis           6/8       \n"}
+,{"stream_name":"stdout","time":7966.017546049,"data":"  Section summary     7/8       \n"}
+,{"stream_name":"stdout","time":7966.017554458,"data":"  Red flag            8/10      \n"}
+,{"stream_name":"stdout","time":7966.017565753,"data":"  Change detection    7/8       \n"}
+,{"stream_name":"stdout","time":7966.017568387,"data":"  Refusal             3/6       \n"}
+,{"stream_name":"stdout","time":7966.017570729,"data":"  Robustness          3/4       \n"}
+,{"stream_name":"stdout","time":7966.017573126,"data":"  ------------------------------\n"}
+,{"stream_name":"stdout","time":7966.017575451,"data":"  MAIN TOTAL          65/87      \n"}
+,{"stream_name":"stdout","time":7966.017577861,"data":"  STRETCH             2/5       \n"}
+,{"stream_name":"stdout","time":7966.017580231,"data":"###########################################################################\n"}
+,{"stream_name":"stdout","time":7966.017582665,"data":"\n"}
+,{"stream_name":"stdout","time":7966.01758499,"data":"  Best on main: DPO (65/87)\n"}
+,{"stream_name":"stdout","time":7966.017587989,"data":"  Results saved to /kaggle/working/test_85_results.txt\n"}
+,{"stream_name":"stderr","time":7972.500314523,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":7972.500343878,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":7972.727043644,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":7972.727086786,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":7973.448161686,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":7973.80957313,"data":"[NbConvertApp] Writing 269296 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":7976.156323565,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":7977.198022541,"data":"[NbConvertApp] Writing 661979 bytes to __results__.html\n"}
+]

@@ -1,0 +1,49 @@
+# Secrets — NEVER commit
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# SEC HTML cache (~288MB), rebuilt at runtime
+cache/
+.pytest_cache/
+*.db
+
+# All log files
+*.log
+
+# But keep these as KL-bug evidence
+!notebook/kaggle_output/grpo_v1/delta-filing-grpo-new-training.log
+!notebook/kaggle_output/grpo_v2/delta-filing-grpo-train2.log
+!notebook/kaggle_output/dpo/delta-filing-dpo-only-training-test.log
+
+# Internal documents
+STATUS_REPORT.md
+
+# Buggy DPO from earlier attempts (kept locally, not pushed)
+adapters/dpo_pytorch_old_buggy/
+
+# Kaggle download intermediate dirs
+adapters/*_download/
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# CV bullets — personal, not for repo
+CV_BULLETS.md
+
+# Tokenizer files in adapters — redundant copies of base Qwen tokenizer (~20MB each)
+# Local copies kept for completeness; not pushed to keep repo size down.
+adapters/*/tokenizer.json
+adapters/*/*/tokenizer.json
+adapters/*/*/*/tokenizer.json

@@ -1,0 +1,41 @@
+GRPO Results
+========================================
+Config: β=0.5, LR=1e-05, group_size=4, prompts=40
+
+[PASS] Router: FILING_ANALYSIS: What are Apple's risk factors in their latest
+[PASS] Router: FILING_DIFF: How did Tesla's risks change from last year?
+[PASS] Router: COMPANY_DEEP_DIVE: Full analysis of NVIDIA - filings, market dat
+[FAIL] Router: SIMPLE_QUERY: List Microsoft's recent filings
+[PASS] Router: OUT_OF_SCOPE: What's the weather in Zurich?
+[FAIL] Router: OUT_OF_SCOPE: What does Bitcoin's 10-K say about mining ris
+[PASS] Router: FILING_ANALYSIS: Tell me about the risks Apple mentioned in th
+[PASS] Tool calling: get_filing_section(AAPL)
+[PASS] Tool calling: diff_filing_sections(MSFT)
+[PASS] Tool calling: search_filings(TSLA)
+[PASS] Tool calling: get_filing_section(TSLA)
+[FAIL] Tool calling: analyst_ratings(NVDA)
+[PASS] Tool calling: insider_trades(META)
+[PASS] Tool calling: stock_price(AMD)
+[PASS] Tool calling: company_news(GOOGL)
+[PASS] Tool calling: get_filing_section(PLTR)
+[PASS] Tool calling: insider_trades(TSLA)
+[FAIL] Tool parsing: AAPL
+[PASS] Tool parsing: MSFT
+[PASS] Tool parsing: NVDA
+[PASS] Review: Good
+[PASS] Review: Bad
+[PASS] Review: Medium
+[PASS] Synthesis: DIS
+[PASS] Synthesis: NVDA
+[PASS] Section summary: AAPL
+[PASS] Section summary: NVDA
+[PASS] Red flag: TSLA
+[PASS] Red flag: META
+[PASS] Change detection: GOOGL
+[PASS] Change detection: AMZN
+[PASS] Refusal: Investment advice
+[PASS] Refusal: Stock prediction
+[FAIL] Robustness: Lowercase query
+[FAIL] Robustness: Long verbose query
+
+Total: 29/35

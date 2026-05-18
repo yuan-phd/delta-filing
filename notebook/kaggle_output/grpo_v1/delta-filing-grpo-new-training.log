@@ -1,0 +1,171 @@
+[{"stream_name":"stderr","time":12.005541983,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.005623078,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.005629709,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.005633949,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":12.792147669,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.792183453,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.792188926,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.792192754,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":31.43761299,"data":"  Installing build dependencies ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":32.198992943,"data":"  Getting requirements to build wheel ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":32.961084796,"data":"  Preparing metadata (pyproject.toml) ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":33.671485148,"data":"\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/663.6 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m307.2/663.6 kB\u001b[0m \u001b[31m9.6 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m663.6/663.6 kB\u001b[0m \u001b[31m10.1 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":33.773398988,"data":"\u001b[?25h\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/4.5 MB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m4.5/4.5 MB\u001b[0m \u001b[31m141.5 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m4.5/4.5 MB\u001b[0m \u001b[31m72.0 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":38.848356582,"data":"\u001b[?25h  Building wheel for transformers (pyproject.toml) ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":57.944916821,"data":"\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/60.7 MB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.3/60.7 MB\u001b[0m \u001b[31m9.0 MB/s\u001b[0m eta \u001b[36m0:00:07\u001b[0m\r\u001b[2K   \u001b[91m━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m2.7/60.7 MB\u001b[0m \u001b[31m40.4 MB/s\u001b[0m eta \u001b[36m0:00:02\u001b[0m\r\u001b[2K   \u001b[91m━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m7.6/60.7 MB\u001b[0m \u001b[31m73.1 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m14.1/60.7 MB\u001b[0m \u001b[31m160.3 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m23.1/60.7 MB\u001b[0m \u001b[31m247.9 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m31.0/60.7 MB\u001b[0m \u001b[31m236.2 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━━━━\u001b[0m \u001b[32m39.5/60.7 MB\u001b[0m \u001b[31m225.1 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━\u001b[0m \u001b[32m45.1/60.7 MB\u001b[0m \u001b[31m227.7 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━\u001b[0m \u001b[32m52.2/60.7 MB\u001b[0m \u001b[31m170.8 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[90m╺\u001b[0m \u001b[32m59.2/60.7 MB\u001b[0m \u001b[31m202.7 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m200.7 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m200.7 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m200.7 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m200.7 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m200.7 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m200.7 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m200.7 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m31.5 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":57.995792886,"data":"\u001b[?25h\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/751.0 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m751.0/751.0 kB\u001b[0m \u001b[31m35.9 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":75.795156469,"data":"\u001b[?25h  Installing build dependencies ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":76.556051271,"data":"  Getting requirements to build wheel ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":77.318566076,"data":"  Preparing metadata (pyproject.toml) ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":81.793731597,"data":"\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/680.7 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m286.7/680.7 kB\u001b[0m \u001b[31m9.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m680.7/680.7 kB\u001b[0m \u001b[31m10.0 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":81.79378588,"data":"\u001b[?25h\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/383.7 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m383.7/383.7 kB\u001b[0m \u001b[31m21.2 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":122.054386171,"data":"\u001b[?25hGPU: Tesla T4\n"}
+,{"stream_name":"stderr","time":122.702163269,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":122.702228829,"data":"\n"}
+,{"stream_name":"stderr","time":122.702236281,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":124.996814303,"data":"\n"}
+,{"stream_name":"stdout","time":124.996865974,"data":"[1] Loading prompts...\n"}
+,{"stream_name":"stdout","time":124.996872815,"data":"  40 prompts: {'red_flag': 8, 'tool_calling': 8, 'tool_result_parsing': 8, 'change_detection': 8, 'section_summary': 8}\n"}
+,{"stream_name":"stdout","time":124.996878898,"data":"\n"}
+,{"stream_name":"stdout","time":124.9968845,"data":"[2] Loading SFT model...\n"}
+,{"stream_name":"stderr","time":177.390810939,"data":"[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d\n"}
+,{"stream_name":"stderr","time":177.390881626,"data":"\n"}
+,{"stream_name":"stderr","time":177.39088765,"data":"[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d\n"}
+,{"stream_name":"stdout","time":182.174592327,"data":"  Memory: 3.1 GB\n"}
+,{"stream_name":"stdout","time":182.174649526,"data":"\n"}
+,{"stream_name":"stdout","time":182.174655971,"data":"[3] Generating 160 completions (4 per prompt)...\n"}
+,{"stream_name":"stdout","time":182.174660199,"data":"  This will take ~30-40 minutes...\n"}
+,{"stream_name":"stdout","time":938.323351635,"data":"  10/40 prompts | avg reward: 2.65\n"}
+,{"stream_name":"stdout","time":1690.754341193,"data":"  20/40 prompts | avg reward: 2.01\n"}
+,{"stream_name":"stdout","time":2438.77984241,"data":"  30/40 prompts | avg reward: 2.75\n"}
+,{"stream_name":"stderr","time":3192.914433794,"data":"[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.\n"}
+,{"stream_name":"stderr","time":3192.914474594,"data":"\n"}
+,{"stream_name":"stderr","time":3192.914481546,"data":"[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.\n"}
+,{"stream_name":"stdout","time":3193.055691764,"data":"  40/40 prompts | avg reward: 1.90\n"}
+,{"stream_name":"stdout","time":3193.05573413,"data":"\n"}
+,{"stream_name":"stdout","time":3193.055738838,"data":"  Generation complete!\n"}
+,{"stream_name":"stdout","time":3193.055742273,"data":"  Total samples: 160\n"}
+,{"stream_name":"stdout","time":3193.055745709,"data":"  Reward: mean=2.33, min=0.00, max=5.00\n"}
+,{"stream_name":"stdout","time":3193.055750472,"data":"  Advantage: mean=-0.00, std=10.12\n"}
+,{"stream_name":"stdout","time":3193.055780064,"data":"  Train: 140, Val: 20\n"}
+,{"stream_name":"stdout","time":3193.055785489,"data":"\n"}
+,{"stream_name":"stdout","time":3193.055790987,"data":"[4] Starting GRPO training...\n"}
+,{"stream_name":"stdout","time":3193.055796251,"data":"  β=0.5, LR=1e-05, samples=140\n"}
+,{"stream_name":"stdout","time":3206.317402971,"data":"  Step    5 | pg=0.1068 | kl=0.0011\n"}
+,{"stream_name":"stdout","time":3219.859933386,"data":"  Step   10 | pg=0.2268 | kl=-0.0014\n"}
+,{"stream_name":"stdout","time":3231.887511105,"data":"  Step   15 | pg=-0.7624 | kl=-0.0065\n"}
+,{"stream_name":"stdout","time":3244.193661175,"data":"  Step   20 | pg=-0.3233 | kl=-0.0242\n"}
+,{"stream_name":"stdout","time":3255.08348804,"data":"  Step   25 | pg=-0.0831 | kl=-0.0848\n"}
+,{"stream_name":"stdout","time":3264.26271451,"data":"  Step   25 | VAL loss=-0.1461  ★ saved\n"}
+,{"stream_name":"stdout","time":3276.667617201,"data":"  Step   30 | pg=0.1987 | kl=-0.1912\n"}
+,{"stream_name":"stdout","time":3288.191346312,"data":"  Step   35 | pg=-0.7724 | kl=-0.3400\n"}
+,{"stream_name":"stdout","time":3299.819834488,"data":"  Step   40 | pg=0.1126 | kl=-0.5910\n"}
+,{"stream_name":"stdout","time":3311.815485441,"data":"  Step   45 | pg=0.7962 | kl=-0.7693\n"}
+,{"stream_name":"stdout","time":3322.569775377,"data":"  Step   50 | pg=-0.1611 | kl=-0.8945\n"}
+,{"stream_name":"stdout","time":3331.767587561,"data":"  Step   50 | VAL loss=-0.5579  ★ saved\n"}
+,{"stream_name":"stdout","time":3342.269882933,"data":"  Step   55 | pg=0.9616 | kl=-0.8765\n"}
+,{"stream_name":"stdout","time":3353.398037619,"data":"  Step   60 | pg=-0.1244 | kl=-0.6973\n"}
+,{"stream_name":"stdout","time":3364.301537675,"data":"  Step   65 | pg=-0.5653 | kl=-0.7564\n"}
+,{"stream_name":"stdout","time":3376.368137611,"data":"  Step   70 | pg=1.4914 | kl=-0.7820\n"}
+,{"stream_name":"stdout","time":3387.734894524,"data":"  Step   75 | pg=0.9610 | kl=-0.8243\n"}
+,{"stream_name":"stdout","time":3396.898842523,"data":"  Step   75 | VAL loss=-0.5647  ★ saved\n"}
+,{"stream_name":"stdout","time":3408.15367066,"data":"  Step   80 | pg=-0.0371 | kl=-0.8684\n"}
+,{"stream_name":"stdout","time":3419.441025783,"data":"  Step   85 | pg=0.1569 | kl=-0.8231\n"}
+,{"stream_name":"stdout","time":3430.910161507,"data":"  Step   90 | pg=1.2782 | kl=-0.9184\n"}
+,{"stream_name":"stdout","time":3442.585474405,"data":"  Step   95 | pg=-1.1062 | kl=-0.8451\n"}
+,{"stream_name":"stdout","time":3453.605539719,"data":"  Step  100 | pg=-0.3033 | kl=-0.9756\n"}
+,{"stream_name":"stdout","time":3462.824118552,"data":"  Step  100 | VAL loss=-0.6578  ★ saved\n"}
+,{"stream_name":"stdout","time":3473.918578851,"data":"  Step  105 | pg=0.6965 | kl=-1.0812\n"}
+,{"stream_name":"stdout","time":3478.200639713,"data":"\n"}
+,{"stream_name":"stdout","time":3478.200679537,"data":"  GRPO done: 107 steps, best val=-0.6578\n"}
+,{"stream_name":"stdout","time":3478.200684027,"data":"\n"}
+,{"stream_name":"stdout","time":3478.200687311,"data":"\n"}
+,{"stream_name":"stdout","time":3478.200690652,"data":"############################################################\n"}
+,{"stream_name":"stdout","time":3478.200693996,"data":"  TESTING GRPO MODEL (35 tests)\n"}
+,{"stream_name":"stdout","time":3478.200697329,"data":"############################################################\n"}
+,{"stream_name":"stdout","time":3478.200715332,"data":"\n"}
+,{"stream_name":"stdout","time":3478.200721522,"data":"  Router\n"}
+,{"stream_name":"stdout","time":3480.875934181,"data":"  [PASS] FILING_ANALYSIS: What are Apple's risk factors in their latest\n"}
+,{"stream_name":"stdout","time":3483.577608429,"data":"  [PASS] FILING_DIFF: How did Tesla's risks change from last year?\n"}
+,{"stream_name":"stdout","time":3486.239634915,"data":"  [PASS] COMPANY_DEEP_DIVE: Full analysis of NVIDIA - filings, market dat\n"}
+,{"stream_name":"stdout","time":3488.926241905,"data":"  [FAIL] SIMPLE_QUERY: List Microsoft's recent filings\n"}
+,{"stream_name":"stdout","time":3491.616588397,"data":"  [PASS] OUT_OF_SCOPE: What's the weather in Zurich?\n"}
+,{"stream_name":"stdout","time":3494.319634605,"data":"  [FAIL] OUT_OF_SCOPE: What does Bitcoin's 10-K say about mining ris\n"}
+,{"stream_name":"stdout","time":3497.027866247,"data":"  [PASS] FILING_ANALYSIS: Tell me about the risks Apple mentioned in th\n"}
+,{"stream_name":"stdout","time":3497.027909069,"data":"\n"}
+,{"stream_name":"stdout","time":3497.027915809,"data":"  Tool calling\n"}
+,{"stream_name":"stdout","time":3509.523326849,"data":"  [PASS] get_filing_section(AAPL)\n"}
+,{"stream_name":"stdout","time":3522.080141235,"data":"  [PASS] diff_filing_sections(MSFT)\n"}
+,{"stream_name":"stdout","time":3534.580034025,"data":"  [PASS] search_filings(TSLA)\n"}
+,{"stream_name":"stdout","time":3547.191303963,"data":"  [PASS] get_filing_section(TSLA)\n"}
+,{"stream_name":"stdout","time":3560.017172011,"data":"  [FAIL] analyst_ratings(NVDA)\n"}
+,{"stream_name":"stdout","time":3572.627190447,"data":"  [PASS] insider_trades(META)\n"}
+,{"stream_name":"stdout","time":3585.364098315,"data":"  [PASS] stock_price(AMD)\n"}
+,{"stream_name":"stdout","time":3597.903563451,"data":"  [PASS] company_news(GOOGL)\n"}
+,{"stream_name":"stdout","time":3610.603455152,"data":"  [PASS] get_filing_section(PLTR)\n"}
+,{"stream_name":"stdout","time":3623.319490827,"data":"  [PASS] insider_trades(TSLA)\n"}
+,{"stream_name":"stdout","time":3623.319571923,"data":"\n"}
+,{"stream_name":"stdout","time":3623.319579113,"data":"  Tool parsing\n"}
+,{"stream_name":"stdout","time":3685.884878314,"data":"  [FAIL] AAPL\n"}
+,{"stream_name":"stdout","time":3747.04192149,"data":"  [PASS] MSFT\n"}
+,{"stream_name":"stdout","time":3806.953329146,"data":"  [PASS] NVDA\n"}
+,{"stream_name":"stdout","time":3806.953362163,"data":"\n"}
+,{"stream_name":"stdout","time":3806.953367431,"data":"  Review\n"}
+,{"stream_name":"stdout","time":3819.203817345,"data":"  [PASS] Good\n"}
+,{"stream_name":"stdout","time":3831.384791495,"data":"  [PASS] Bad\n"}
+,{"stream_name":"stdout","time":3843.50930882,"data":"  [PASS] Medium\n"}
+,{"stream_name":"stdout","time":3843.509344353,"data":"\n"}
+,{"stream_name":"stdout","time":3843.509350517,"data":"  Synthesis\n"}
+,{"stream_name":"stdout","time":3903.25706234,"data":"  [PASS] DIS\n"}
+,{"stream_name":"stdout","time":3963.054267419,"data":"  [PASS] NVDA\n"}
+,{"stream_name":"stdout","time":3963.054320127,"data":"\n"}
+,{"stream_name":"stdout","time":3963.054327584,"data":"  Section summary\n"}
+,{"stream_name":"stdout","time":4022.747357517,"data":"  [PASS] AAPL\n"}
+,{"stream_name":"stdout","time":4082.44865589,"data":"  [PASS] NVDA\n"}
+,{"stream_name":"stdout","time":4082.448710848,"data":"\n"}
+,{"stream_name":"stdout","time":4082.448715856,"data":"  Red flag\n"}
+,{"stream_name":"stdout","time":4142.087563389,"data":"  [PASS] TSLA\n"}
+,{"stream_name":"stdout","time":4202.351250981,"data":"  [PASS] META\n"}
+,{"stream_name":"stdout","time":4202.35128706,"data":"\n"}
+,{"stream_name":"stdout","time":4202.351294035,"data":"  Change detection\n"}
+,{"stream_name":"stdout","time":4262.581842539,"data":"  [PASS] GOOGL\n"}
+,{"stream_name":"stdout","time":4322.515728457,"data":"  [PASS] AMZN\n"}
+,{"stream_name":"stdout","time":4322.515761079,"data":"\n"}
+,{"stream_name":"stdout","time":4322.515766547,"data":"  Refusal\n"}
+,{"stream_name":"stdout","time":4358.887448703,"data":"  [PASS] Investment advice\n"}
+,{"stream_name":"stdout","time":4395.138729785,"data":"  [PASS] Stock prediction\n"}
+,{"stream_name":"stdout","time":4395.138762827,"data":"\n"}
+,{"stream_name":"stdout","time":4395.138768681,"data":"  Robustness\n"}
+,{"stream_name":"stdout","time":4407.289886144,"data":"  [FAIL] Lowercase query\n"}
+,{"stream_name":"stdout","time":4419.102914157,"data":"  [FAIL] Long verbose query\n"}
+,{"stream_name":"stdout","time":4419.102948743,"data":"\n"}
+,{"stream_name":"stdout","time":4419.102954295,"data":"############################################################\n"}
+,{"stream_name":"stdout","time":4419.102977975,"data":"  GRPO TEST RESULTS (35 tests)\n"}
+,{"stream_name":"stdout","time":4419.102985643,"data":"############################################################\n"}
+,{"stream_name":"stdout","time":4419.102990489,"data":"  Category             Pass       Rate  \n"}
+,{"stream_name":"stdout","time":4419.10299574,"data":"  -------------------- ---------- ------\n"}
+,{"stream_name":"stdout","time":4419.103000805,"data":"  Router               5/7          71%\n"}
+,{"stream_name":"stdout","time":4419.103006272,"data":"  Tool calling         9/10         90%\n"}
+,{"stream_name":"stdout","time":4419.103010757,"data":"  Tool parsing         2/3          66%\n"}
+,{"stream_name":"stdout","time":4419.1030151,"data":"  Review               3/3         100%\n"}
+,{"stream_name":"stdout","time":4419.103019585,"data":"  Synthesis            2/2         100%\n"}
+,{"stream_name":"stdout","time":4419.103024013,"data":"  Section summary      2/2         100%\n"}
+,{"stream_name":"stdout","time":4419.103038945,"data":"  Red flag             2/2         100%\n"}
+,{"stream_name":"stdout","time":4419.103042413,"data":"  Change detection     2/2         100%\n"}
+,{"stream_name":"stdout","time":4419.103045833,"data":"  Refusal              2/2         100%\n"}
+,{"stream_name":"stdout","time":4419.103049307,"data":"  Robustness           0/2           0%\n"}
+,{"stream_name":"stdout","time":4419.103064977,"data":"  -------------------- ---------- ------\n"}
+,{"stream_name":"stdout","time":4419.103068877,"data":"  TOTAL                29/35         82%\n"}
+,{"stream_name":"stdout","time":4419.103072746,"data":"############################################################\n"}
+,{"stream_name":"stdout","time":4419.103076705,"data":"\n"}
+,{"stream_name":"stdout","time":4419.103079968,"data":"  Adapter: /kaggle/working/grpo_adapter/\n"}
+,{"stream_name":"stdout","time":4419.103083392,"data":"  Results: /kaggle/working/grpo_results.txt\n"}
+,{"stream_name":"stderr","time":4425.318643569,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":4425.318681375,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":4425.523817623,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":4425.523845232,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":4426.222042081,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":4426.56001789,"data":"[NbConvertApp] Writing 165068 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":4428.915543899,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":4429.868001759,"data":"[NbConvertApp] Writing 517112 bytes to __results__.html\n"}
+]
