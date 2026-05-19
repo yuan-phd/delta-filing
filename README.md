@@ -18,7 +18,7 @@ Every LLM call goes through a fine-tuned Qwen3.5-4B + LoRA adapter running on Ap
 | **DPO** | `-logσ(β·margin)` | **65/87 (75%)** | **Unbounded margin → catastrophic Review collapse (1/9)** |
 | IPO | `(margin - 1/(2β))²` | 70/87 (80%) | Identity loss — bounded margin |
 | cDPO | `-(1-ε)·logσ(m) - ε·logσ(-m)` | 69/87 (79%) | Label smoothing |
-| **GRPO v2** | RL with k3 KL estimator | **76/87 (87%)** | **Best overall — multi-objective reward** |
+| **GRPO** | RL with k3 KL estimator | **76/87 (87%)** | **Best overall — multi-objective reward** |
 
 Six losses implemented from scratch: DPO, IPO, cDPO, GRPO, InfoNCE (for embedding training), SFT retention. The five-method comparison surfaces a striking failure mode in unbounded DPO (below) that the bounded variants and RL avoid.
 
@@ -34,7 +34,7 @@ The three methods training on the same data, with the same setup, with the same 
 
 The empirical result tracks the boundedness ordering. During DPO training, the implicit reward margin grew from 0.02 at step 10 to 8.76 at step 520 — a 440× increase. The resulting adapter collapsed catastrophically on rigid-format tasks: 1/9 on Review (binary `COMPLETE`/`NEEDS_FOLLOW_UP` classification), 3/6 on Refusal. IPO held the margin near 1.0 (its target) and lost 3 points on tool-calling. cDPO showed an intermediate failure mode.
 
-GRPO_v2, training on the same data and same LoRA rank but using a hand-designed multi-objective reward function (tool-call validity, section reference, numerical specificity, analytical judgment, format compliance), holds 15/15 on tool calling *and* leads on synthesis (7/8 vs SFT's 5/8). It avoids the trade-off entirely.
+GRPO, training on the same data and same LoRA rank but using a hand-designed multi-objective reward function (tool-call validity, section reference, numerical specificity, analytical judgment, format compliance), holds 15/15 on tool calling *and* leads on synthesis (7/8 vs SFT's 5/8). It avoids the trade-off entirely.
 
 The interpretation: alignment tax magnitude in DPO-family methods is determined by how strongly the preference objective constrains the implicit reward margin. Unbounded DPO can over-optimize until format-rigid capabilities collapse. RL with an explicit, multi-objective reward signal can avoid the trade-off — but only if every important dimension is in the reward function. The LoRA parameter budget is not the binding constraint here.
 
@@ -52,7 +52,7 @@ Built from scratch. Ten categories covering routing, tool calling, JSON parsing,
 
 ### End-to-end production replacement
 
-`local_llm.py` is a duck-typed drop-in for `ChatOpenAI` with `.invoke()` and `.bind_tools()`. It loads Qwen3.5-4B + GRPO_v2 adapter, parses JSON tool calls from the SFT-trained model, and normalizes common parameter mistakes (e.g. the model occasionally emits `section_id="Risk Factors"` instead of `"1A"` — the wrapper maps this back to the SEC Item ID). Swapping `ChatOpenAI(model="gpt-4o-mini")` to `LocalLLM(adapter_path="./adapters/grpo_v2")` is a two-line change to `app.py`.
+`local_llm.py` is a duck-typed drop-in for `ChatOpenAI` with `.invoke()` and `.bind_tools()`. It loads Qwen3.5-4B + GRPO adapter, parses JSON tool calls from the SFT-trained model, and normalizes common parameter mistakes (e.g. the model occasionally emits `section_id="Risk Factors"` instead of `"1A"` — the wrapper maps this back to the SEC Item ID). Swapping `ChatOpenAI(model="gpt-4o-mini")` to `LocalLLM(adapter_path="./adapters/grpo")` is a two-line change to `app.py`.
 
 ## Architecture
 
@@ -112,7 +112,7 @@ delta-filing/
 ├── adapters/
 │   ├── sft_pytorch/             # SFT adapter
 │   ├── dpo_ablation/            # IPO + cDPO from a single ablation script
-│   └── grpo_v2/                 # GRPO adapter (deployed in production)
+│   └── grpo/                    # GRPO adapter (deployed in production)
 ├── training_data/
 │   ├── sft_data_combined.jsonl  # 351 real-filing analyses (37 companies, 4 sections)
 │   ├── sft_supplementary_fixed.jsonl  # tool-calling examples
@@ -120,7 +120,7 @@ delta-filing/
 │   └── embedding_pairs.jsonl    # 2000 positive pairs for InfoNCE
 ├── train_sft_kaggle.py          # SFT training (Kaggle T4)
 ├── train_dpo.py                 # DPO-family ablation (IPO + cDPO + DPO)
-├── train_grpo_kaggle.py         # GRPO training (v2 with k3 KL fix)
+├── train_grpo_kaggle.py         # GRPO training (with k3 KL fix)
 ├── train_embedding.py           # Custom embedding model (InfoNCE)
 ├── faiss_index/                 # FAISS vector store (351 sections)
 ├── models/financial_embeddings/ # Fine-tuned MiniLM weights
@@ -132,7 +132,7 @@ delta-filing/
 
 ### 87-test main suite (across 5 adapters)
 
-| Category          | SFT    | DPO    | IPO    | cDPO   | GRPO_v2 |
+| Category          | SFT    | DPO    | IPO    | cDPO   | GRPO    |
 |-------------------|--------|--------|--------|--------|---------|
 | Router            | 10/11  | 8/11   | 10/11  | 9/11   | 10/11   |
 | Tool calling      | **15/15** | 14/15 | 12/15 | 12/15  | **15/15** |
@@ -152,7 +152,7 @@ DPO's Review collapse (1/9 vs others' 6-8/9) is the signature of unbounded prefe
 
 A continuous metric — counts occurrences of strong alarm words (concerning, severe, critical, misleading, etc.) in analyses of *healthy* companies. The model should not over-alarm on JNJ, PG, V.
 
-| Company | SFT | DPO | IPO | cDPO | GRPO_v2 |
+| Company | SFT | DPO | IPO | cDPO | GRPO    |
 |---------|-----|-----|-----|------|---------|
 | JNJ     | 4   | **3 ★** | 6 | 9    | 5       |
 | PG      | 4   | 4   | 5   | 5    | **3 ★** |
@@ -178,7 +178,7 @@ All four queries retrieve the correct SEC Item type; same-topic / cross-topic ma
 - **`tool` role not in training data**: The SFT model wasn't trained with `tool`-role messages. The wrapper passes tool results back as a `user` turn prefixed with `[Tool result]`. Works in practice but not the cleanest design.
 - **Section name vs ID**: The model occasionally generates `section_id="Risk Factors"` instead of `"1A"`. Handled by a normalization map in the wrapper (14 common name→ID mappings).
 - **Three false-positive red flag tests fail across all adapters**: All four adapters over-alarm on healthy companies (JNJ/PG/V), and the binary pass/fail at threshold ≤3 alarm words can't distinguish them. The continuous alarm-count metric (above) is the meaningful signal.
-- **`tool_calling` category at ceiling**: Both SFT and GRPO_v2 score 15/15 on tool calling. Additional ambiguous-intent test cases would be needed to differentiate further.
+- **`tool_calling` category at ceiling**: Both SFT and GRPO score 15/15 on tool calling. Additional ambiguous-intent test cases would be needed to differentiate further.
 - **SFT-retention loss computes on full sequence**: Not just on assistant tokens. A minor inefficiency, not a correctness bug, but it dilutes the retention signal and likely contributed to the IPO/cDPO alignment tax magnitude.
 
 ## Acknowledgments
