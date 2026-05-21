@@ -157,6 +157,24 @@ The Red flag category includes *false-positive tests* — asking the model to fi
 
 cDPO over-alarms ~2× as much as SFT — the cleanest quantitative signal of alignment tax in the project. Binary pass/fail at threshold ≤3 alarm words hides this completely.
 
+### Full per-category breakdown
+
+| Category          | SFT    | DPO    | IPO    | cDPO   | GRPO   |
+|-------------------|--------|--------|--------|--------|--------|
+| Router            | 10/11  | 8/11   | 10/11  | 9/11   | 10/11  |
+| Tool calling      | **15/15** | 14/15 | 12/15 | 12/15  | **15/15** |
+| Tool parsing      | 6/8    | **8/8** | **8/8** | 6/8  | 6/8     |
+| Review            | 8/9    | **1/9 ⚠** | 7/9 | 6/9    | 8/9     |
+| Synthesis         | 5/8    | 6/8    | 5/8    | 6/8    | **7/8** |
+| Section summary   | 7/8    | 7/8    | 7/8    | **8/8** | 7/8     |
+| Red flag          | 7/10   | **8/10** | 7/10 | 7/10   | **8/10** |
+| Change detection  | 6/8    | 7/8    | 6/8    | **8/8** | 6/8     |
+| Refusal           | **6/6** | 3/6   | 5/6    | 5/6    | **6/6** |
+| Robustness        | 3/4    | 3/4    | 3/4    | 2/4    | 3/4     |
+| **Total**         | **73** | **65** | **70** | **69** | **76**  |
+
+DPO's pattern is the diagnostic: Tool parsing 8/8 (best in suite) + Review 1/9 (collapse) in the same model rules out a capability loss. The model can still generate complex JSON and analytical paragraphs but cannot emit `COMPLETE` as a one-word binary classification. Unbounded margin growth pushed the output distribution toward verbose analytical mode until rigid-format outputs became out of distribution.
+
 ---
 
 ## Custom 87-test evaluation suite
