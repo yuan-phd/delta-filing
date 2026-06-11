@@ -1,0 +1,5 @@
+{"item_id": "t1_json_000", "prompt": "What are Apple's risk factors in their latest 10-K?", "gold": {"tool": "get_filing_section", "arguments": {"ticker": "AAPL"}}, "category": "function_call"}
+{"item_id": "t1_json_001", "prompt": "How did Microsoft's MD&A change versus last year?", "gold": {"tool": "diff_filing_sections", "arguments": {"ticker": "MSFT"}}, "category": "function_call"}
+{"item_id": "t1_json_002", "prompt": "List Tesla's most recent 10-K filings.", "gold": {"tool": "search_filings", "arguments": {"ticker": "TSLA"}}, "category": "function_call"}
+{"item_id": "t1_json_003", "prompt": "What's the analyst consensus on NVIDIA right now?", "gold": {"tool": "analyst_ratings", "arguments": {"ticker": "NVDA"}}, "category": "function_call"}
+{"item_id": "t1_json_004", "prompt": "Show me recent insider trades at Meta.", "gold": {"tool": "insider_trades", "arguments": {"ticker": "META"}}, "category": "function_call"}

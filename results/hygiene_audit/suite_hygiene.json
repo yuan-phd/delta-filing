@@ -1,0 +1,121 @@
+{
+  "reference_sizes": {
+    "pref_pairs": 645,
+    "sft_questions": 921
+  },
+  "tasks": {
+    "json": {
+      "n": 160,
+      "degeneracy_floor": {
+        "floor": 0.0125,
+        "constant_strategy_acc": 0.0125,
+        "empty_output_acc": 0.0,
+        "most_common_gold_count": 2,
+        "most_common_gold_freq": 0.0125,
+        "best_strategy": "constant"
+      },
+      "quoted_floor": 0.013,
+      "floor_matches_quoted": true,
+      "unique_prompts": 160,
+      "duplicate_prompts": 0,
+      "gold_self_consistency": "160/160",
+      "leakage_vs_pref_pairs": 0,
+      "leakage_vs_sft": 0,
+      "balance": {
+        "tool_counts": {
+          "search_filings": 20,
+          "get_filing_section": 20,
+          "diff_filing_sections": 20,
+          "stock_price": 20,
+          "company_metrics": 20,
+          "company_news": 20,
+          "insider_trades": 20,
+          "analyst_ratings": 20
+        },
+        "tools_covered": 8
+      }
+    },
+    "router": {
+      "n": 160,
+      "degeneracy_floor": {
+        "floor": 0.2,
+        "constant_strategy_acc": 0.2,
+        "empty_output_acc": 0.0,
+        "most_common_gold_count": 32,
+        "most_common_gold_freq": 0.2,
+        "best_strategy": "constant"
+      },
+      "quoted_floor": 0.2,
+      "floor_matches_quoted": true,
+      "unique_prompts": 160,
+      "duplicate_prompts": 0,
+      "gold_self_consistency": "160/160",
+      "leakage_vs_pref_pairs": 0,
+      "leakage_vs_sft": 0,
+      "balance": {
+        "COMPANY_DEEP_DIVE": 32,
+        "FILING_ANALYSIS": 32,
+        "FILING_DIFF": 32,
+        "OUT_OF_SCOPE": 32,
+        "SIMPLE_QUERY": 32
+      }
+    },
+    "extraction": {
+      "n": 160,
+      "degeneracy_floor": {
+        "floor": 0.00625,
+        "constant_strategy_acc": 0.00625,
+        "empty_output_acc": 0.0,
+        "most_common_gold_count": 1,
+        "most_common_gold_freq": 0.00625,
+        "best_strategy": "constant"
+      },
+      "quoted_floor": 0.0063,
+      "floor_matches_quoted": true,
+      "unique_prompts": 160,
+      "duplicate_prompts": 0,
+      "gold_self_consistency": "160/160",
+      "leakage_vs_pref_pairs": 0,
+      "leakage_vs_sft": 0,
+      "balance": {
+        "unique_tickers": 16,
+        "unique_sections": 6,
+        "unique_dates": 160,
+        "unique_full_gold": 160
+      }
+    }
+  },
+  "leakage_matching_criterion": "EXACT string match after .strip() (verbatim overlap only)",
+  "near_duplicate_source_overlap": {
+    "matching_criterion": "ticker (and ticker x section); section id via keyword map",
+    "pref_provenance_coverage": {
+      "ticker_recoverable": "597/647",
+      "ticker_and_section_recoverable": "209/647",
+      "distinct_pref_tickers": 35,
+      "distinct_pref_ticker_section": 89
+    },
+    "tasks": {
+      "json": {
+        "n": 160,
+        "eval_ticker_recoverable": 160,
+        "share_ticker_with_pref": 131,
+        "eval_ticker_section_recoverable": 0,
+        "share_ticker_section_with_pref": null
+      },
+      "router": {
+        "n": 160,
+        "eval_ticker_recoverable": 128,
+        "share_ticker_with_pref": 128,
+        "eval_ticker_section_recoverable": 0,
+        "share_ticker_section_with_pref": null
+      },
+      "extraction": {
+        "n": 160,
+        "eval_ticker_recoverable": 160,
+        "share_ticker_with_pref": 160,
+        "eval_ticker_section_recoverable": 160,
+        "share_ticker_section_with_pref": 81
+      }
+    }
+  }
+}
