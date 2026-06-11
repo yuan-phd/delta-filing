@@ -20,9 +20,9 @@ leakage reference: 645 pref-pair questions + 921 SFT questions
   (b) unique_prompts=160/160 (dups=0); gold-self-consistency=160/160; leakage pref=0 sft=0
   (c) balance: {'unique_tickers': 16, 'unique_sections': 6, 'unique_dates': 160, 'unique_full_gold': 160}
 
-LEAKAGE CRITERION: EXACT string match after .strip() (verbatim overlap only)
-DESCRIPTIVE SOURCE-DOMAIN OVERLAP (not a gate; domain overlap is by design):
-  pref provenance coverage: ticker 597/647, ticker+section 209/647 (35 distinct tickers)
-  json: 131/160 items share a ticker; ticker+section shared = None (of 0 with section)
-  router: 128/128 items share a ticker; ticker+section shared = None (of 0 with section)
-  extraction: 160/160 items share a ticker; ticker+section shared = 81 (of 160 with section)
+LEAKAGE CRITERION: EXACT string match after .strip() (verbatim overlap only)  -> verbatim overlap = 0 on all tasks
+DESCRIPTIVE SOURCE-DOMAIN OVERLAP (LOWER BOUNDS; by design; NOT a gate):
+  provenance coverage: ticker 597/647, ticker+section 209/647 -> counts below are LOWER BOUNDS
+  json: at least 131/160 items share a ticker (lower bound)
+  router: at least 128/160 items share a ticker (lower bound)
+  extraction: at least 160/160 items share a ticker (lower bound); at least 81/160 share ticker x section (lower bound)

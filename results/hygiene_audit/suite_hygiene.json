@@ -116,6 +116,7 @@
         "eval_ticker_section_recoverable": 160,
         "share_ticker_section_with_pref": 81
       }
-    }
+    },
+    "interpretation": "LOWER BOUNDS: ticker x section provenance recoverable for only 209/647 pairs, so true overlap can only be HIGHER. Domain overlap is by design (EDGAR ticker x section fetches); this is descriptive, not a gate."
   }
 }
