@@ -26,18 +26,32 @@ code = sorted(glob.glob("/kaggle/input/**/probe_register_shift.py", recursive=Tr
 assert code, "NOT RUN: upload the repo dataset (must contain probe_register_shift.py)"
 CODE = os.path.dirname(code[0])
 sys.path.insert(0, CODE)
-os.chdir(CODE)   # probe reads data_eval/ + kaggle_runs/ relative paths
 
-# the checkpoint adapters must be present (uploaded under kaggle_runs/)
-assert glob.glob(os.path.join(CODE, "kaggle_runs", "seed0*", "adapters", "**", "ckpt_margin1"),
-                 recursive=True), "NOT RUN: checkpoint adapters (kaggle_runs/.../ckpt_margin*) not found"
+# /kaggle/input is READ-ONLY -> work from /kaggle/working and symlink the inputs the
+# probe reads via cwd-relative paths (kaggle_runs/ pilot adapters, adapters/sft_pytorch).
+# (data_eval/ is read via an absolute path under CODE, so it needs no symlink.)
+os.chdir("/kaggle/working")
+for d in ("kaggle_runs", "adapters"):
+    src = os.path.join(CODE, d)
+    dst = os.path.join("/kaggle/working", d)
+    if os.path.isdir(src) and not os.path.exists(dst):
+        os.symlink(src, dst)
+os.makedirs("results", exist_ok=True)
 
+# the checkpoint adapters must be present (uploaded under CODE/kaggle_runs/)
+need = glob.glob(os.path.join(CODE, "kaggle_runs", "seed0*", "adapters", "**", "ckpt_margin1"),
+                 recursive=True)
+assert need, ("NOT RUN: pilot checkpoint adapters not found under the code dataset "
+              "(expected CODE/kaggle_runs/seed{0,1}.../adapters/pref/track1_dpo_seed{0,1}/ckpt_margin1)")
+
+OUT = "/kaggle/working/results/register_probe_nf4.jsonl"
+TOPK = "/kaggle/working/results/register_probe_topk_nf4.jsonl"
 import probe_register_shift as P
-sys.argv = ["probe", "--quant", "--out", "/kaggle/working/register_probe_nf4.jsonl"]
+sys.argv = ["probe", "--quant", "--out", OUT, "--topk-out", TOPK]
 P.main()
 
 print("\n=== FROZEN decision (X=0.05) ===")
 import register_decision as D
-sys.argv = ["decide", "--probe", "/kaggle/working/register_probe_nf4.jsonl"]
+sys.argv = ["decide", "--probe", OUT]
 D.main()
 print("\nREGISTER_PROBE_DONE")
