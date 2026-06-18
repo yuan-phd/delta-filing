@@ -58,6 +58,7 @@ sys.argv = ["run_matrix", "--sft-adapter", SFT, "--pref-data", PREF,
             "--output-base", "/kaggle/working/adapters/pref",
             "--conditions", CONDITION, "--seeds", SEED,
             "--tasks", "json", "router", "extraction",
+            "--max-opt-steps", "180",        # FROZEN fixed step count (no early-stop)
             "--skip-baseline"]
 run_matrix.main()
 print(f"\nMATRIX_RUN_DONE condition={CONDITION} seed={SEED}")

@@ -111,6 +111,8 @@ EVAL_EVERY = 50
 MIN_STEPS_BEFORE_EARLY_STOP = 140    # floor raised 100->140 (~2 epochs at batch-8) so a
                                      # fluke low pref-loss can't stop us before the high-
                                      # margin regime; consistent with the longer run.
+DIVERGENCE_MARGIN = 20.0             # pre-registered pathology abort (~3x calibration max ~7.7);
+                                     # NOT a convergence early-stop -- fires only on blow-up.
 EARLY_STOP_THRESHOLD = 0.005         # KEPT: -logsigmoid(margin)<0.005 <=> margin>~5.3, so
                                      # this fires ONLY in the high-margin regime (genuine
                                      # DPO convergence) -- changing it would mis-target.
@@ -425,15 +427,20 @@ def train(args):
     pref_losses, margins = [], []       # per-sample (micro) histories
     indices = list(range(len(train_pairs)))
     early_stopped = False
+    aborted = False                     # pre-registered divergence abort (NaN / margin>20)
+    abort_reason = None
     margin_ckpts = []                   # [{label, dir, step, smoothed_margin}]
     saved_levels = set()
     ckpt_levels = getattr(args, "margin_checkpoints", None) or MARGIN_CHECKPOINTS
     step_levels = getattr(args, "step_checkpoints", None) or STEP_CHECKPOINTS
     saved_steps = set()
 
+    max_opt_steps = getattr(args, "max_opt_steps", None)     # matrix: fixed step count
+    no_early_stop = getattr(args, "no_early_stop", False)    # matrix: no convergence early-stop
+
     def optimizer_step_bookkeeping():
-        """Run after each optimizer step: checkpoints / logging / val / early-stop."""
-        nonlocal step, early_stopped
+        """Run after each optimizer step: checkpoints / logging / val / stops."""
+        nonlocal step, early_stopped, aborted, abort_reason
         torch.nn.utils.clip_grad_norm_(model.parameters(), GRAD_CLIP)
         optimizer.step()
         optimizer.zero_grad()
@@ -478,11 +485,23 @@ def train(args):
             print(f"  step {step:4d} | VAL pref={vm['val_pref_loss']:.4f} | margin={vm['val_margin']:.3f}")
             model.train()
 
-        if (step >= MIN_STEPS_BEFORE_EARLY_STOP and len(pref_losses) >= EARLY_STOP_WINDOW):
+        # DIVERGENCE GUARD (pre-registered pathology abort; not a convergence stop)
+        if smoothed > DIVERGENCE_MARGIN:
+            print(f"  *** DIVERGENCE ABORT at step {step}: smoothed margin {smoothed:.2f} "
+                  f"> {DIVERGENCE_MARGIN} ***")
+            aborted = True; abort_reason = f"margin>{DIVERGENCE_MARGIN}"; early_stopped = True
+            return
+        # convergence early-stop — DISABLED for the confirmatory matrix (no_early_stop)
+        if (not no_early_stop and step >= MIN_STEPS_BEFORE_EARLY_STOP
+                and len(pref_losses) >= EARLY_STOP_WINDOW):
             recent = sum(pref_losses[-EARLY_STOP_WINDOW:]) / EARLY_STOP_WINDOW
             if recent < EARLY_STOP_THRESHOLD:
                 print(f"  early stop at step {step}: rolling pref {recent:.4f} < {EARLY_STOP_THRESHOLD}")
                 early_stopped = True
+        # fixed optimizer-step count (matrix: identical across seeds, no early-stop)
+        if max_opt_steps and step >= max_opt_steps:
+            print(f"  reached fixed max_opt_steps={max_opt_steps}")
+            early_stopped = True
         if args.smoke and step >= args.max_steps:
             print(f"  smoke: reached max_steps={args.max_steps}")
             early_stopped = True
@@ -501,11 +520,12 @@ def train(args):
                 beta=BETA, condition=args.condition, sft_weight=SFT_WEIGHT,
                 clamp_c=CLAMP_C, eps=CDPO_EPS)
 
-            if torch.isnan(loss):          # skip this sample; don't count toward batch
-                print(f"  (opt-step {step+1}): NaN loss on a sample, skipping it")
+            if torch.isnan(loss):          # DIVERGENCE GUARD: NaN pref-loss -> abort the seed
+                print(f"  *** DIVERGENCE ABORT at opt-step {step+1}: NaN loss ***")
+                aborted = True; abort_reason = "nan_pref_loss"; early_stopped = True
                 if torch.cuda.is_available():
                     torch.cuda.empty_cache()
-                continue
+                break
 
             (loss / accum).backward()      # mean over the accumulated batch
             pref_losses.append(m["pref"])
@@ -533,11 +553,16 @@ def train(args):
                          "smoothed_margin": final_margin})
     with open(os.path.join(out_dir, "checkpoints.json"), "w") as f:
         json.dump({"run": f"{args.track}_{args.condition}_seed{args.seed}",
+                   "aborted": aborted, "abort_reason": abort_reason,
                    "checkpoints": margin_ckpts}, f, indent=2)
     with open(os.path.join(out_dir, "train_config.json"), "w") as f:
         json.dump({**header, "final_step": step, "early_stopped": early_stopped,
+                   "aborted": aborted, "abort_reason": abort_reason,
                    "final_smoothed_margin": final_margin,
                    "margin_checkpoints": [c["label"] for c in margin_ckpts]}, f, indent=2)
+    if aborted:
+        print(f"[ABORTED] {args.condition} seed{args.seed}: {abort_reason} at step {step} "
+              f"-> EXCLUDED from primary analysis (not replaced)")
     print(f"[done] {args.condition} seed{args.seed}: {step} steps -> {out_dir}")
     print(f"       checkpoints: {[c['label'] for c in margin_ckpts]}")
     print(f"       margin trajectory: {log_path}")

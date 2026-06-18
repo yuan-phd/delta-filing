@@ -86,7 +86,8 @@ def main():
     # smoke knobs (exercise the full path on a small slice)
     ap.add_argument("--smoke", action="store_true")
     ap.add_argument("--smoke-n", type=int, default=60)
-    ap.add_argument("--max-steps", type=int, default=40)
+    ap.add_argument("--max-steps", type=int, default=40)        # smoke step cap
+    ap.add_argument("--max-opt-steps", type=int, default=180)   # matrix: fixed step count (FROZEN)
     ap.add_argument("--log-every", type=int, default=2)
     ap.add_argument("--max-items", type=int, default=None, help="eval item cap (smoke)")
     ap.add_argument("--margin-checkpoints", nargs="+", type=float, default=None,
@@ -119,11 +120,20 @@ def main():
                                  log_every=(args.log_every if args.smoke else None),
                                  eval_every=(10_000 if args.smoke else None),
                                  margin_checkpoints=args.margin_checkpoints,
-                                 step_checkpoints=args.step_checkpoints)
+                                 step_checkpoints=args.step_checkpoints,
+                                 # matrix: fixed step count, NO convergence early-stop
+                                 max_opt_steps=(None if args.smoke else args.max_opt_steps),
+                                 no_early_stop=True)
             T.train(tr)                      # frees its own models on return
             _free()
             run_dir = os.path.join(args.output_base, f"{TRACK}_{cond}_seed{seed}")
-            ckpts = json.load(open(os.path.join(run_dir, "checkpoints.json")))["checkpoints"]
+            manifest = json.load(open(os.path.join(run_dir, "checkpoints.json")))
+            if manifest.get("aborted"):      # pre-registered divergence abort -> exclude, no re-run
+                print(f"=== SEED ABORTED {cond} seed{seed}: {manifest.get('abort_reason')} "
+                      f"-> EXCLUDED from primary analysis (not replaced) ===")
+                _free()
+                continue
+            ckpts = manifest["checkpoints"]
             print(f"=== EVAL {cond} seed{seed}: {[c['label'] for c in ckpts]} ===")
             # one base load for ALL checkpoints x tasks of this run; freed after
             sess = E.EvalSession(TRACK)
