@@ -48,7 +48,10 @@ def eval_adapter(session, tag, seed, task, adapter_path, max_items=None):
     if not os.path.exists(rp):                   # no recompute of the behavioral eval
         gen_items, tok = session.generate(task, items, adapter_path)
         gp = f"generations/{TRACK}_{tag}_seed{seed}_{task}.jsonl"
-        res, _ = E.score_and_persist(TRACK, tag, seed, task, gen_items, gp, rp, tokenizer=tok)
+        # FROZEN scorer v2 (three-tier; semantic accuracy = primary) — same scorer as
+        # baseline_v2, so matrix-vs-baseline_v2 is like-for-like and the extraction
+        # register-shift artifact is canonicalized into SURFACE_FORM, not REASONING_ERROR.
+        res, _ = E.score_and_persist_v2(TRACK, tag, seed, task, gen_items, gp, rp, tokenizer=tok)
     else:
         res = json.load(open(rp))
     gold_logp_log(session, tag, seed, task, adapter_path, items)   # secondary, near-free

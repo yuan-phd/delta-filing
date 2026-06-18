@@ -22,6 +22,7 @@ import re
 import statistics
 
 import scorer as SC
+import scorer_v2 as V
 
 # Rigid eval prompts. NOTE (flagged for researcher review): §3a defines the
 # binary task's output space as EXACTLY {COMPLETE, NEEDS_FOLLOW_UP} and §6's
@@ -127,6 +128,54 @@ def score_and_persist(track, condition, seed, task, items, gen_path, results_pat
         "pct_normalized": sum(r["normalization_applied"] for r in rows) / n if n else None,
         "generations_file": gen_path,
         "scorer_rules": SC.SCORER_RULES,
+    }
+    with open(results_path, "w") as f:
+        json.dump(results, f, indent=2)
+    return results, rows
+
+
+def score_and_persist_v2(track, condition, seed, task, items, gen_path, results_path,
+                         tokenizer=None):
+    """SCORER V2 (three-tier) scoring + persist — the FROZEN matrix/baseline scorer.
+    Primary metric = semantic accuracy (PASS + SURFACE_FORM); strict = PASS only.
+    Uses scorer_v2.score_v2 with the frozen canonicalization (section id \\d+[A-Z]?,
+    case-fold, ignore appended titles). `accuracy` is aliased to semantic_accuracy so
+    downstream curves report the semantic metric. Same scorer as run_baseline_v2 ->
+    matrix-vs-baseline_v2 are like-for-like."""
+    os.makedirs(os.path.dirname(gen_path), exist_ok=True)
+    os.makedirs(os.path.dirname(results_path), exist_ok=True)
+    header = {"_header": True, "track": track, "condition": condition, "seed": seed,
+              "task": task, "scorer": "v2", "canon_rules": V.CANON_RULES}
+    rows, fields_list = [], []
+    with open(gen_path, "w") as f:
+        f.write(json.dumps(header) + "\n")
+        for it in items:
+            raw = it["raw_output"]
+            tier, fields = V.score_v2(task, raw, it["gold"], prompt=it.get("prompt"), track=track)
+            fields_list.append(fields)
+            tok_len = (len(tokenizer.encode(raw)) if tokenizer is not None else len(raw.split()))
+            row = {"item_id": it["item_id"], "prompt": it["prompt"], "gold": it["gold"],
+                   "raw_output": raw, "output_token_len": tok_len,
+                   "raw_output_untruncated": it.get("raw_output_untruncated"),
+                   "format_pass": fields["format_pass"], "tier": tier,
+                   "strict_pass": fields["strict_pass"], "semantic_pass": fields["semantic_pass"]}
+            f.write(json.dumps(row) + "\n")
+            rows.append(row)
+    agg = V.aggregate(fields_list)
+    n = len(rows)
+    lens = [r["output_token_len"] for r in rows]
+    results = {
+        "track": track, "condition": condition, "seed": seed, "task": task, "n": n,
+        "scorer": "v2",
+        "accuracy": agg["semantic_accuracy"],            # PRIMARY (alias for downstream curves)
+        "semantic_accuracy": agg["semantic_accuracy"],
+        "strict_accuracy": agg["strict_accuracy"],       # secondary
+        "format_break_rate": agg["format_break"] / n if n else None,
+        "surface_form_rate": agg["surface_form"] / n if n else None,
+        "semantic_error_rate": agg["semantic_error"] / n if n else None,
+        "mean_output_len": statistics.mean(lens) if lens else None,
+        "median_output_len": statistics.median(lens) if lens else None,
+        "generations_file": gen_path, "canon_rules": V.CANON_RULES,
     }
     with open(results_path, "w") as f:
         json.dump(results, f, indent=2)
