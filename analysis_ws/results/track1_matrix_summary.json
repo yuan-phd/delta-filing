@@ -1,0 +1,92 @@
+{
+  "dpo/final/extraction": {
+    "margin_mean": 6.725059475004673,
+    "accuracy_mean": 0.96953125,
+    "accuracy_std": 0.02129533307881096,
+    "n_seeds": 8
+  },
+  "dpo/margin5/extraction": {
+    "margin_mean": 5.130859108269215,
+    "accuracy_mean": 0.97890625,
+    "accuracy_std": 0.013953571171477925,
+    "n_seeds": 8
+  },
+  "dpo/margin1/router": {
+    "margin_mean": 1.0898972707800567,
+    "accuracy_mean": 0.815625,
+    "accuracy_std": 0.03013640862810299,
+    "n_seeds": 8
+  },
+  "dpo/step20/router": {
+    "margin_mean": 0.749866524618119,
+    "accuracy_mean": 0.8515625,
+    "accuracy_std": 0.01457402977045128,
+    "n_seeds": 8
+  },
+  "dpo/margin5/router": {
+    "margin_mean": 5.130859108269215,
+    "accuracy_mean": 0.62578125,
+    "accuracy_std": 0.04895764073091654,
+    "n_seeds": 8
+  },
+  "dpo/margin5/json": {
+    "margin_mean": 5.130859108269215,
+    "accuracy_mean": 0.9296875,
+    "accuracy_std": 0.035869500885153116,
+    "n_seeds": 8
+  },
+  "dpo/final/json": {
+    "margin_mean": 6.725059475004673,
+    "accuracy_mean": 0.95234375,
+    "accuracy_std": 0.014636714058746243,
+    "n_seeds": 8
+  },
+  "dpo/step20/json": {
+    "margin_mean": 0.749866524618119,
+    "accuracy_mean": 0.91875,
+    "accuracy_std": 0.04352621336620039,
+    "n_seeds": 8
+  },
+  "dpo/margin1/extraction": {
+    "margin_mean": 1.0898972707800567,
+    "accuracy_mean": 0.99453125,
+    "accuracy_std": 0.007928821535228302,
+    "n_seeds": 8
+  },
+  "dpo/margin3/router": {
+    "margin_mean": 3.1212150694802405,
+    "accuracy_mean": 0.58671875,
+    "accuracy_std": 0.06103257807054772,
+    "n_seeds": 8
+  },
+  "dpo/step20/extraction": {
+    "margin_mean": 0.749866524618119,
+    "accuracy_mean": 0.9875,
+    "accuracy_std": 0.008838834764831861,
+    "n_seeds": 8
+  },
+  "dpo/final/router": {
+    "margin_mean": 6.725059475004673,
+    "accuracy_mean": 0.6359375,
+    "accuracy_std": 0.07672177310744324,
+    "n_seeds": 8
+  },
+  "dpo/margin3/json": {
+    "margin_mean": 3.1212150694802405,
+    "accuracy_mean": 0.890625,
+    "accuracy_std": 0.06419574557554417,
+    "n_seeds": 8
+  },
+  "dpo/margin3/extraction": {
+    "margin_mean": 3.1212150694802405,
+    "accuracy_mean": 0.98828125,
+    "accuracy_std": 0.007928821535228316,
+    "n_seeds": 8
+  },
+  "dpo/margin1/json": {
+    "margin_mean": 1.0898972707800567,
+    "accuracy_mean": 0.9390625,
+    "accuracy_std": 0.020904825250405722,
+    "n_seeds": 8
+  }
+}

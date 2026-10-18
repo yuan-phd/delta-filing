@@ -1,0 +1,22 @@
+{"_header": true, "track": "track1", "condition": "dpo", "seed": 7, "model_id": "Qwen/Qwen3.5-4B", "sft_adapter": "/kaggle/input/datasets/yuanmazax/delta-filing-smoke/adapters/sft_pytorch", "beta": 0.5, "sft_retention_weight": 0.5, "clamp_C": 3.0, "cdpo_eps": 0.1, "lr": 5e-05, "epochs": 6, "grad_clip": 1.0, "effective_batch": 8, "batching": "gradient accumulation (one forward/sample, step every N)", "weight_decay": 0.01, "max_seq_len": 1024, "lora": {"r": 8, "lora_alpha": 16, "lora_dropout": 0.05, "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"], "bias": "none"}, "quant": "4bit-nf4-doublequant-fp16compute", "early_stop": {"min_steps": 140, "threshold": 0.005, "window": 20}, "data_seed": 42, "n_train": 549, "n_valid": 98, "val_subset_n": 20, "device": "cuda:0", "smoke": false, "retention_mask": "assistant-only (-100 on system/user/prompt)", "pref_logprobs": "completion-only, normalized by completion length", "ts": "2026-06-20T21:49:41", "seed_record": {"seed": 7, "numpy_seeded": true, "cuda": true}}
+{"step": 10, "train_margin": 0.3089376226067543, "pref_loss": 0.5517682656645775}
+{"step": 20, "train_margin": 0.7906295418739319, "pref_loss": 0.38728725984692575}
+{"step": 30, "train_margin": 0.9592141538858414, "pref_loss": 0.3365371089428663}
+{"step": 40, "train_margin": 1.2140763722360135, "pref_loss": 0.2817636214196682}
+{"step": 50, "train_margin": 1.5304624259471893, "pref_loss": 0.23764306977391242}
+{"step": 50, "val_margin": 1.5283115327358245, "val_pref_loss": 0.21245361398905516}
+{"step": 60, "train_margin": 1.9631821155548095, "pref_loss": 0.14701626244932414}
+{"step": 70, "train_margin": 2.350811469554901, "pref_loss": 0.1170621681958437}
+{"step": 80, "train_margin": 2.262210303544998, "pref_loss": 0.1219158886000514}
+{"step": 90, "train_margin": 2.7436062544584274, "pref_loss": 0.09493794469162822}
+{"step": 100, "train_margin": 3.2353328466415405, "pref_loss": 0.052007229533046484}
+{"step": 100, "val_margin": 3.2879302978515623, "val_pref_loss": 0.046994583262130615}
+{"step": 110, "train_margin": 3.78561989068985, "pref_loss": 0.032815488881897184}
+{"step": 120, "train_margin": 4.04127938747406, "pref_loss": 0.02893634238280356}
+{"step": 130, "train_margin": 4.361729019880295, "pref_loss": 0.03513447799487039}
+{"step": 140, "train_margin": 5.462613272666931, "pref_loss": 0.008439232865930535}
+{"step": 150, "train_margin": 5.170924961566925, "pref_loss": 0.009715139601030386}
+{"step": 150, "val_margin": 5.768139636516571, "val_pref_loss": 0.008849248131446075}
+{"step": 160, "train_margin": 6.192308509349823, "pref_loss": 0.005480539778363891}
+{"step": 170, "train_margin": 7.4194162607192995, "pref_loss": 0.003569381135093863}
+{"step": 180, "train_margin": 7.209268879890442, "pref_loss": 0.0036021247897224384}

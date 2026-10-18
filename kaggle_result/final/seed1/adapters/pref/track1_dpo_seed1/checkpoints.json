@@ -1,0 +1,37 @@
+{
+  "run": "track1_dpo_seed1",
+  "aborted": false,
+  "abort_reason": null,
+  "checkpoints": [
+    {
+      "label": "step20",
+      "dir": "/kaggle/working/adapters/pref/track1_dpo_seed1/ckpt_step20",
+      "step": 20,
+      "smoothed_margin": 0.8083566009998322
+    },
+    {
+      "label": "margin1",
+      "dir": "/kaggle/working/adapters/pref/track1_dpo_seed1/ckpt_margin1",
+      "step": 29,
+      "smoothed_margin": 1.1727995678782464
+    },
+    {
+      "label": "margin3",
+      "dir": "/kaggle/working/adapters/pref/track1_dpo_seed1/ckpt_margin3",
+      "step": 93,
+      "smoothed_margin": 3.320092189311981
+    },
+    {
+      "label": "margin5",
+      "dir": "/kaggle/working/adapters/pref/track1_dpo_seed1/ckpt_margin5",
+      "step": 131,
+      "smoothed_margin": 5.076587080955505
+    },
+    {
+      "label": "final",
+      "dir": "/kaggle/working/adapters/pref/track1_dpo_seed1",
+      "step": 180,
+      "smoothed_margin": 7.126881790161133
+    }
+  ]
+}

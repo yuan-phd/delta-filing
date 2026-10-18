@@ -47,3 +47,20 @@ CV_BULLETS.md
 adapters/*/tokenizer.json
 adapters/*/*/tokenizer.json
 adapters/*/*/*/tokenizer.json
+
+# Public-release exclusions (paper prep)
+Qwen3.5-4B/
+hf_cache/
+**/tokenizer.json
+kaggle_runs/
+paper/latex/*.aux
+paper/latex/*.log
+paper/latex/*.bbl
+paper/latex/*.xdv
+# Duplicate adapter copies (identical to kaggle_result/final) and oversized probe dump
+kaggle_upload/matrix_adapters/
+kaggle_result/A3_seed0/adapters/
+kaggle_result/A3_seed1/adapters/**
+!kaggle_result/A3_seed1/adapters/**/
+!kaggle_result/A3_seed1/adapters/pref/track1_dpo_seed1/adapter_model.safetensors
+kaggle_result/A1/register_probe_topk_nf4.jsonl

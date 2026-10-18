@@ -1,0 +1,28 @@
+EVAL-SUITE HYGIENE AUDIT (re-derived from data_eval/)
+============================================================
+leakage reference: 645 pref-pair questions + 0 SFT questions
+
+### json  (n=160)
+  (a) degeneracy floor = 0.0125  [constant: const=0.0125, empty=0.0000]  | quoted=0.013  -> MATCH
+      most-common gold appears 2x (0.0125)
+  (b) unique_prompts=160/160 (dups=0); gold-self-consistency=160/160; leakage pref=0 sft=0
+  (c) balance: {'tool_counts': {'search_filings': 20, 'get_filing_section': 20, 'diff_filing_sections': 20, 'stock_price': 20, 'company_metrics': 20, 'company_news': 20, 'insider_trades': 20, 'analyst_ratings': 20}, 'tools_covered': 8}
+
+### router  (n=160)
+  (a) degeneracy floor = 0.2000  [constant: const=0.2000, empty=0.0000]  | quoted=0.2  -> MATCH
+      most-common gold appears 32x (0.2000)
+  (b) unique_prompts=160/160 (dups=0); gold-self-consistency=160/160; leakage pref=0 sft=0
+  (c) balance: {'COMPANY_DEEP_DIVE': 32, 'FILING_ANALYSIS': 32, 'FILING_DIFF': 32, 'OUT_OF_SCOPE': 32, 'SIMPLE_QUERY': 32}
+
+### extraction  (n=160)
+  (a) degeneracy floor = 0.0063  [constant: const=0.0063, empty=0.0000]  | quoted=0.0063  -> MATCH
+      most-common gold appears 1x (0.0063)
+  (b) unique_prompts=160/160 (dups=0); gold-self-consistency=160/160; leakage pref=0 sft=0
+  (c) balance: {'unique_tickers': 16, 'unique_sections': 6, 'unique_dates': 160, 'unique_full_gold': 160}
+
+LEAKAGE CRITERION: EXACT string match after .strip() (verbatim overlap only)  -> verbatim overlap = 0 on all tasks
+DESCRIPTIVE SOURCE-DOMAIN OVERLAP (LOWER BOUNDS; by design; NOT a gate):
+  provenance coverage: ticker 597/647, ticker+section 209/647 -> counts below are LOWER BOUNDS
+  json: at least 131/160 items share a ticker (lower bound)
+  router: at least 128/160 items share a ticker (lower bound)
+  extraction: at least 160/160 items share a ticker (lower bound); at least 81/160 share ticker x section (lower bound)

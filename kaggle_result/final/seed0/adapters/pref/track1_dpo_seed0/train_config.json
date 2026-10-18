@@ -1,0 +1,63 @@
+{
+  "_header": true,
+  "track": "track1",
+  "condition": "dpo",
+  "seed": 0,
+  "model_id": "Qwen/Qwen3.5-4B",
+  "sft_adapter": "/kaggle/input/datasets/yuanmazax/delta-filing-smoke/adapters/sft_pytorch",
+  "beta": 0.5,
+  "sft_retention_weight": 0.5,
+  "clamp_C": 3.0,
+  "cdpo_eps": 0.1,
+  "lr": 5e-05,
+  "epochs": 6,
+  "grad_clip": 1.0,
+  "effective_batch": 8,
+  "batching": "gradient accumulation (one forward/sample, step every N)",
+  "weight_decay": 0.01,
+  "max_seq_len": 1024,
+  "lora": {
+    "r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "bias": "none"
+  },
+  "quant": "4bit-nf4-doublequant-fp16compute",
+  "early_stop": {
+    "min_steps": 140,
+    "threshold": 0.005,
+    "window": 20
+  },
+  "data_seed": 42,
+  "n_train": 549,
+  "n_valid": 98,
+  "val_subset_n": 20,
+  "device": "cuda:0",
+  "smoke": false,
+  "retention_mask": "assistant-only (-100 on system/user/prompt)",
+  "pref_logprobs": "completion-only, normalized by completion length",
+  "ts": "2026-06-18T16:15:03",
+  "seed_record": {
+    "seed": 0,
+    "numpy_seeded": true,
+    "cuda": true
+  },
+  "final_step": 180,
+  "early_stopped": true,
+  "aborted": false,
+  "abort_reason": null,
+  "final_smoothed_margin": 7.678087723255158,
+  "margin_checkpoints": [
+    "step20",
+    "margin1",
+    "margin3",
+    "margin5",
+    "final"
+  ]
+}

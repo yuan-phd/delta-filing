@@ -1,0 +1,113 @@
+% neurips_2026.sty
+% Self-contained NeurIPS-style format file (workshop submission).
+% Reproduces the standard NeurIPS single-column layout (5.5in x 9in text block,
+% 10pt Times, NeurIPS section headings and title block) using only standard
+% LaTeX packages, so the paper compiles in any TeX Live / MiKTeX installation
+% without the official media-distributed style. Options:
+%   [preprint] non-anonymous preprint (author block shown, footer "Preprint.")
+%   [final]    camera-ready (author block shown)
+%   [nonatbib] do not load natbib (use if you manage citations yourself)
+% Default (no option) = anonymous submission.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{neurips_2026}[2026/01/01 NeurIPS 2026 workshop style (self-contained)]
+
+% ---- options ----------------------------------------------------------------
+\newif\if@neuripspreprint   \@neuripspreprintfalse
+\newif\if@neuripsfinal      \@neuripsfinalfalse
+\newif\if@neuripsnatbib     \@neuripsnatbibtrue
+\DeclareOption{preprint}{\@neuripspreprinttrue}
+\DeclareOption{final}{\@neuripsfinaltrue}
+\DeclareOption{nonatbib}{\@neuripsnatbibfalse}
+\ProcessOptions\relax
+
+% ---- fonts ------------------------------------------------------------------
+\RequirePackage[T1]{fontenc}
+\RequirePackage{mathptmx}      % Times for text and math
+\renewcommand{\rmdefault}{ptm}
+
+% ---- page geometry (NeurIPS: 5.5in x 9in text block, centred) ---------------
+\RequirePackage[letterpaper,
+  textwidth=5.5in, textheight=9.0in,
+  top=1.0in, left=1.5in,
+  footskip=0.4in, headsep=0.25in]{geometry}
+
+% ---- paragraph / spacing ----------------------------------------------------
+\setlength{\parindent}{\z@}
+\setlength{\parskip}{4\p@ \@plus 1\p@ \@minus 1\p@}
+\setlength{\emergencystretch}{3em}
+\widowpenalty=10000
+\clubpenalty=10000
+
+% tighten float separation (denser layout, NeurIPS-like)
+\setlength{\floatsep}{8\p@ \@plus 2\p@ \@minus 2\p@}
+\setlength{\textfloatsep}{10\p@ \@plus 2\p@ \@minus 3\p@}
+\setlength{\intextsep}{8\p@ \@plus 2\p@ \@minus 2\p@}
+\setlength{\abovecaptionskip}{4\p@}
+\setlength{\belowcaptionskip}{2\p@}
+
+% baseline ~11pt over 10pt body (NeurIPS leading)
+\renewcommand\normalsize{%
+  \@setfontsize\normalsize\@xpt{11}%
+  \abovedisplayskip 7\p@ \@plus 2\p@ \@minus 5\p@
+  \belowdisplayskip \abovedisplayskip
+  \abovedisplayshortskip \z@ \@plus 3\p@
+  \belowdisplayshortskip 4\p@ \@plus 3\p@ \@minus 3\p@}
+\normalsize
+
+% ---- section headings -------------------------------------------------------
+\RequirePackage{titlesec}
+\titleformat{\section}{\large\bfseries\raggedright}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries\raggedright}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\raggedright}{\thesubsubsection}{1em}{}
+\titlespacing*{\section}{0pt}{2.0ex plus 1ex minus .2ex}{1.0ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{1.6ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{1.4ex plus 1ex minus .2ex}{0.6ex plus .2ex}
+\setcounter{secnumdepth}{3}
+
+% ---- title block ------------------------------------------------------------
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+\if@neuripspreprint
+  \fancyfoot[C]{Preprint. Under review.\\[2pt]\thepage}
+\fi
+
+\newcommand{\@neuripsauthor}{}
+\renewcommand{\@maketitle}{%
+  \newpage \null \vskip 2em%
+  \begin{center}%
+    {\LARGE\bfseries \@title \par}%
+    \vskip 1.4em%
+    {\large
+      \if@neuripsfinal \@neuripsauthor
+      \else \if@neuripspreprint \@neuripsauthor
+      \else \textbf{Anonymous Author(s)}\\Affiliation\\\texttt{email}
+      \fi\fi \par}%
+  \end{center}%
+  \vskip 1.2em}
+
+% capture the author block content for the conditional title
+\long\def\author#1{\renewcommand{\@neuripsauthor}{#1}}
+
+% ---- abstract ---------------------------------------------------------------
+\renewenvironment{abstract}{%
+  \centerline{\large\bfseries Abstract}%
+  \vspace{0.5ex}%
+  \begin{quote}\small}{%
+  \end{quote}}
+
+% ---- bibliography -----------------------------------------------------------
+\if@neuripsnatbib
+  \RequirePackage[numbers,sort&compress]{natbib}
+  \setlength{\bibsep}{2pt plus 0.3ex}
+  \renewcommand{\bibsection}{\section*{References}\small}
+\fi
+
+% ---- misc -------------------------------------------------------------------
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{amsmath}
+\endinput

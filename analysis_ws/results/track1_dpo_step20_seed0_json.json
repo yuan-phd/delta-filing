@@ -1,0 +1,20 @@
+{
+  "track": "track1",
+  "condition": "dpo_step20",
+  "seed": 0,
+  "task": "json",
+  "n": 160,
+  "scorer": "v2",
+  "accuracy": 0.825,
+  "semantic_accuracy": 0.825,
+  "strict_accuracy": 0.825,
+  "format_break_rate": 0.14375,
+  "surface_form_rate": 0.0,
+  "semantic_error_rate": 0.03125,
+  "mean_output_len": 27.03125,
+  "median_output_len": 23.0,
+  "generations_file": "generations/track1_dpo_step20_seed0_json.jsonl",
+  "canon_rules": {
+    "extraction.section": "first \\d+[A-Z]? , case-folded, appended titles ignored"
+  }
+}

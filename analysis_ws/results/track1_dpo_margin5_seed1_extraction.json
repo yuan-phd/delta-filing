@@ -1,0 +1,20 @@
+{
+  "track": "track1",
+  "condition": "dpo_margin5",
+  "seed": 1,
+  "task": "extraction",
+  "n": 160,
+  "scorer": "v2",
+  "accuracy": 0.9875,
+  "semantic_accuracy": 0.9875,
+  "strict_accuracy": 0.9625,
+  "format_break_rate": 0.0,
+  "surface_form_rate": 0.025,
+  "semantic_error_rate": 0.0125,
+  "mean_output_len": 32.18125,
+  "median_output_len": 32.0,
+  "generations_file": "generations/track1_dpo_margin5_seed1_extraction.jsonl",
+  "canon_rules": {
+    "extraction.section": "first \\d+[A-Z]? , case-folded, appended titles ignored"
+  }
+}

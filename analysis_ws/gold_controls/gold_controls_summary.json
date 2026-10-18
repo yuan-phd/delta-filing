@@ -1,0 +1,99 @@
+{
+  "seed0": {
+    "mean_stat": 0.2560655938636046,
+    "ci95": [
+      0.24802787431821344,
+      0.26435172397614226
+    ],
+    "verdict": "GOLD_PROTECTED",
+    "mean_delta_gold": -0.10157717501861044,
+    "mean_delta_ctrlAB": -0.357642768882215
+  },
+  "seed1": {
+    "mean_stat": 0.24248407784034498,
+    "ci95": [
+      0.2348258442511724,
+      0.25015652836009394
+    ],
+    "verdict": "GOLD_PROTECTED",
+    "mean_delta_gold": -0.22617943228106013,
+    "mean_delta_ctrlAB": -0.4686635101214051
+  },
+  "seed2": {
+    "mean_stat": 0.21254983826656826,
+    "ci95": [
+      0.205342233916017,
+      0.21975493772857588
+    ],
+    "verdict": "GOLD_PROTECTED",
+    "mean_delta_gold": -0.14695869951392523,
+    "mean_delta_ctrlAB": -0.3595085377804935
+  },
+  "seed3": {
+    "mean_stat": 0.2388640771911014,
+    "ci95": [
+      0.23160672082609382,
+      0.24620585047567148
+    ],
+    "verdict": "GOLD_PROTECTED",
+    "mean_delta_gold": -0.10219534753705375,
+    "mean_delta_ctrlAB": -0.34105942472815515
+  },
+  "seed4": {
+    "mean_stat": 0.29531220957287585,
+    "ci95": [
+      0.28698341859097126,
+      0.3037730474921409
+    ],
+    "verdict": "GOLD_PROTECTED",
+    "mean_delta_gold": -0.15019526569521985,
+    "mean_delta_ctrlAB": -0.44550747526809575
+  },
+  "seed5": {
+    "mean_stat": 0.2172180080146063,
+    "ci95": [
+      0.2108399642832228,
+      0.22364753260975703
+    ],
+    "verdict": "GOLD_PROTECTED",
+    "mean_delta_gold": -0.19382107701967471,
+    "mean_delta_ctrlAB": -0.411039085034281
+  },
+  "seed6": {
+    "mean_stat": 0.24771370189846492,
+    "ci95": [
+      0.2403155219502514,
+      0.2552726826108119
+    ],
+    "verdict": "GOLD_PROTECTED",
+    "mean_delta_gold": -0.137851878994843,
+    "mean_delta_ctrlAB": -0.38556558089330795
+  },
+  "seed7": {
+    "mean_stat": 0.26658075040322726,
+    "ci95": [
+      0.2574271430661611,
+      0.27560810766706706
+    ],
+    "verdict": "GOLD_PROTECTED",
+    "mean_delta_gold": -0.16838952528196388,
+    "mean_delta_ctrlAB": -0.43497027568519114
+  },
+  "_aggregate": {
+    "gold_protected": 8,
+    "n_seeds": 8,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "X": 0.05,
+    "reference": "sft_baseline",
+    "method": "fp16/bf16 unquantized, paired stat Dgold-Dmean(A,B)"
+  }
+}

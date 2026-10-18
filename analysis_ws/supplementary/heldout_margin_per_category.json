@@ -1,0 +1,446 @@
+{
+  "backend": "fp16_mac",
+  "beta": 0.5,
+  "reference": "sft_baseline",
+  "metric": "margin = beta*(reward_chosen - reward_rejected), reward = policy_logp - sft_logp",
+  "prediction": "style margin > tool_calling margin",
+  "n_pairs": 98,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "by_seed": {
+    "0": {
+      "margin1": {
+        "style": {
+          "margin": 0.6504205936107083,
+          "reward_chosen": -0.10115529575209686,
+          "reward_rejected": -1.4019964829735134
+        },
+        "tool_calling": {
+          "margin": 1.30109240459886,
+          "reward_chosen": 0.12109387816856505,
+          "reward_rejected": -2.481090931029155
+        }
+      },
+      "margin3": {
+        "style": {
+          "margin": 1.7375961239787114,
+          "reward_chosen": -0.20955737431844076,
+          "reward_rejected": -3.684749622275864
+        },
+        "tool_calling": {
+          "margin": 2.664184373800238,
+          "reward_chosen": 0.004243000371984792,
+          "reward_rejected": -5.324125747228491
+        }
+      },
+      "margin5": {
+        "style": {
+          "margin": 2.4799724281698037,
+          "reward_chosen": -0.11804595028144726,
+          "reward_rejected": -5.077990806621054
+        },
+        "tool_calling": {
+          "margin": 3.2526596254092826,
+          "reward_chosen": -0.3726993883924322,
+          "reward_rejected": -6.878018639210997
+        }
+      },
+      "final": {
+        "style": {
+          "margin": 2.501199420379556,
+          "reward_chosen": -0.03963727277258168,
+          "reward_rejected": -5.042036113531693
+        },
+        "tool_calling": {
+          "margin": 4.033774490128868,
+          "reward_chosen": -0.23643113695640028,
+          "reward_rejected": -8.303980117214136
+        }
+      }
+    },
+    "1": {
+      "margin1": {
+        "style": {
+          "margin": 0.6981365615906923,
+          "reward_chosen": -0.12498998037282971,
+          "reward_rejected": -1.5212631035542143
+        },
+        "tool_calling": {
+          "margin": 1.4837933063714006,
+          "reward_chosen": 0.05672747907995252,
+          "reward_rejected": -2.9108591336628487
+        }
+      },
+      "margin3": {
+        "style": {
+          "margin": 1.8432955525923467,
+          "reward_chosen": -0.19711518633192865,
+          "reward_rejected": -3.883706291516622
+        },
+        "tool_calling": {
+          "margin": 3.068807689398831,
+          "reward_chosen": -0.19574032854356557,
+          "reward_rejected": -6.333355707341227
+        }
+      },
+      "margin5": {
+        "style": {
+          "margin": 2.240565823903982,
+          "reward_chosen": -0.10784814064053522,
+          "reward_rejected": -4.5889797884484995
+        },
+        "tool_calling": {
+          "margin": 3.382794977153841,
+          "reward_chosen": -0.29703376129854686,
+          "reward_rejected": -7.062623715606229
+        }
+      },
+      "final": {
+        "style": {
+          "margin": 2.4758790852367016,
+          "reward_chosen": -0.0499932921451071,
+          "reward_rejected": -5.00175146261851
+        },
+        "tool_calling": {
+          "margin": 3.9050756340330457,
+          "reward_chosen": -0.009512648102451027,
+          "reward_rejected": -7.819663916168542
+        }
+      }
+    },
+    "2": {
+      "margin1": {
+        "style": {
+          "margin": 0.6149263053700543,
+          "reward_chosen": -0.10310366361037544,
+          "reward_rejected": -1.3329562743504841
+        },
+        "tool_calling": {
+          "margin": 1.3613957566593196,
+          "reward_chosen": 0.09985048691876351,
+          "reward_rejected": -2.6229410263998756
+        }
+      },
+      "margin3": {
+        "style": {
+          "margin": 1.729140455308168,
+          "reward_chosen": -0.18641957338305487,
+          "reward_rejected": -3.6447004839993906
+        },
+        "tool_calling": {
+          "margin": 2.9610646837476264,
+          "reward_chosen": -0.16860725700048376,
+          "reward_rejected": -6.090736624495737
+        }
+      },
+      "margin5": {
+        "style": {
+          "margin": 2.497609175633693,
+          "reward_chosen": -0.15635184274203534,
+          "reward_rejected": -5.151570194009421
+        },
+        "tool_calling": {
+          "margin": 3.2846652350171697,
+          "reward_chosen": -0.2971135802037115,
+          "reward_rejected": -6.866444050238051
+        }
+      },
+      "final": {
+        "style": {
+          "margin": 1.9039648183877917,
+          "reward_chosen": -0.0457324100577313,
+          "reward_rejected": -3.853662046833315
+        },
+        "tool_calling": {
+          "margin": 3.7093549655637617,
+          "reward_chosen": 0.015500839867007895,
+          "reward_rejected": -7.403209091260515
+        }
+      }
+    },
+    "3": {
+      "margin1": {
+        "style": {
+          "margin": 0.6705045479795207,
+          "reward_chosen": -0.11915574989457062,
+          "reward_rejected": -1.460164845853612
+        },
+        "tool_calling": {
+          "margin": 1.1886821688652256,
+          "reward_chosen": 0.11199383414864784,
+          "reward_rejected": -2.2653705035818033
+        }
+      },
+      "margin3": {
+        "style": {
+          "margin": 1.9865316571532814,
+          "reward_chosen": -0.21486065439555957,
+          "reward_rejected": -4.187923968702123
+        },
+        "tool_calling": {
+          "margin": 2.7434651160759222,
+          "reward_chosen": -0.38780673563376006,
+          "reward_rejected": -5.874736967785605
+        }
+      },
+      "margin5": {
+        "style": {
+          "margin": 2.9886291096175923,
+          "reward_chosen": -0.20719398795694544,
+          "reward_rejected": -6.18445220719213
+        },
+        "tool_calling": {
+          "margin": 3.1838313672512943,
+          "reward_chosen": -0.4650881912274254,
+          "reward_rejected": -6.832750925730014
+        }
+      },
+      "final": {
+        "style": {
+          "margin": 2.22986279276834,
+          "reward_chosen": -0.029330018637836842,
+          "reward_rejected": -4.489055604174517
+        },
+        "tool_calling": {
+          "margin": 4.001654515330928,
+          "reward_chosen": -0.06322897129475363,
+          "reward_rejected": -8.06653800195661
+        }
+      }
+    },
+    "4": {
+      "margin1": {
+        "style": {
+          "margin": 0.7208355790463046,
+          "reward_chosen": -0.14720556096754212,
+          "reward_rejected": -1.5888767190601514
+        },
+        "tool_calling": {
+          "margin": 1.411444014184875,
+          "reward_chosen": 0.07708239797359746,
+          "reward_rejected": -2.7458056303961524
+        }
+      },
+      "margin3": {
+        "style": {
+          "margin": 1.881781415230986,
+          "reward_chosen": -0.19891199080840402,
+          "reward_rejected": -3.962474821270376
+        },
+        "tool_calling": {
+          "margin": 2.8950112816490154,
+          "reward_chosen": -0.00043200626369698197,
+          "reward_rejected": -5.790454569561728
+        }
+      },
+      "margin5": {
+        "style": {
+          "margin": 2.044481774603111,
+          "reward_chosen": -0.11098122855891353,
+          "reward_rejected": -4.199944777765136
+        },
+        "tool_calling": {
+          "margin": 3.2700865776494474,
+          "reward_chosen": 0.07324976944035935,
+          "reward_rejected": -6.466923385858536
+        }
+      },
+      "final": {
+        "style": {
+          "margin": 2.114781999933547,
+          "reward_chosen": -0.053125003109807556,
+          "reward_rejected": -4.282689002976901
+        },
+        "tool_calling": {
+          "margin": 3.8555693990187265,
+          "reward_chosen": 0.05962594808995069,
+          "reward_rejected": -7.651512849947502
+        }
+      }
+    },
+    "5": {
+      "margin1": {
+        "style": {
+          "margin": 0.5954938625943833,
+          "reward_chosen": -0.10261036174884741,
+          "reward_rejected": -1.293598086937614
+        },
+        "tool_calling": {
+          "margin": 1.229898282821523,
+          "reward_chosen": 0.10421233369912632,
+          "reward_rejected": -2.3555842319439195
+        }
+      },
+      "margin3": {
+        "style": {
+          "margin": 1.9765955870566159,
+          "reward_chosen": -0.25247280234875885,
+          "reward_rejected": -4.205663976461991
+        },
+        "tool_calling": {
+          "margin": 2.7823170791789065,
+          "reward_chosen": -0.09990508939342269,
+          "reward_rejected": -5.664539247751236
+        }
+      },
+      "margin5": {
+        "style": {
+          "margin": 2.225328742593959,
+          "reward_chosen": -0.12078343785327414,
+          "reward_rejected": -4.571440923041192
+        },
+        "tool_calling": {
+          "margin": 3.2303216405637394,
+          "reward_chosen": 0.03834942798431289,
+          "reward_rejected": -6.422293853143166
+        }
+      },
+      "final": {
+        "style": {
+          "margin": 1.9978020817473312,
+          "reward_chosen": -0.054705831451692444,
+          "reward_rejected": -4.050309994946355
+        },
+        "tool_calling": {
+          "margin": 3.8141117128943733,
+          "reward_chosen": -0.0077856188995767675,
+          "reward_rejected": -7.636009044688324
+        }
+      }
+    },
+    "6": {
+      "margin1": {
+        "style": {
+          "margin": 0.6803384855173636,
+          "reward_chosen": -0.11048827309539352,
+          "reward_rejected": -1.4711652441301208
+        },
+        "tool_calling": {
+          "margin": 0.9516624809501646,
+          "reward_chosen": 0.11812025024112793,
+          "reward_rejected": -1.7852047116592014
+        }
+      },
+      "margin3": {
+        "style": {
+          "margin": 1.8590667619221453,
+          "reward_chosen": -0.21630768845046777,
+          "reward_rejected": -3.9344412122947583
+        },
+        "tool_calling": {
+          "margin": 2.7770388950781313,
+          "reward_chosen": -0.005938131806409541,
+          "reward_rejected": -5.560015921962672
+        }
+      },
+      "margin5": {
+        "style": {
+          "margin": 2.568025003740753,
+          "reward_chosen": -0.09178273660549219,
+          "reward_rejected": -5.2278327440869985
+        },
+        "tool_calling": {
+          "margin": 3.2965847607574057,
+          "reward_chosen": -0.06665686096600658,
+          "reward_rejected": -6.659826382480818
+        }
+      },
+      "final": {
+        "style": {
+          "margin": 1.998268269110417,
+          "reward_chosen": -0.03485191904980203,
+          "reward_rejected": -4.031388457270636
+        },
+        "tool_calling": {
+          "margin": 3.7389415429949215,
+          "reward_chosen": -0.09770176650008894,
+          "reward_rejected": -7.575584852489932
+        }
+      }
+    },
+    "7": {
+      "margin1": {
+        "style": {
+          "margin": 0.7063429718432218,
+          "reward_chosen": -0.11609806357950404,
+          "reward_rejected": -1.5287840072659478
+        },
+        "tool_calling": {
+          "margin": 1.0765370806207886,
+          "reward_chosen": 0.10920780125957992,
+          "reward_rejected": -2.043866359981997
+        }
+      },
+      "margin3": {
+        "style": {
+          "margin": 2.0546743835228076,
+          "reward_chosen": -0.22213967468427576,
+          "reward_rejected": -4.331488441729891
+        },
+        "tool_calling": {
+          "margin": 2.9128988351658336,
+          "reward_chosen": 0.09104885569129316,
+          "reward_rejected": -5.7347488146403744
+        }
+      },
+      "margin5": {
+        "style": {
+          "margin": 2.490297511867855,
+          "reward_chosen": -0.11290343948032545,
+          "reward_rejected": -5.093498463216036
+        },
+        "tool_calling": {
+          "margin": 3.5048671194678622,
+          "reward_chosen": 0.08955765376294007,
+          "reward_rejected": -6.9201765851727846
+        }
+      },
+      "final": {
+        "style": {
+          "margin": 3.354380786418915,
+          "reward_chosen": -0.06892550509908925,
+          "reward_rejected": -6.7776870779369185
+        },
+        "tool_calling": {
+          "margin": 3.90786651471278,
+          "reward_chosen": 0.0975236877433229,
+          "reward_rejected": -7.718209341682237
+        }
+      }
+    }
+  },
+  "by_checkpoint": {
+    "margin1": {
+      "style_margin": 0.6671248634440311,
+      "tool_margin": 1.2505631868840195,
+      "style_gt_tool": false,
+      "n_seeds": 8
+    },
+    "margin3": {
+      "style_margin": 1.883585242095633,
+      "tool_margin": 2.850598494261813,
+      "style_gt_tool": false,
+      "n_seeds": 8
+    },
+    "margin5": {
+      "style_margin": 2.441863696266344,
+      "tool_margin": 3.3007264129087552,
+      "style_gt_tool": false,
+      "n_seeds": 8
+    },
+    "final": {
+      "style_margin": 2.3220174067478245,
+      "tool_margin": 3.870793596834676,
+      "style_gt_tool": false,
+      "n_seeds": 8
+    }
+  }
+}

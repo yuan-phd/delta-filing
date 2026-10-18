@@ -1,0 +1,15 @@
+{
+  "n": 160,
+  "semantic_accuracy": 0.9875,
+  "strict_accuracy": 0.9875,
+  "pass": 158,
+  "surface_form": 0,
+  "semantic_error": 2,
+  "format_break": 0,
+  "checkpoint": "baseline_sft",
+  "scorer": "v2",
+  "canon_rules": {
+    "extraction.section": "first \\d+[A-Z]? , case-folded, appended titles ignored"
+  },
+  "generations_file": "generations/track1_baseline_v2_json.jsonl"
+}

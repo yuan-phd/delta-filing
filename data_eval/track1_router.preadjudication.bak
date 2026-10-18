@@ -1,0 +1,80 @@
+{"item_id": "t1_router_000", "prompt": "What were Apple's total revenues reported for the fourth quarter of 2022 in their earnings filing?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_001", "prompt": "What were Microsoft's total revenues reported in their Q2 2023 earnings filing?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_002", "prompt": "What were NVIDIA's total revenues reported in their Q2 2023 earnings filing?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_003", "prompt": "What were Amazon's total revenue and net income for the second quarter of 2023 as reported in their latest SEC filing?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_004", "prompt": "What were Tesla's total revenues reported in their Q2 2023 earnings filing?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_005", "prompt": "What were Alphabet's total revenue and net income reported in their Q2 2023 earnings filing?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_006", "prompt": "What were Meta's total revenues for the second quarter of 2023 as reported in their earnings filing?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_007", "prompt": "What were JPMorgan's reported earnings per share for the second quarter of 2023?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_008", "prompt": "What were the total revenue figures reported by ExxonMobil in their Q2 2023 earnings filing?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_009", "prompt": "What were Walmart's total revenue and net income for the fourth quarter of fiscal year 2023 as reported in their latest earnings filing?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_010", "prompt": "What were Coca-Cola's reported earnings per share for the second quarter of 2023?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_011", "prompt": "What were Boeing's total revenues reported in their Q2 2023 financial filing?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_012", "prompt": "What were Nike's total revenues reported in their Q2 2023 financial filing?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_013", "prompt": "What were the total revenues reported by Disney in their Q4 2023 earnings filing?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_014", "prompt": "What were the total revenues reported by Caterpillar in their Q2 2023 earnings statement?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_015", "prompt": "What were Pfizer's total revenue and net income reported in their Q2 2023 earnings filing?", "gold": "FILING_ANALYSIS", "category": "router"}
+{"item_id": "t1_router_016", "prompt": "How do Apple's financial filings from 2022 compare to those from 2023 in terms of revenue growth and expenses?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_017", "prompt": "How do Microsoft's financial filings from 2022 compare to those from 2023 in terms of revenue growth and net income?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_018", "prompt": "How do NVIDIA's financial filings from 2022 compare to those from 2023 in terms of revenue growth and net income?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_019", "prompt": "How do Amazon's financial filings from 2020 compare to those from 2023 in terms of revenue growth and net income?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_020", "prompt": "How do Tesla's financial filings from 2022 compare to those from 2023 in terms of revenue growth and net profit?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_021", "prompt": "How do Alphabet's financial filings in 2022 compare to those in 2023?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_022", "prompt": "How do Meta's financial filings from 2022 compare to those from 2023 in terms of revenue growth and expenses?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_023", "prompt": "How do JPMorgan's financial filings compare between 2022 and 2023?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_024", "prompt": "What are the key differences in ExxonMobil's financial filings between 2020 and 2022?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_025", "prompt": "How do Walmart's financial filings from 2022 compare to those from 2023?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_026", "prompt": "How do Coca-Cola's annual revenue figures from 2022 compare to those from 2023 in their SEC filings?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_027", "prompt": "How do Boeing's financial filings from 2022 compare to those from 2023 in terms of revenue and net income?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_028", "prompt": "How do Nike's financial filings from 2022 compare to those from 2023 in terms of revenue and net income?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_029", "prompt": "How do Disney's financial filings from 2022 compare to those from 2023 in terms of revenue and net income?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_030", "prompt": "How do Caterpillar's revenue and net income for 2022 compare to those reported in 2021?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_031", "prompt": "How do Pfizer's financial filings from 2022 compare to those from 2023 in terms of revenue growth and expenses?", "gold": "FILING_DIFF", "category": "router"}
+{"item_id": "t1_router_032", "prompt": "Can you provide a comprehensive multi-source analysis of Apple Inc., including its financial performance, market position, and recent developments?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_033", "prompt": "Provide a comprehensive multi-source analysis of Microsoft, covering its financial performance, market position, recent developments, and competitive landscape.", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_034", "prompt": "Can you provide a detailed multi-source analysis of NVIDIA, covering its financial performance, market position, and recent developments?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_035", "prompt": "Can you provide a comprehensive multi-source analysis of Amazon, including its financial performance, market position, and recent developments?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_036", "prompt": "Can you provide a comprehensive analysis of Tesla, including financial performance, market position, and recent developments from multiple sources?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_037", "prompt": "Can you provide a comprehensive multi-source analysis of Alphabet, including its financial performance, market position, and recent developments?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_038", "prompt": "Can you provide a comprehensive multi-source analysis of Meta, including its financial performance, market position, and recent developments?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_039", "prompt": "Can you provide a detailed multi-source analysis of JPMorgan, including its financial performance, market position, and recent news?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_040", "prompt": "Can you provide a comprehensive multi-source analysis of ExxonMobil, including its financial performance, market position, and recent developments?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_041", "prompt": "Can you provide a comprehensive multi-source analysis of Walmart, including its financial performance, market position, and recent strategic initiatives?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_042", "prompt": "Can you provide a detailed multi-source analysis of Coca-Cola, covering its financial performance, market strategies, and competitive landscape?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_043", "prompt": "What are the key strengths, weaknesses, opportunities, and threats (SWOT analysis) of Boeing based on recent multi-source reports and analyses?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_044", "prompt": "Can you provide a comprehensive analysis of Nike, including financial performance, market position, competitive landscape, and recent developments from multiple reputable sources?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_045", "prompt": "Can you provide a comprehensive multi-source analysis of The Walt Disney Company, including its financial performance, market position, and recent strategic initiatives?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_046", "prompt": "Can you provide a comprehensive multi-source analysis of Caterpillar, including its financial performance, market position, and recent developments?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_047", "prompt": "Can you provide a comprehensive multi-source analysis of Pfizer, including its financial performance, market position, and recent developments?", "gold": "COMPANY_DEEP_DIVE", "category": "router"}
+{"item_id": "t1_router_048", "prompt": "What is the most recent filing date for Apple Inc. with the SEC?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_049", "prompt": "What is the latest filing date for Microsoft with the SEC?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_050", "prompt": "What is the latest filing date for NVIDIA's quarterly earnings report?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_051", "prompt": "What is the most recent SEC filing date for Amazon?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_052", "prompt": "What is the date of Tesla's most recent quarterly earnings filing?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_053", "prompt": "What is the most recent filing date for Alphabet Inc.?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_054", "prompt": "What is the most recent filing date for Meta with the SEC?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_055", "prompt": "What are the recent SEC filings for JPMorgan?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_056", "prompt": "What are the recent SEC filings for ExxonMobil?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_057", "prompt": "What is the most recent filing date for Walmart?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_058", "prompt": "What is the most recent filing date for Coca-Cola's quarterly earnings report?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_059", "prompt": "What is the latest SEC filing date for Boeing?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_060", "prompt": "What is the most recent filing date for Nike with the SEC?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_061", "prompt": "What is the date of Disney's most recent SEC filing?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_062", "prompt": "What is the most recent filing date for Caterpillar with the SEC?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_063", "prompt": "What is the most recent filing date for Pfizer?", "gold": "SIMPLE_QUERY", "category": "router"}
+{"item_id": "t1_router_064", "prompt": "What are the best techniques for roasting vegetables to enhance their flavor?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_065", "prompt": "What are the best tips for growing tomatoes in a home garden?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_066", "prompt": "What are some effective methods for growing tomatoes in a home garden?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_067", "prompt": "What are some effective techniques for improving my baking skills?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_068", "prompt": "What are the health benefits of drinking green tea?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_069", "prompt": "What are the best techniques for perfectly cooking steak on a grill?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_070", "prompt": "What are some easy recipes for a beginner to learn how to bake bread?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_071", "prompt": "What are some effective techniques for improving my cooking skills at home?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_072", "prompt": "What are some effective techniques for improving my indoor plant care?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_073", "prompt": "What are the best techniques for baking a fluffy souffl\u00e9?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_074", "prompt": "What are the best methods for baking a moist chocolate cake?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_075", "prompt": "What are some effective techniques for learning a new language?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_076", "prompt": "What are the best ways to make homemade pizza from scratch?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_077", "prompt": "What is the best way to cook a perfect steak?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_078", "prompt": "What are the health benefits of eating avocados?", "gold": "OUT_OF_SCOPE", "category": "router"}
+{"item_id": "t1_router_079", "prompt": "What are the best techniques for making homemade pasta from scratch?", "gold": "OUT_OF_SCOPE", "category": "router"}

@@ -1,0 +1,27 @@
+{
+  "track": "track1",
+  "condition": "dpo_step20",
+  "seed": 1,
+  "task": "json",
+  "n": 160,
+  "accuracy": 0.9375,
+  "format_break_rate": 0.01875,
+  "format_break_rate_lenient": 0.01875,
+  "leading_prose_rate": 0.0,
+  "reasoning_error_rate": 0.04375,
+  "mean_output_len": 25.90625,
+  "median_output_len": 23.0,
+  "pct_normalized": 0.0,
+  "generations_file": "generations/track1_dpo_step20_seed1_json.jsonl",
+  "scorer_rules": {
+    "gate": "SYMMETRIC begins-with: output (after lstrip + optional opening code fence for JSON) must START with the required structured token; trailing content allowed.",
+    "binary_strict": "starts with a delimited label (negative lookahead on [A-Za-z0-9_], case-insensitive) so COMPLETED != COMPLETE; 'COMPLETE: reason' passes, 'Based on... COMPLETE' breaks.",
+    "binary_lenient": "(sensitivity) label present as a delimited token anywhere.",
+    "json_strict": "starts with a balanced {...} (after optional ```json fence) that parses and has tool/name + arguments; '{...} note' passes, 'Sure: {...}' breaks.",
+    "json_lenient": "(sensitivity) any balanced {...} anywhere parses with required keys.",
+    "leading_prose": "True iff lenient passes but strict fails (structured token present but not at the start).",
+    "normalization_applied": "True if accepting the output needed surrounding whitespace strip, trailing punctuation strip, case folding, or an opening code-fence strip.",
+    "matches_gold.function_call": "tool name exact + every gold argument value-normalized-equal.",
+    "matches_gold.binary": "normalized label == gold label (track2 boolq maps yes/no to bool)."
+  }
+}

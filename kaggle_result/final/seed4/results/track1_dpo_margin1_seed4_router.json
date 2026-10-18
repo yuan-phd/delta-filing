@@ -1,0 +1,20 @@
+{
+  "track": "track1",
+  "condition": "dpo_margin1",
+  "seed": 4,
+  "task": "router",
+  "n": 160,
+  "scorer": "v2",
+  "accuracy": 0.80625,
+  "semantic_accuracy": 0.80625,
+  "strict_accuracy": 0.80625,
+  "format_break_rate": 0.0,
+  "surface_form_rate": 0.0,
+  "semantic_error_rate": 0.19375,
+  "mean_output_len": 3.73125,
+  "median_output_len": 3.0,
+  "generations_file": "generations/track1_dpo_margin1_seed4_router.jsonl",
+  "canon_rules": {
+    "extraction.section": "first \\d+[A-Z]? , case-folded, appended titles ignored"
+  }
+}

@@ -221,7 +221,8 @@ def main():
 
     if args.base_model:
         os.environ["DELTA_MODEL_DIR"] = args.base_model
-    device = torch.device(args.device or ("mps" if torch.backends.mps.is_available() else "cpu"))
+    device = torch.device(args.device or os.environ.get("DELTA_DEVICE")
+                          or ("mps" if torch.backends.mps.is_available() else "cpu"))
     dtype = torch.float16 if args.dtype == "fp16" else torch.bfloat16
     print(f"device={device} dtype={args.dtype}  seeds={seeds}")
 

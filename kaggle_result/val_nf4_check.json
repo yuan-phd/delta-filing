@@ -1,0 +1,1772 @@
+{
+  "backend": "nf4",
+  "quant": "4bit-nf4-doublequant-fp16compute",
+  "beta": 0.5,
+  "reference": "sft_baseline (/kaggle/input/datasets/yuanmazax/delta-filing-smoke/adapters/sft_pytorch)",
+  "val_subset_n": 20,
+  "val_pair_ids": [
+    438,
+    269,
+    252,
+    641,
+    271,
+    146,
+    469,
+    405,
+    511,
+    217,
+    322,
+    216,
+    67,
+    274,
+    410,
+    323,
+    635,
+    234,
+    57,
+    332
+  ],
+  "sft_logp": {
+    "438": {
+      "chosen_logp": -1.1369773149490356,
+      "rejected_logp": -2.543938159942627
+    },
+    "269": {
+      "chosen_logp": -1.364909052848816,
+      "rejected_logp": -2.5178308486938477
+    },
+    "252": {
+      "chosen_logp": -0.9656348824501038,
+      "rejected_logp": -2.4698991775512695
+    },
+    "641": {
+      "chosen_logp": -0.017424071207642555,
+      "rejected_logp": -1.0846328735351562
+    },
+    "271": {
+      "chosen_logp": -1.3182958364486694,
+      "rejected_logp": -2.3212575912475586
+    },
+    "146": {
+      "chosen_logp": -0.010005584917962551,
+      "rejected_logp": -1.2618298530578613
+    },
+    "469": {
+      "chosen_logp": -1.5219159126281738,
+      "rejected_logp": -2.3454079627990723
+    },
+    "405": {
+      "chosen_logp": -1.256731629371643,
+      "rejected_logp": -2.2609450817108154
+    },
+    "511": {
+      "chosen_logp": -1.0228146314620972,
+      "rejected_logp": -2.0949671268463135
+    },
+    "217": {
+      "chosen_logp": -1.3908381462097168,
+      "rejected_logp": -2.57069993019104
+    },
+    "322": {
+      "chosen_logp": -1.4183248281478882,
+      "rejected_logp": -2.4915518760681152
+    },
+    "216": {
+      "chosen_logp": -0.34407350420951843,
+      "rejected_logp": -1.1204265356063843
+    },
+    "67": {
+      "chosen_logp": -1.2235050201416016,
+      "rejected_logp": -2.4690825939178467
+    },
+    "274": {
+      "chosen_logp": -0.9283226132392883,
+      "rejected_logp": -2.1799752712249756
+    },
+    "410": {
+      "chosen_logp": -0.454094260931015,
+      "rejected_logp": -1.0829036235809326
+    },
+    "323": {
+      "chosen_logp": -1.5587924718856812,
+      "rejected_logp": -2.1804075241088867
+    },
+    "635": {
+      "chosen_logp": -1.3318475484848022,
+      "rejected_logp": -2.405848503112793
+    },
+    "234": {
+      "chosen_logp": -1.2470937967300415,
+      "rejected_logp": -2.639514446258545
+    },
+    "57": {
+      "chosen_logp": -0.8992186784744263,
+      "rejected_logp": -2.184553384780884
+    },
+    "332": {
+      "chosen_logp": -0.0016572659369558096,
+      "rejected_logp": -0.5198589563369751
+    }
+  },
+  "by_seed": {
+    "0": {
+      "final_adapter": "/kaggle/input/datasets/yuanmazax/delta-filing-smoke/kaggle_runs/seed0_delta-filing-aftersmoke-matrix-run1/adapters/pref/track1_dpo_seed0",
+      "pairs": [
+        {
+          "pair_id": 438,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.1880182027816772,
+          "rejected_logp": -24.943946838378906,
+          "reward_chosen": -0.0510408878326416,
+          "reward_rejected": -22.40000867843628,
+          "margin": 11.174483895301819
+        },
+        {
+          "pair_id": 269,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.489811658859253,
+          "rejected_logp": -18.31661033630371,
+          "reward_chosen": -0.12490260601043701,
+          "reward_rejected": -15.798779487609863,
+          "margin": 7.836938440799713
+        },
+        {
+          "pair_id": 252,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8930671811103821,
+          "rejected_logp": -12.870369911193848,
+          "reward_chosen": 0.07256770133972168,
+          "reward_rejected": -10.400470733642578,
+          "margin": 5.23651921749115
+        },
+        {
+          "pair_id": 641,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0003424424503464252,
+          "rejected_logp": -13.097350120544434,
+          "reward_chosen": 0.01708162875729613,
+          "reward_rejected": -12.012717247009277,
+          "margin": 6.014899437883287
+        },
+        {
+          "pair_id": 271,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.359523057937622,
+          "rejected_logp": -10.464786529541016,
+          "reward_chosen": -0.04122722148895264,
+          "reward_rejected": -8.143528938293457,
+          "margin": 4.051150858402252
+        },
+        {
+          "pair_id": 146,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.018934616819024086,
+          "rejected_logp": -10.668631553649902,
+          "reward_chosen": -0.008929031901061535,
+          "reward_rejected": -9.406801700592041,
+          "margin": 4.69893633434549
+        },
+        {
+          "pair_id": 469,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.5395355224609375,
+          "rejected_logp": -23.67624855041504,
+          "reward_chosen": -0.017619609832763672,
+          "reward_rejected": -21.330840587615967,
+          "margin": 10.656610488891602
+        },
+        {
+          "pair_id": 405,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.3032245635986328,
+          "rejected_logp": -15.386072158813477,
+          "reward_chosen": -0.046492934226989746,
+          "reward_rejected": -13.125127077102661,
+          "margin": 6.539317071437836
+        },
+        {
+          "pair_id": 511,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.9893686175346375,
+          "rejected_logp": -16.21291160583496,
+          "reward_chosen": 0.03344601392745972,
+          "reward_rejected": -14.117944478988647,
+          "margin": 7.075695246458054
+        },
+        {
+          "pair_id": 217,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.430464744567871,
+          "rejected_logp": -23.380395889282227,
+          "reward_chosen": -0.0396265983581543,
+          "reward_rejected": -20.809695959091187,
+          "margin": 10.385034680366516
+        },
+        {
+          "pair_id": 322,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.4403984546661377,
+          "rejected_logp": -22.642301559448242,
+          "reward_chosen": -0.02207362651824951,
+          "reward_rejected": -20.150749683380127,
+          "margin": 10.064338028430939
+        },
+        {
+          "pair_id": 216,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.34797045588493347,
+          "rejected_logp": -15.782771110534668,
+          "reward_chosen": -0.003896951675415039,
+          "reward_rejected": -14.662344574928284,
+          "margin": 7.329223811626434
+        },
+        {
+          "pair_id": 67,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.199975609779358,
+          "rejected_logp": -20.91587257385254,
+          "reward_chosen": 0.023529410362243652,
+          "reward_rejected": -18.446789979934692,
+          "margin": 9.235159695148468
+        },
+        {
+          "pair_id": 274,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8539060354232788,
+          "rejected_logp": -10.647700309753418,
+          "reward_chosen": 0.07441657781600952,
+          "reward_rejected": -8.467725038528442,
+          "margin": 4.271070808172226
+        },
+        {
+          "pair_id": 410,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.043721772730350494,
+          "rejected_logp": -14.36456298828125,
+          "reward_chosen": 0.4103724882006645,
+          "reward_rejected": -13.281659364700317,
+          "margin": 6.846015926450491
+        },
+        {
+          "pair_id": 323,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.561895728111267,
+          "rejected_logp": -23.53068733215332,
+          "reward_chosen": -0.0031032562255859375,
+          "reward_rejected": -21.350279808044434,
+          "margin": 10.673588275909424
+        },
+        {
+          "pair_id": 635,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.479486107826233,
+          "rejected_logp": -20.36785316467285,
+          "reward_chosen": -0.14763855934143066,
+          "reward_rejected": -17.96200466156006,
+          "margin": 8.907183051109314
+        },
+        {
+          "pair_id": 234,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.2643611431121826,
+          "rejected_logp": -21.772493362426758,
+          "reward_chosen": -0.017267346382141113,
+          "reward_rejected": -19.132978916168213,
+          "margin": 9.557855784893036
+        },
+        {
+          "pair_id": 57,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8945326209068298,
+          "rejected_logp": -21.615331649780273,
+          "reward_chosen": 0.0046860575675964355,
+          "reward_rejected": -19.43077826499939,
+          "margin": 9.717732161283493
+        },
+        {
+          "pair_id": 332,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0623321570456028,
+          "rejected_logp": -7.9395246505737305,
+          "reward_chosen": -0.06067489110864699,
+          "reward_rejected": -7.419665694236755,
+          "margin": 3.679495401564054
+        }
+      ],
+      "nf4_mean_margin": 7.69756243079828
+    },
+    "1": {
+      "final_adapter": "/kaggle/input/datasets/yuanmazax/delta-filing-smoke/kaggle_runs/seed1_delta-filing-aftersmoke-matrix-run1/adapters/pref/track1_dpo_seed1",
+      "pairs": [
+        {
+          "pair_id": 438,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.2198412418365479,
+          "rejected_logp": -25.149986267089844,
+          "reward_chosen": -0.08286392688751221,
+          "reward_rejected": -22.606048107147217,
+          "margin": 11.261592090129852
+        },
+        {
+          "pair_id": 269,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.499516487121582,
+          "rejected_logp": -20.326717376708984,
+          "reward_chosen": -0.1346074342727661,
+          "reward_rejected": -17.808886528015137,
+          "margin": 8.837139546871185
+        },
+        {
+          "pair_id": 252,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.9207383394241333,
+          "rejected_logp": -14.496459007263184,
+          "reward_chosen": 0.04489654302597046,
+          "reward_rejected": -12.026559829711914,
+          "margin": 6.035728186368942
+        },
+        {
+          "pair_id": 641,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.006730006542056799,
+          "rejected_logp": -7.590888023376465,
+          "reward_chosen": 0.010694064665585756,
+          "reward_rejected": -6.506255149841309,
+          "margin": 3.258474607253447
+        },
+        {
+          "pair_id": 271,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.3287042379379272,
+          "rejected_logp": -12.380461692810059,
+          "reward_chosen": -0.010408401489257812,
+          "reward_rejected": -10.0592041015625,
+          "margin": 5.024397850036621
+        },
+        {
+          "pair_id": 146,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0010323157766833901,
+          "rejected_logp": -7.9163289070129395,
+          "reward_chosen": 0.008973269141279161,
+          "reward_rejected": -6.654499053955078,
+          "margin": 3.3317361615481786
+        },
+        {
+          "pair_id": 469,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.533383846282959,
+          "rejected_logp": -24.909711837768555,
+          "reward_chosen": -0.011467933654785156,
+          "reward_rejected": -22.564303874969482,
+          "margin": 11.276417970657349
+        },
+        {
+          "pair_id": 405,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.317177414894104,
+          "rejected_logp": -19.755470275878906,
+          "reward_chosen": -0.06044578552246094,
+          "reward_rejected": -17.49452519416809,
+          "margin": 8.717039704322815
+        },
+        {
+          "pair_id": 511,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.9528815150260925,
+          "rejected_logp": -16.883718490600586,
+          "reward_chosen": 0.06993311643600464,
+          "reward_rejected": -14.788751363754272,
+          "margin": 7.4293422400951385
+        },
+        {
+          "pair_id": 217,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.4108818769454956,
+          "rejected_logp": -21.032920837402344,
+          "reward_chosen": -0.02004373073577881,
+          "reward_rejected": -18.462220907211304,
+          "margin": 9.221088588237762
+        },
+        {
+          "pair_id": 322,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.4363962411880493,
+          "rejected_logp": -23.19411849975586,
+          "reward_chosen": -0.018071413040161133,
+          "reward_rejected": -20.702566623687744,
+          "margin": 10.342247605323792
+        },
+        {
+          "pair_id": 216,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0003335350484121591,
+          "rejected_logp": -13.596870422363281,
+          "reward_chosen": 0.3437399691611063,
+          "reward_rejected": -12.476443886756897,
+          "margin": 6.410091927959002
+        },
+        {
+          "pair_id": 67,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.2356475591659546,
+          "rejected_logp": -20.1228084564209,
+          "reward_chosen": -0.012142539024353027,
+          "reward_rejected": -17.65372586250305,
+          "margin": 8.82079166173935
+        },
+        {
+          "pair_id": 274,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8248631954193115,
+          "rejected_logp": -12.927950859069824,
+          "reward_chosen": 0.1034594178199768,
+          "reward_rejected": -10.747975587844849,
+          "margin": 5.425717502832413
+        },
+        {
+          "pair_id": 410,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0001241683930857107,
+          "rejected_logp": -12.87423038482666,
+          "reward_chosen": 0.4539700925379293,
+          "reward_rejected": -11.791326761245728,
+          "margin": 6.122648426891828
+        },
+        {
+          "pair_id": 323,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.5436981916427612,
+          "rejected_logp": -24.564260482788086,
+          "reward_chosen": 0.015094280242919922,
+          "reward_rejected": -22.3838529586792,
+          "margin": 11.19947361946106
+        },
+        {
+          "pair_id": 635,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.4155815839767456,
+          "rejected_logp": -20.20948028564453,
+          "reward_chosen": -0.08373403549194336,
+          "reward_rejected": -17.80363178253174,
+          "margin": 8.859948873519897
+        },
+        {
+          "pair_id": 234,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.2787245512008667,
+          "rejected_logp": -19.19407081604004,
+          "reward_chosen": -0.031630754470825195,
+          "reward_rejected": -16.554556369781494,
+          "margin": 8.261462807655334
+        },
+        {
+          "pair_id": 57,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8690642714500427,
+          "rejected_logp": -22.238523483276367,
+          "reward_chosen": 0.030154407024383545,
+          "reward_rejected": -20.053970098495483,
+          "margin": 10.042062252759933
+        },
+        {
+          "pair_id": 332,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0051099336706101894,
+          "rejected_logp": -7.239016056060791,
+          "reward_chosen": -0.00345266773365438,
+          "reward_rejected": -6.719157099723816,
+          "margin": 3.3578522159950808
+        }
+      ],
+      "nf4_mean_margin": 7.661762691982949
+    },
+    "2": {
+      "final_adapter": "/kaggle/input/datasets/yuanmazax/delta-filing-smoke/matrix_adapters/seed2/final",
+      "pairs": [
+        {
+          "pair_id": 438,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.1592448949813843,
+          "rejected_logp": -25.69611358642578,
+          "reward_chosen": -0.022267580032348633,
+          "reward_rejected": -23.152175426483154,
+          "margin": 11.564953923225403
+        },
+        {
+          "pair_id": 269,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.453277349472046,
+          "rejected_logp": -21.279403686523438,
+          "reward_chosen": -0.08836829662322998,
+          "reward_rejected": -18.76157283782959,
+          "margin": 9.33660227060318
+        },
+        {
+          "pair_id": 252,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8901567459106445,
+          "rejected_logp": -18.26983642578125,
+          "reward_chosen": 0.07547813653945923,
+          "reward_rejected": -15.79993724822998,
+          "margin": 7.93770769238472
+        },
+        {
+          "pair_id": 641,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0002913842035923153,
+          "rejected_logp": -9.776159286499023,
+          "reward_chosen": 0.01713268700405024,
+          "reward_rejected": -8.691526412963867,
+          "margin": 4.354329549983959
+        },
+        {
+          "pair_id": 271,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.3137894868850708,
+          "rejected_logp": -15.68239688873291,
+          "reward_chosen": 0.004506349563598633,
+          "reward_rejected": -13.361139297485352,
+          "margin": 6.682822823524475
+        },
+        {
+          "pair_id": 146,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0003963617200497538,
+          "rejected_logp": -9.284234046936035,
+          "reward_chosen": 0.009609223197912797,
+          "reward_rejected": -8.022404193878174,
+          "margin": 4.016006708538043
+        },
+        {
+          "pair_id": 469,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.5182087421417236,
+          "rejected_logp": -27.556333541870117,
+          "reward_chosen": 0.0037071704864501953,
+          "reward_rejected": -25.210925579071045,
+          "margin": 12.607316374778748
+        },
+        {
+          "pair_id": 405,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.2728608846664429,
+          "rejected_logp": -19.478374481201172,
+          "reward_chosen": -0.016129255294799805,
+          "reward_rejected": -17.217429399490356,
+          "margin": 8.600650072097778
+        },
+        {
+          "pair_id": 511,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.939932107925415,
+          "rejected_logp": -17.49839210510254,
+          "reward_chosen": 0.08288252353668213,
+          "reward_rejected": -15.403424978256226,
+          "margin": 7.743153750896454
+        },
+        {
+          "pair_id": 217,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.4204638004302979,
+          "rejected_logp": -26.077421188354492,
+          "reward_chosen": -0.029625654220581055,
+          "reward_rejected": -23.506721258163452,
+          "margin": 11.738547801971436
+        },
+        {
+          "pair_id": 322,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.425363540649414,
+          "rejected_logp": -26.511798858642578,
+          "reward_chosen": -0.007038712501525879,
+          "reward_rejected": -24.020246982574463,
+          "margin": 12.006604135036469
+        },
+        {
+          "pair_id": 216,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.01617215760052204,
+          "rejected_logp": -12.614840507507324,
+          "reward_chosen": 0.3279013466089964,
+          "reward_rejected": -11.49441397190094,
+          "margin": 5.911157659254968
+        },
+        {
+          "pair_id": 67,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.2047350406646729,
+          "rejected_logp": -21.48014259338379,
+          "reward_chosen": 0.01876997947692871,
+          "reward_rejected": -19.011059999465942,
+          "margin": 9.514914989471436
+        },
+        {
+          "pair_id": 274,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8435195684432983,
+          "rejected_logp": -15.798030853271484,
+          "reward_chosen": 0.08480304479598999,
+          "reward_rejected": -13.618055582046509,
+          "margin": 6.851429313421249
+        },
+        {
+          "pair_id": 410,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0005182266468182206,
+          "rejected_logp": -11.159945487976074,
+          "reward_chosen": 0.4535760342841968,
+          "reward_rejected": -10.077041864395142,
+          "margin": 5.265308949339669
+        },
+        {
+          "pair_id": 323,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.5459699630737305,
+          "rejected_logp": -27.40789031982422,
+          "reward_chosen": 0.012822508811950684,
+          "reward_rejected": -25.227482795715332,
+          "margin": 12.620152652263641
+        },
+        {
+          "pair_id": 635,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.4194903373718262,
+          "rejected_logp": -21.639080047607422,
+          "reward_chosen": -0.08764278888702393,
+          "reward_rejected": -19.23323154449463,
+          "margin": 9.572794377803802
+        },
+        {
+          "pair_id": 234,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.277547001838684,
+          "rejected_logp": -23.793039321899414,
+          "reward_chosen": -0.030453205108642578,
+          "reward_rejected": -21.15352487564087,
+          "margin": 10.561535835266113
+        },
+        {
+          "pair_id": 57,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8735944032669067,
+          "rejected_logp": -22.733684539794922,
+          "reward_chosen": 0.02562427520751953,
+          "reward_rejected": -20.549131155014038,
+          "margin": 10.287377715110779
+        },
+        {
+          "pair_id": 332,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0004496207693591714,
+          "rejected_logp": -8.094398498535156,
+          "reward_chosen": 0.0012076451675966382,
+          "reward_rejected": -7.574539542198181,
+          "margin": 3.787873593682889
+        }
+      ],
+      "nf4_mean_margin": 8.54806200943276
+    },
+    "3": {
+      "final_adapter": "/kaggle/input/datasets/yuanmazax/delta-filing-smoke/matrix_adapters/seed3/final",
+      "pairs": [
+        {
+          "pair_id": 438,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.1464171409606934,
+          "rejected_logp": -27.108671188354492,
+          "reward_chosen": -0.009439826011657715,
+          "reward_rejected": -24.564733028411865,
+          "margin": 12.277646601200104
+        },
+        {
+          "pair_id": 269,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.4350130558013916,
+          "rejected_logp": -18.86393928527832,
+          "reward_chosen": -0.07010400295257568,
+          "reward_rejected": -16.346108436584473,
+          "margin": 8.138002216815948
+        },
+        {
+          "pair_id": 252,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8995962142944336,
+          "rejected_logp": -13.810112953186035,
+          "reward_chosen": 0.06603866815567017,
+          "reward_rejected": -11.340213775634766,
+          "margin": 5.703126221895218
+        },
+        {
+          "pair_id": 641,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0002191983803641051,
+          "rejected_logp": -9.946972846984863,
+          "reward_chosen": 0.01720487282727845,
+          "reward_rejected": -8.862339973449707,
+          "margin": 4.439772423138493
+        },
+        {
+          "pair_id": 271,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.3348736763000488,
+          "rejected_logp": -11.526655197143555,
+          "reward_chosen": -0.016577839851379395,
+          "reward_rejected": -9.205397605895996,
+          "margin": 4.594409883022308
+        },
+        {
+          "pair_id": 146,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.00021376977383624762,
+          "rejected_logp": -10.891533851623535,
+          "reward_chosen": 0.009791815144126303,
+          "reward_rejected": -9.629703998565674,
+          "margin": 4.8197479068549
+        },
+        {
+          "pair_id": 469,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.5244855880737305,
+          "rejected_logp": -26.637596130371094,
+          "reward_chosen": -0.0025696754455566406,
+          "reward_rejected": -24.29218816757202,
+          "margin": 12.144809246063232
+        },
+        {
+          "pair_id": 405,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.2254531383514404,
+          "rejected_logp": -18.076608657836914,
+          "reward_chosen": 0.03127849102020264,
+          "reward_rejected": -15.815663576126099,
+          "margin": 7.923471033573151
+        },
+        {
+          "pair_id": 511,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.9581039547920227,
+          "rejected_logp": -14.992491722106934,
+          "reward_chosen": 0.06471067667007446,
+          "reward_rejected": -12.89752459526062,
+          "margin": 6.481117635965347
+        },
+        {
+          "pair_id": 217,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.4250105619430542,
+          "rejected_logp": -25.555709838867188,
+          "reward_chosen": -0.0341724157333374,
+          "reward_rejected": -22.985009908676147,
+          "margin": 11.475418746471405
+        },
+        {
+          "pair_id": 322,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.4129278659820557,
+          "rejected_logp": -25.32057762145996,
+          "reward_chosen": 0.0053969621658325195,
+          "reward_rejected": -22.829025745391846,
+          "margin": 11.417211353778839
+        },
+        {
+          "pair_id": 216,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0003988868265878409,
+          "rejected_logp": -13.35964584350586,
+          "reward_chosen": 0.3436746173829306,
+          "reward_rejected": -12.239219307899475,
+          "margin": 6.291446962641203
+        },
+        {
+          "pair_id": 67,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.211925745010376,
+          "rejected_logp": -18.697072982788086,
+          "reward_chosen": 0.011579275131225586,
+          "reward_rejected": -16.22799038887024,
+          "margin": 8.119784832000732
+        },
+        {
+          "pair_id": 274,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8240039348602295,
+          "rejected_logp": -10.575167655944824,
+          "reward_chosen": 0.10431867837905884,
+          "reward_rejected": -8.395192384719849,
+          "margin": 4.249755531549454
+        },
+        {
+          "pair_id": 410,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -5.9700014389818534e-05,
+          "rejected_logp": -12.254069328308105,
+          "reward_chosen": 0.4540345609166252,
+          "reward_rejected": -11.171165704727173,
+          "margin": 5.812600132821899
+        },
+        {
+          "pair_id": 323,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.5385288000106812,
+          "rejected_logp": -25.989763259887695,
+          "reward_chosen": 0.020263671875,
+          "reward_rejected": -23.80935573577881,
+          "margin": 11.914809703826904
+        },
+        {
+          "pair_id": 635,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.3685708045959473,
+          "rejected_logp": -20.894962310791016,
+          "reward_chosen": -0.03672325611114502,
+          "reward_rejected": -18.489113807678223,
+          "margin": 9.226195275783539
+        },
+        {
+          "pair_id": 234,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.2673038244247437,
+          "rejected_logp": -21.24662971496582,
+          "reward_chosen": -0.02021002769470215,
+          "reward_rejected": -18.607115268707275,
+          "margin": 9.293452620506287
+        },
+        {
+          "pair_id": 57,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8609378337860107,
+          "rejected_logp": -20.575109481811523,
+          "reward_chosen": 0.03828084468841553,
+          "reward_rejected": -18.39055609703064,
+          "margin": 9.214418470859528
+        },
+        {
+          "pair_id": 332,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.000500972499139607,
+          "rejected_logp": -8.446728706359863,
+          "reward_chosen": 0.0011562934378162026,
+          "reward_rejected": -7.926869750022888,
+          "margin": 3.964013021730352
+        }
+      ],
+      "nf4_mean_margin": 7.875060491024942
+    },
+    "4": {
+      "final_adapter": "/kaggle/input/datasets/yuanmazax/delta-filing-smoke/matrix_adapters/seed4/final",
+      "pairs": [
+        {
+          "pair_id": 438,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.1785030364990234,
+          "rejected_logp": -18.162019729614258,
+          "reward_chosen": -0.04152572154998779,
+          "reward_rejected": -15.61808156967163,
+          "margin": 7.7882779240608215
+        },
+        {
+          "pair_id": 269,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.43841552734375,
+          "rejected_logp": -14.675702095031738,
+          "reward_chosen": -0.07350647449493408,
+          "reward_rejected": -12.15787124633789,
+          "margin": 6.042182385921478
+        },
+        {
+          "pair_id": 252,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.9009661674499512,
+          "rejected_logp": -14.332621574401855,
+          "reward_chosen": 0.06466871500015259,
+          "reward_rejected": -11.862722396850586,
+          "margin": 5.963695555925369
+        },
+        {
+          "pair_id": 641,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.00022506715322379023,
+          "rejected_logp": -10.41845703125,
+          "reward_chosen": 0.017199004054418765,
+          "reward_rejected": -9.333824157714844,
+          "margin": 4.675511580884631
+        },
+        {
+          "pair_id": 271,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.3309186697006226,
+          "rejected_logp": -10.577347755432129,
+          "reward_chosen": -0.012622833251953125,
+          "reward_rejected": -8.25609016418457,
+          "margin": 4.121733665466309
+        },
+        {
+          "pair_id": 146,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.00023298998712562025,
+          "rejected_logp": -10.562052726745605,
+          "reward_chosen": 0.009772594930836931,
+          "reward_rejected": -9.300222873687744,
+          "margin": 4.6549977343092905
+        },
+        {
+          "pair_id": 469,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.5205243825912476,
+          "rejected_logp": -19.291444778442383,
+          "reward_chosen": 0.0013915300369262695,
+          "reward_rejected": -16.94603681564331,
+          "margin": 8.473714172840118
+        },
+        {
+          "pair_id": 405,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.2453523874282837,
+          "rejected_logp": -14.676069259643555,
+          "reward_chosen": 0.011379241943359375,
+          "reward_rejected": -12.41512417793274,
+          "margin": 6.213251709938049
+        },
+        {
+          "pair_id": 511,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.9635843634605408,
+          "rejected_logp": -14.74384880065918,
+          "reward_chosen": 0.059230268001556396,
+          "reward_rejected": -12.648881673812866,
+          "margin": 6.354055970907211
+        },
+        {
+          "pair_id": 217,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.4297220706939697,
+          "rejected_logp": -19.2785587310791,
+          "reward_chosen": -0.03888392448425293,
+          "reward_rejected": -16.70785880088806,
+          "margin": 8.334487438201904
+        },
+        {
+          "pair_id": 322,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.4356681108474731,
+          "rejected_logp": -20.577863693237305,
+          "reward_chosen": -0.01734328269958496,
+          "reward_rejected": -18.08631181716919,
+          "margin": 9.034484267234802
+        },
+        {
+          "pair_id": 216,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0005598068237304688,
+          "rejected_logp": -13.84341049194336,
+          "reward_chosen": 0.34351369738578796,
+          "reward_rejected": -12.722983956336975,
+          "margin": 6.5332488268613815
+        },
+        {
+          "pair_id": 67,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.2080914974212646,
+          "rejected_logp": -15.906399726867676,
+          "reward_chosen": 0.015413522720336914,
+          "reward_rejected": -13.437317132949829,
+          "margin": 6.726365327835083
+        },
+        {
+          "pair_id": 274,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.82657790184021,
+          "rejected_logp": -10.736287117004395,
+          "reward_chosen": 0.10174471139907837,
+          "reward_rejected": -8.556311845779419,
+          "margin": 4.329028278589249
+        },
+        {
+          "pair_id": 410,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.00014925003051757812,
+          "rejected_logp": -12.0470552444458,
+          "reward_chosen": 0.45394501090049744,
+          "reward_rejected": -10.964151620864868,
+          "margin": 5.709048315882683
+        },
+        {
+          "pair_id": 323,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.545858383178711,
+          "rejected_logp": -21.821746826171875,
+          "reward_chosen": 0.012934088706970215,
+          "reward_rejected": -19.64133930206299,
+          "margin": 9.82713669538498
+        },
+        {
+          "pair_id": 635,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.4137295484542847,
+          "rejected_logp": -17.59391212463379,
+          "reward_chosen": -0.08188199996948242,
+          "reward_rejected": -15.188063621520996,
+          "margin": 7.553090810775757
+        },
+        {
+          "pair_id": 234,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.275524616241455,
+          "rejected_logp": -16.871492385864258,
+          "reward_chosen": -0.028430819511413574,
+          "reward_rejected": -14.231977939605713,
+          "margin": 7.10177356004715
+        },
+        {
+          "pair_id": 57,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8730737566947937,
+          "rejected_logp": -20.562549591064453,
+          "reward_chosen": 0.02614492177963257,
+          "reward_rejected": -18.37799620628357,
+          "margin": 9.202070564031601
+        },
+        {
+          "pair_id": 332,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0003424424503464252,
+          "rejected_logp": -8.823389053344727,
+          "reward_chosen": 0.0013148234866093844,
+          "reward_rejected": -8.303530097007751,
+          "margin": 4.15242246024718
+        }
+      ],
+      "nf4_mean_margin": 6.639528862267253
+    },
+    "5": {
+      "final_adapter": "/kaggle/input/datasets/yuanmazax/delta-filing-smoke/matrix_adapters/seed5/final",
+      "pairs": [
+        {
+          "pair_id": 438,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.1564522981643677,
+          "rejected_logp": -21.41748046875,
+          "reward_chosen": -0.01947498321533203,
+          "reward_rejected": -18.873542308807373,
+          "margin": 9.42703366279602
+        },
+        {
+          "pair_id": 269,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.4492357969284058,
+          "rejected_logp": -17.67108154296875,
+          "reward_chosen": -0.08432674407958984,
+          "reward_rejected": -15.153250694274902,
+          "margin": 7.534461975097656
+        },
+        {
+          "pair_id": 252,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.9329386949539185,
+          "rejected_logp": -11.676870346069336,
+          "reward_chosen": 0.0326961874961853,
+          "reward_rejected": -9.206971168518066,
+          "margin": 4.619833678007126
+        },
+        {
+          "pair_id": 641,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.00041888310806825757,
+          "rejected_logp": -9.191168785095215,
+          "reward_chosen": 0.017005188099574298,
+          "reward_rejected": -8.106535911560059,
+          "margin": 4.0617705498298164
+        },
+        {
+          "pair_id": 271,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.3323664665222168,
+          "rejected_logp": -10.269652366638184,
+          "reward_chosen": -0.014070630073547363,
+          "reward_rejected": -7.948394775390625,
+          "margin": 3.967162072658539
+        },
+        {
+          "pair_id": 146,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0004078791826032102,
+          "rejected_logp": -9.754570960998535,
+          "reward_chosen": 0.009597705735359341,
+          "reward_rejected": -8.492741107940674,
+          "margin": 4.251169406838017
+        },
+        {
+          "pair_id": 469,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.5252848863601685,
+          "rejected_logp": -20.32721519470215,
+          "reward_chosen": -0.003368973731994629,
+          "reward_rejected": -17.981807231903076,
+          "margin": 8.98921912908554
+        },
+        {
+          "pair_id": 405,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.2647478580474854,
+          "rejected_logp": -14.482927322387695,
+          "reward_chosen": -0.008016228675842285,
+          "reward_rejected": -12.22198224067688,
+          "margin": 6.106983006000519
+        },
+        {
+          "pair_id": 511,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.9576416015625,
+          "rejected_logp": -12.998260498046875,
+          "reward_chosen": 0.06517302989959717,
+          "reward_rejected": -10.903293371200562,
+          "margin": 5.484233200550079
+        },
+        {
+          "pair_id": 217,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.4266681671142578,
+          "rejected_logp": -20.46274757385254,
+          "reward_chosen": -0.035830020904541016,
+          "reward_rejected": -17.8920476436615,
+          "margin": 8.928108811378479
+        },
+        {
+          "pair_id": 322,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.4219831228256226,
+          "rejected_logp": -23.13895034790039,
+          "reward_chosen": -0.003658294677734375,
+          "reward_rejected": -20.647398471832275,
+          "margin": 10.32187008857727
+        },
+        {
+          "pair_id": 216,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0009135698201134801,
+          "rejected_logp": -12.413366317749023,
+          "reward_chosen": 0.34315993438940495,
+          "reward_rejected": -11.29293978214264,
+          "margin": 5.818049858266022
+        },
+        {
+          "pair_id": 67,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.2063331604003906,
+          "rejected_logp": -15.461979866027832,
+          "reward_chosen": 0.017171859741210938,
+          "reward_rejected": -12.992897272109985,
+          "margin": 6.505034565925598
+        },
+        {
+          "pair_id": 274,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8213068842887878,
+          "rejected_logp": -8.97409439086914,
+          "reward_chosen": 0.10701572895050049,
+          "reward_rejected": -6.794119119644165,
+          "margin": 3.4505674242973328
+        },
+        {
+          "pair_id": 410,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0003355979861225933,
+          "rejected_logp": -11.70338249206543,
+          "reward_chosen": 0.4537586629448924,
+          "reward_rejected": -10.620478868484497,
+          "margin": 5.537118765714695
+        },
+        {
+          "pair_id": 323,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.534621000289917,
+          "rejected_logp": -23.88303565979004,
+          "reward_chosen": 0.02417147159576416,
+          "reward_rejected": -21.702628135681152,
+          "margin": 10.863399803638458
+        },
+        {
+          "pair_id": 635,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.3988062143325806,
+          "rejected_logp": -18.535110473632812,
+          "reward_chosen": -0.06695866584777832,
+          "reward_rejected": -16.12926197052002,
+          "margin": 8.03115165233612
+        },
+        {
+          "pair_id": 234,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.2785111665725708,
+          "rejected_logp": -18.531692504882812,
+          "reward_chosen": -0.0314173698425293,
+          "reward_rejected": -15.892178058624268,
+          "margin": 7.930380344390869
+        },
+        {
+          "pair_id": 57,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8754708766937256,
+          "rejected_logp": -17.44805145263672,
+          "reward_chosen": 0.023747801780700684,
+          "reward_rejected": -15.263498067855835,
+          "margin": 7.643622934818268
+        },
+        {
+          "pair_id": 332,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.00022902856289874762,
+          "rejected_logp": -8.216914176940918,
+          "reward_chosen": 0.001428237374057062,
+          "reward_rejected": -7.697055220603943,
+          "margin": 3.849241728989
+        }
+      ],
+      "nf4_mean_margin": 6.666020632959771
+    },
+    "6": {
+      "final_adapter": "/kaggle/input/datasets/yuanmazax/delta-filing-smoke/matrix_adapters/seed6/final",
+      "pairs": [
+        {
+          "pair_id": 438,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.1734482049942017,
+          "rejected_logp": -22.94390869140625,
+          "reward_chosen": -0.036470890045166016,
+          "reward_rejected": -20.399970531463623,
+          "margin": 10.181749820709229
+        },
+        {
+          "pair_id": 269,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.432847261428833,
+          "rejected_logp": -15.14262866973877,
+          "reward_chosen": -0.06793820858001709,
+          "reward_rejected": -12.624797821044922,
+          "margin": 6.278429806232452
+        },
+        {
+          "pair_id": 252,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8771647214889526,
+          "rejected_logp": -13.250964164733887,
+          "reward_chosen": 0.08847016096115112,
+          "reward_rejected": -10.781064987182617,
+          "margin": 5.434767574071884
+        },
+        {
+          "pair_id": 641,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.00018545298371464014,
+          "rejected_logp": -9.14220905303955,
+          "reward_chosen": 0.017238618223927915,
+          "reward_rejected": -8.057576179504395,
+          "margin": 4.037407398864161
+        },
+        {
+          "pair_id": 271,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.336617112159729,
+          "rejected_logp": -8.789671897888184,
+          "reward_chosen": -0.01832127571105957,
+          "reward_rejected": -6.468414306640625,
+          "margin": 3.2250465154647827
+        },
+        {
+          "pair_id": 146,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.00021465009194798768,
+          "rejected_logp": -10.266520500183105,
+          "reward_chosen": 0.009790934826014563,
+          "reward_rejected": -9.004690647125244,
+          "margin": 4.507240790975629
+        },
+        {
+          "pair_id": 469,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.5203887224197388,
+          "rejected_logp": -23.428415298461914,
+          "reward_chosen": 0.0015271902084350586,
+          "reward_rejected": -21.083007335662842,
+          "margin": 10.542267262935638
+        },
+        {
+          "pair_id": 405,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.2463349103927612,
+          "rejected_logp": -14.37331485748291,
+          "reward_chosen": 0.010396718978881836,
+          "reward_rejected": -12.112369775772095,
+          "margin": 6.061383247375488
+        },
+        {
+          "pair_id": 511,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.9655449986457825,
+          "rejected_logp": -14.808219909667969,
+          "reward_chosen": 0.0572696328163147,
+          "reward_rejected": -12.713252782821655,
+          "margin": 6.385261207818985
+        },
+        {
+          "pair_id": 217,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.4193966388702393,
+          "rejected_logp": -22.753042221069336,
+          "reward_chosen": -0.02855849266052246,
+          "reward_rejected": -20.182342290878296,
+          "margin": 10.076891899108887
+        },
+        {
+          "pair_id": 322,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.4264901876449585,
+          "rejected_logp": -22.750730514526367,
+          "reward_chosen": -0.008165359497070312,
+          "reward_rejected": -20.259178638458252,
+          "margin": 10.12550663948059
+        },
+        {
+          "pair_id": 216,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.003102653892710805,
+          "rejected_logp": -12.798361778259277,
+          "reward_chosen": 0.3409708503168076,
+          "reward_rejected": -11.677935242652893,
+          "margin": 6.00945304648485
+        },
+        {
+          "pair_id": 67,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.2012877464294434,
+          "rejected_logp": -20.379892349243164,
+          "reward_chosen": 0.022217273712158203,
+          "reward_rejected": -17.910809755325317,
+          "margin": 8.966513514518738
+        },
+        {
+          "pair_id": 274,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8258998990058899,
+          "rejected_logp": -12.114130973815918,
+          "reward_chosen": 0.10242271423339844,
+          "reward_rejected": -9.934155702590942,
+          "margin": 5.01828920841217
+        },
+        {
+          "pair_id": 410,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.00029692650423385203,
+          "rejected_logp": -12.495633125305176,
+          "reward_chosen": 0.45379733442678116,
+          "reward_rejected": -11.412729501724243,
+          "margin": 5.933263418075512
+        },
+        {
+          "pair_id": 323,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.537523627281189,
+          "rejected_logp": -22.159902572631836,
+          "reward_chosen": 0.021268844604492188,
+          "reward_rejected": -19.97949504852295,
+          "margin": 10.00038194656372
+        },
+        {
+          "pair_id": 635,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.4120901823043823,
+          "rejected_logp": -19.498188018798828,
+          "reward_chosen": -0.08024263381958008,
+          "reward_rejected": -17.092339515686035,
+          "margin": 8.506048440933228
+        },
+        {
+          "pair_id": 234,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.2660627365112305,
+          "rejected_logp": -19.49136734008789,
+          "reward_chosen": -0.018968939781188965,
+          "reward_rejected": -16.851852893829346,
+          "margin": 8.416441977024078
+        },
+        {
+          "pair_id": 57,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8773667216300964,
+          "rejected_logp": -20.478805541992188,
+          "reward_chosen": 0.021851956844329834,
+          "reward_rejected": -18.294252157211304,
+          "margin": 9.158052057027817
+        },
+        {
+          "pair_id": 332,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0007200241088867188,
+          "rejected_logp": -8.2109375,
+          "reward_chosen": 0.0009372418280690908,
+          "reward_rejected": -7.691078543663025,
+          "margin": 3.846007892745547
+        }
+      ],
+      "nf4_mean_margin": 7.135520183241169
+    },
+    "7": {
+      "final_adapter": "/kaggle/input/datasets/yuanmazax/delta-filing-smoke/matrix_adapters/seed7/final",
+      "pairs": [
+        {
+          "pair_id": 438,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.1667283773422241,
+          "rejected_logp": -24.099868774414062,
+          "reward_chosen": -0.029751062393188477,
+          "reward_rejected": -21.555930614471436,
+          "margin": 10.763089776039124
+        },
+        {
+          "pair_id": 269,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.4254238605499268,
+          "rejected_logp": -18.376033782958984,
+          "reward_chosen": -0.06051480770111084,
+          "reward_rejected": -15.858202934265137,
+          "margin": 7.898844063282013
+        },
+        {
+          "pair_id": 252,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.9405044317245483,
+          "rejected_logp": -18.055057525634766,
+          "reward_chosen": 0.02513045072555542,
+          "reward_rejected": -15.585158348083496,
+          "margin": 7.805144399404526
+        },
+        {
+          "pair_id": 641,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.00026504811830818653,
+          "rejected_logp": -8.481247901916504,
+          "reward_chosen": 0.01715902308933437,
+          "reward_rejected": -7.396615028381348,
+          "margin": 3.706887025735341
+        },
+        {
+          "pair_id": 271,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.347011685371399,
+          "rejected_logp": -14.020697593688965,
+          "reward_chosen": -0.028715848922729492,
+          "reward_rejected": -11.699440002441406,
+          "margin": 5.835362076759338
+        },
+        {
+          "pair_id": 146,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0003351065097376704,
+          "rejected_logp": -10.407710075378418,
+          "reward_chosen": 0.00967047840822488,
+          "reward_rejected": -9.145880222320557,
+          "margin": 4.577775350364391
+        },
+        {
+          "pair_id": 469,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.505832314491272,
+          "rejected_logp": -24.229143142700195,
+          "reward_chosen": 0.016083598136901855,
+          "reward_rejected": -21.883735179901123,
+          "margin": 10.949909389019012
+        },
+        {
+          "pair_id": 405,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.2322149276733398,
+          "rejected_logp": -18.342496871948242,
+          "reward_chosen": 0.024516701698303223,
+          "reward_rejected": -16.081551790237427,
+          "margin": 8.053034245967865
+        },
+        {
+          "pair_id": 511,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.996727466583252,
+          "rejected_logp": -18.100858688354492,
+          "reward_chosen": 0.026087164878845215,
+          "reward_rejected": -16.00589156150818,
+          "margin": 8.015989363193512
+        },
+        {
+          "pair_id": 217,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.4290837049484253,
+          "rejected_logp": -22.682119369506836,
+          "reward_chosen": -0.038245558738708496,
+          "reward_rejected": -20.111419439315796,
+          "margin": 10.036586940288544
+        },
+        {
+          "pair_id": 322,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.4256625175476074,
+          "rejected_logp": -23.754764556884766,
+          "reward_chosen": -0.007337689399719238,
+          "reward_rejected": -21.26321268081665,
+          "margin": 10.627937495708466
+        },
+        {
+          "pair_id": 216,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.038985803723335266,
+          "rejected_logp": -13.486540794372559,
+          "reward_chosen": 0.30508770048618317,
+          "reward_rejected": -12.366114258766174,
+          "margin": 6.335600979626179
+        },
+        {
+          "pair_id": 67,
+          "category": "change_detection",
+          "axis": "style",
+          "chosen_logp": -1.1906650066375732,
+          "rejected_logp": -19.944746017456055,
+          "reward_chosen": 0.03284001350402832,
+          "reward_rejected": -17.475663423538208,
+          "margin": 8.754251718521118
+        },
+        {
+          "pair_id": 274,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8457551598548889,
+          "rejected_logp": -15.548255920410156,
+          "reward_chosen": 0.08256745338439941,
+          "reward_rejected": -13.36828064918518,
+          "margin": 6.72542405128479
+        },
+        {
+          "pair_id": 410,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.0002815723419189453,
+          "rejected_logp": -12.139591217041016,
+          "reward_chosen": 0.45381268858909607,
+          "reward_rejected": -11.056687593460083,
+          "margin": 5.7552501410245895
+        },
+        {
+          "pair_id": 323,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.5516937971115112,
+          "rejected_logp": -23.70351219177246,
+          "reward_chosen": 0.007098674774169922,
+          "reward_rejected": -21.523104667663574,
+          "margin": 10.765101671218872
+        },
+        {
+          "pair_id": 635,
+          "category": "red_flag",
+          "axis": "style",
+          "chosen_logp": -1.4877849817276,
+          "rejected_logp": -20.455020904541016,
+          "reward_chosen": -0.15593743324279785,
+          "reward_rejected": -18.049172401428223,
+          "margin": 8.946617484092712
+        },
+        {
+          "pair_id": 234,
+          "category": "section_summary",
+          "axis": "style",
+          "chosen_logp": -1.2754366397857666,
+          "rejected_logp": -19.834659576416016,
+          "reward_chosen": -0.028342843055725098,
+          "reward_rejected": -17.19514513015747,
+          "margin": 8.583401143550873
+        },
+        {
+          "pair_id": 57,
+          "category": "tool_result_parsing",
+          "axis": "style",
+          "chosen_logp": -0.8943190574645996,
+          "rejected_logp": -23.548969268798828,
+          "reward_chosen": 0.00489962100982666,
+          "reward_rejected": -21.364415884017944,
+          "margin": 10.684657752513885
+        },
+        {
+          "pair_id": 332,
+          "category": "tool_calling",
+          "axis": "tool_calling",
+          "chosen_logp": -0.00017085442959796637,
+          "rejected_logp": -8.132902145385742,
+          "reward_chosen": 0.0014864115073578432,
+          "reward_rejected": -7.613043189048767,
+          "margin": 3.8072648002780625
+        }
+      ],
+      "nf4_mean_margin": 7.931406493393661
+    }
+  },
+  "grand_mean_margin": 7.519365474387598,
+  "per_seed_mean": {
+    "0": 7.69756243079828,
+    "1": 7.661762691982949,
+    "2": 8.54806200943276,
+    "3": 7.875060491024942,
+    "4": 6.639528862267253,
+    "5": 6.666020632959771,
+    "6": 7.135520183241169,
+    "7": 7.931406493393661
+  }
+}
