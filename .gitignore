@@ -64,3 +64,4 @@ kaggle_result/A3_seed1/adapters/**
 !kaggle_result/A3_seed1/adapters/**/
 !kaggle_result/A3_seed1/adapters/pref/track1_dpo_seed1/adapter_model.safetensors
 kaggle_result/A1/register_probe_topk_nf4.jsonl
+!kaggle_result/A3_seed1/adapters/pref/track1_dpo_seed1/adapter_config.json
