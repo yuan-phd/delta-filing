@@ -20,7 +20,7 @@ This is a workshop paper (target: NeurIPS 2026 workshop, 4–6 pages + reference
 ## Style Rules (critical — apply uniformly)
 
 ### Claim calibration
-- The mechanistic chain (squeezing → rejected collapse → selective deflation → ordering preserved → graded behavioral gradient) is **interpretive, not proven causal**. 
+- The mechanistic chain (squeezing → rejected collapse → selective deflation → ordering preserved → graded degradation ordering) is **interpretive, not proven causal**. 
 - Use: "consistent with," "accounts for," "explains," "suggests"
 - Never use: "demonstrates that," "proves," "establishes," "confirms" (for the chain as a whole)
 - Individual data points CAN use strong language: "8/8 seeds show GOLD_PROTECTED" is a fact, not interpretation.
@@ -42,7 +42,7 @@ This is a workshop paper (target: NeurIPS 2026 workshop, 4–6 pages + reference
 | Style axis effect | "aggregate suppression pressure" | "style is stronger" (per-pair, tool_calling is slightly more potent) |
 | Json's status | "small loss on a clustered item-level interval" | "preserved," "marginally preserved" |
 | The chronology | "three falsifications and two refinements" | "four failures," "four overturned hypotheses" |
-| TOST novelty | "unprecedented as pre-registered primary framework for DPO capability preservation" | "novel in DPO literature" (a Feb 2026 paper uses TOST incidentally) |
+| TOST novelty | "We are not aware of prior DPO work that uses pre-registered TOST as its primary capability test" | "unprecedented," "novel in DPO literature" (a Feb 2026 paper uses TOST incidentally) |
 
 ### Tone
 - Confident on data, humble on interpretation.
@@ -62,8 +62,8 @@ This is a workshop paper (target: NeurIPS 2026 workshop, 4–6 pages + reference
 - Do not soften hedges that are already calibrated (they were reviewed multiple times).
 - Do not add interpretation beyond what the content provides.
 - Do not remove caveats or scope conditions.
-- Do not rephrase the ±5 justification — the wording ("researcher judgment, not derived from an external standard") is deliberate.
-- Do not merge the falsification chronology's "2 falsifications + 2 refinements" into a uniform category.
+- Do not rephrase the ±5 justification beyond its current form (chosen a priori; power above 0.99 at a true Δ of 0 from the observed per-seed SDs; 5 points is 8 of 160 items). The sentence "researcher judgment, not derived from an external standard" is deliberate and stays verbatim.
+- Do not merge the falsification chronology's "three falsifications and two refinements" into a uniform category.
 - Do not change the per-axis framing sentence ("aggregate suppression pressure, not per-pair potency") — it prevents a specific reviewer misread.
 
 ## LaTeX
