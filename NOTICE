@@ -1,0 +1,26 @@
+delta-filing
+Copyright 2026 Ye Yuan
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Third-party materials and attributions
+--------------------------------------
+
+Base model.
+  The LoRA adapters in this repository are fine-tuned from Qwen3.5-4B
+  (Hugging Face: Qwen/Qwen3.5-4B), developed by the Qwen team, Alibaba Cloud.
+  The base model weights are not redistributed here; use of the base model
+  and of any model derived from it with these adapters is subject to the
+  base model's own license terms.
+
+Model-generated data.
+  The SFT data, the preference pairs (chosen and rejected completions), the
+  evaluation prompts, and related control texts were generated with OpenAI
+  models (gpt-4o-mini; gpt-4o for router label adjudication) through the
+  OpenAI API. Use of these outputs is also subject to OpenAI's terms.
+
+SEC filings.
+  Filing text used to generate the chosen completions was retrieved from
+  the U.S. Securities and Exchange Commission's EDGAR system. EDGAR filings
+  are public records; this project is not affiliated with or endorsed by
+  the SEC.
