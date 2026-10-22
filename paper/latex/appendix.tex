@@ -2,7 +2,7 @@
 
 \section{Full Per-Seed TOST Data}
 \label{app:tost-data}
-Complete data behind Table~\ref{tab:tost}. Per-task semantic accuracy (\%) at each checkpoint, all 8 seeds, plus the step-0 SFT baseline. $\Delta = \text{final} - \text{baseline}$ (percentage points). The TOST per-seed equivalence band is $|\Delta| \le 5$.
+Complete data behind Table~\ref{tab:tost}. Per-task semantic accuracy (\%) at each checkpoint, all 8 seeds, plus the step-0 SFT baseline. $\Delta = \text{final} - \text{baseline}$ (percentage points). The final column is the per-seed point check $|\Delta| \le 5$ (PASS/FAIL), not a per-seed TOST.
 
 \begin{table}[H]
 \centering
@@ -10,7 +10,7 @@ Complete data behind Table~\ref{tab:tost}. Per-task semantic accuracy (\%) at ea
 \small
 \begin{tabular}{@{}lrrrrrrrc@{}}
 \toprule
-Seed & Baseline & step 20 & margin1 & margin3 & margin5 & final & $\Delta$ & TOST\\
+Seed & Baseline & step 20 & margin1 & margin3 & margin5 & final & $\Delta$ & $|\Delta| \le 5$\\
 \midrule
 0 & 97.50 & 97.50 & 97.50 & 98.12 & 96.25 & 97.50 & $+0.00$ & PASS\\
 1 & 97.50 & 98.75 & 100.00 & 98.75 & 98.75 & 94.38 & $-3.12$ & PASS\\
@@ -30,7 +30,7 @@ Seed & Baseline & step 20 & margin1 & margin3 & margin5 & final & $\Delta$ & TOS
 \small
 \begin{tabular}{@{}lrrrrrrrc@{}}
 \toprule
-Seed & Baseline & step 20 & margin1 & margin3 & margin5 & final & $\Delta$ & TOST\\
+Seed & Baseline & step 20 & margin1 & margin3 & margin5 & final & $\Delta$ & $|\Delta| \le 5$\\
 \midrule
 0 & 98.75 & 82.50 & 93.75 & 93.12 & 94.38 & 92.50 & $-6.25$ & FAIL\\
 1 & 98.75 & 93.75 & 95.62 & 80.62 & 89.38 & 96.88 & $-1.88$ & PASS\\
@@ -50,7 +50,7 @@ Seed & Baseline & step 20 & margin1 & margin3 & margin5 & final & $\Delta$ & TOS
 \small
 \begin{tabular}{@{}lrrrrrrrc@{}}
 \toprule
-Seed & Baseline & step 20 & margin1 & margin3 & margin5 & final & $\Delta$ & TOST\\
+Seed & Baseline & step 20 & margin1 & margin3 & margin5 & final & $\Delta$ & $|\Delta| \le 5$\\
 \midrule
 0 & 93.75 & 85.62 & 78.12 & 59.38 & 61.88 & 64.38 & $-29.37$ & FAIL\\
 1 & 93.75 & 87.50 & 86.88 & 61.25 & 66.88 & 76.88 & $-16.87$ & FAIL\\
@@ -64,17 +64,17 @@ Seed & Baseline & step 20 & margin1 & margin3 & margin5 & final & $\Delta$ & TOS
 \end{tabular}
 \end{table}
 
-Per-seed TOST pass/fail is shown in the final column; item-level bootstrap 90\% CIs at the final checkpoint are reported per task in Table~\ref{tab:tost}.
+The per-seed $|\Delta| \le 5$ check is shown in the final column; item-level bootstrap 90\% CIs at the final checkpoint are reported per task in Table~\ref{tab:tost}.
 
-Seeds 0 and 1 are deterministic re-runs of the pilot (\S\ref{sec:method}). Restricting to seeds 2--7: extraction mean $\Delta = -0.21$, json mean $\Delta = -3.33$, router mean $\Delta = -32.50$. All three verdicts are unchanged on the 6-seed subset (seed-level $t$ intervals with df $= 5$; item-level bootstrap as in the main analysis). Extraction remains equivalent: seed-level 90\% CI $[-2.18, +1.76]$, item-level $[-1.67, +1.35]$, and 6/6 seeds within $\pm5$. The json task remains not equivalent: its seed-level CI $[-4.29, -2.38]$ and 6/6 seeds are within $\pm5$, but the item-level CI $[-5.42, -1.46]$ crosses $-5$. Router remains not equivalent: seed-level CI $[-38.44, -26.56]$, 0/6 seeds within $\pm5$. The router failure-mode decomposition across the checkpoint trajectory is in main-text Table~\ref{tab:router-traj}; Figure~\ref{fig:traj} visualizes the same trajectory per seed.
+Seeds 0 and 1 are deterministic re-runs of the pilot (\S\ref{sec:method}). Restricting to seeds 2--7: extraction mean $\Delta = -0.21$, json mean $\Delta = -3.33$, router mean $\Delta = -32.50$. All three verdicts are unchanged on the 6-seed subset (seed-level $t$ intervals with df $= 5$; item-level bootstrap as in the main analysis). Extraction remains equivalent: seed-level 90\% CI $[-2.18, +1.76]$, item-level $[-1.67, +1.35]$, and 6/6 seeds within $\pm5$. For json, equivalence remains not shown: its seed-level CI $[-4.29, -2.38]$ and 6/6 seeds are within $\pm5$, but the item-level CI $[-5.42, -1.46]$ crosses $-5$. Router remains not equivalent: seed-level CI $[-38.44, -26.56]$, 0/6 seeds within $\pm5$. The router failure-mode decomposition across the checkpoint trajectory is in main-text Table~\ref{tab:router-traj}; Figure~\ref{fig:traj} visualizes the same trajectory per seed.
 
 \section{Scorer v2 Rules and Artifact Walkthrough}
 \label{app:scorer}
-\textbf{Scorer architecture.} Scorer v2 applies a deterministic four-tier classification to each generated output. (1)~\textbf{FORMAT\_BREAK}: the output cannot be parsed by the task-specific format gate. For router, the gate requires a bare string matching one of the five valid labels; for json and extraction, it requires valid JSON with required keys. (2)~\textbf{PASS}: the parsed output matches the gold answer after canonicalization. (3)~\textbf{SURFACE\_FORM}: the parsed output contains the correct semantic content but differs in surface form (e.g., ``Item 1'' versus ``1''). (4)~\textbf{SEMANTIC\_ERROR}: the parsed, well-formed output has incorrect content. Semantic accuracy counts PASS $+$ SURFACE\_FORM as correct; FORMAT\_BREAK and SEMANTIC\_ERROR are failures.
+\textbf{Scorer architecture.} Scorer v2 applies a deterministic four-tier classification to each generated output, evaluated in this order (\texttt{scorer\_v2.py}). (1)~\textbf{FORMAT\_BREAK}: the output fails the task's parse gate. For router, the output (after leading whitespace) must begin with one of the five valid labels as a delimited token (case-insensitive; trailing text allowed), so syntactically plausible but invalid labels such as invented UPPER\_SNAKE\_CASE pseudo-labels are FORMAT\_BREAK. For json and extraction, the output must begin with a JSON object (optionally code-fenced) that parses and contains the required keys. (2)~\textbf{PASS}: strict match to gold (field-wise exact match after whitespace and case normalization; dates normalized to YYYY-MM-DD). (3)~\textbf{SURFACE\_FORM}: no strict match, but a match after canonicalization (e.g., ``Item 1'' versus ``1''); only extraction has a canonicalization rule. (4)~\textbf{SEMANTIC\_ERROR}: no match after canonicalization (for router and json, any parsed output that fails the strict match). Semantic accuracy counts PASS $+$ SURFACE\_FORM as correct; FORMAT\_BREAK and SEMANTIC\_ERROR are failures.
 
-\textbf{Canonicalization rules (extraction).} The section-identifier field is canonicalized before comparison. The numeric portion is extracted via regex \verb|\d+[A-Z]?| (``Item 7A'' $\to$ ``7A'', ``Item 1'' $\to$ ``1''). The alpha suffix is case-folded, and appended titles are ignored (``Item 7: Management's Discussion'' $\to$ ``7''). Ticker and filing\_date use exact string match (case-insensitive for ticker).
+\textbf{Canonicalization rules (extraction).} The section-identifier field is canonicalized before comparison. The numeric portion is extracted via regex \verb|\d+[A-Z]?| (``Item 7A'' $\to$ ``7A'', ``Item 1'' $\to$ ``1''). The alpha suffix is case-folded, and appended titles are ignored (``Item 7: Management's Discussion'' $\to$ ``7''). Ticker uses case-insensitive exact match; filing\_date is normalized to YYYY-MM-DD before exact match.
 
-\textbf{The artifact: $0.550 \to 0.981$.} At the margin3 checkpoint, extraction accuracy under strict string matching is 0.550 (seed0); under scorer v2's canonicalization the same checkpoint scores 0.981. The 69 items ($69/72 = 96\%$) that flip from strict-FAIL to SURFACE\_FORM (semantically correct) are exclusively section-identifier surface-form variants. The model outputs ``1'' where gold says ``Item 1'', or ``7A'' where gold says ``Item 7A''. The semantic content is correct in every case, with no ticker or filing\_date errors. The 8-seed mean is $0.616 \to 0.988$. The register-shift rate (SURFACE\_FORM tier) peaks at margin ${\approx}3$ (mean 0.37 across 8 seeds), then subsides to 0.09 by final. This mirrors router's non-monotonic FORMAT\_BREAK trajectory. The canonicalization rules were frozen before the confirmatory run; no rules were added or modified after observing its results.
+\textbf{The artifact: $0.550 \to 0.981$.} At the margin3 checkpoint, extraction accuracy under strict string matching is 0.550 (seed0); under scorer v2's canonicalization the same checkpoint scores 0.981. The 69 items ($69/72 = 96\%$) that flip from strict-FAIL to SURFACE\_FORM (semantically correct) are exclusively section-identifier surface-form variants. The model outputs ``1'' where gold says ``Item 1'', or ``7A'' where gold says ``Item 7A''. The semantic content is correct in every case, with no ticker or filing\_date errors. The 8-seed mean is $0.616 \to 0.988$. The register-shift rate (SURFACE\_FORM tier) peaks at margin ${\approx}3$ (mean 0.37 across 8 seeds), then subsides to 0.09 by final. This mirrors router's non-monotonic FORMAT\_BREAK trajectory. The artifact was identified in the pilot (seed 0 is bitwise identical in the pilot and confirmatory runs; pilot chronology, Note 3, committed 2026-06-11). The canonicalization rule was written and frozen in response, and the matrix evaluation was switched to scorer v2 before Note 2 was frozen (2026-06-18) and before the confirmatory run; the 8-seed figures above are from the confirmatory run. No rules were added or modified after observing its results.
 
 \section{Pre-Registration Reconciliation and Falsification Chronology}
 \label{app:reconcile}
@@ -88,11 +88,11 @@ Seeds 0 and 1 are deterministic re-runs of the pilot (\S\ref{sec:method}). Restr
 \toprule
 \# & Secondary & Status & Location\\
 \midrule
-1 & Trajectory-min per seed/task & Reported & \S\ref{sec:nonmono} (router trough at margin3, 6/8)\\
+1 & Trajectory-min per seed/task & Partly reported (router only) & \S\ref{sec:nonmono} (router minimum at margin3, 6/8)\\
 2 & FORMAT\_BREAK trajectory & Reported & \S\ref{sec:nonmono} (Table~\ref{tab:router-traj})\\
-3 & Held-out margin per category & Reported. \textbf{Falsified under both backends}: the prediction (style $>$ tool at every checkpoint) holds at 0/4 checkpoints under fp16 and 2/4 under nf4. Final-checkpoint per-pair ordering is backend-dependent. & \S\ref{sec:mechanism} (Tables~\ref{tab:heldout-fp16}, \ref{tab:heldout-nf4})\\
-4 & Chosen/rejected reward decomposition & Reported (post-hoc GPU inference) & \S\ref{sec:mechanism}, Fig.~\ref{fig:reward} (per-axis Table~\ref{tab:peraxis})\\
-5 & Gold-logp trajectory $\times$ 3 tasks & Reported (fp16, 8 seeds) & \S\ref{sec:gold} (Table~\ref{tab:gold})\\
+3 & Held-out margin per category & Reported; computed under fp16 (Mac) and nf4 (Kaggle). \textbf{Falsified under both backends}: the prediction (style $>$ tool at every checkpoint) holds at 0/4 checkpoints under fp16 and 2/4 under nf4. Final-checkpoint per-pair ordering is backend-dependent. & \S\ref{sec:mechanism} (Tables~\ref{tab:heldout-fp16}, \ref{tab:heldout-nf4}, \ref{tab:heldout-nf4-perseed})\\
+4 & Chosen/rejected reward decomposition & Reported (post-hoc; nf4 Kaggle, fp16 Mac) & \S\ref{sec:mechanism}, Fig.~\ref{fig:reward} (per-axis Table~\ref{tab:peraxis})\\
+5 & Gold-logp trajectory $\times$ 3 tasks & Partly reported (endpoint $\Delta_{\text{gold}}$ only; per-checkpoint trajectory in Appendix~G.4 for KL only) & \S\ref{sec:gold} (Table~\ref{tab:gold})\\
 6 & Probe statistic replication (paired) & Extraction 8/8 GOLD\_PROTECTED; json/router not computable (extraction-specific controls) & \S\ref{sec:gold} (Table~\ref{tab:protected})\\
 7 & Register-shift tracking & Reported (SURFACE\_FORM rate) & \S\ref{sec:nonmono}\\
 8 & KL-from-reference per checkpoint & Reported (post-hoc, fp16, 8 seeds) & \S\ref{sec:gold} (Appendix~\ref{app:gold})\\
@@ -100,17 +100,17 @@ Seeds 0 and 1 are deterministic re-runs of the pilot (\S\ref{sec:method}). Restr
 \end{tabular}
 \end{table}
 
-Secondaries \#4 and \#8 were not logged during training in the confirmatory run. \#4 was computed via a dedicated GPU inference run on saved adapters (Kaggle T4). \#8 was computed via Mac inference on saved adapters (fp16, proper token-level KL). \#3 was computed via Mac inference on saved adapters. All three use the same checkpoint adapters as the confirmatory run; no retraining was involved. The primary TOST analysis (\S\ref{sec:graded}) was unaffected.
+Secondaries \#4 and \#8 were not logged during training in the confirmatory run. \#4 was computed via a dedicated GPU inference run on saved adapters (Kaggle T4). \#8 was computed via Mac inference on saved adapters (fp16, proper token-level KL). \#3 was computed under fp16 (Mac) and nf4 (Kaggle T4) on saved adapters. All three use the same checkpoint adapters as the confirmatory run; no retraining was involved. The primary TOST analysis (\S\ref{sec:graded}) was unaffected.
 
 \textbf{C.2 Pre-registration deviations.} \emph{Checkpoint mechanism:} the pre-registered design (Note 2) specified fixed-step checkpoints with margin as a post-hoc label; the implementation used margin-crossing triggers for intermediate checkpoints (margin1: steps 24--30, margin3: 84--98, margin5: 112--138). Step 20 and final (step 180) are fixed and identical across seeds, so the primary endpoint is unaffected. Cross-seed averages at intermediate checkpoints pool seeds at matched margin but different optimizer steps. \emph{Early-stop configuration:} the design specified \texttt{max\_opt\_steps=180} and \texttt{no\_early\_stop=True}. Both were enforced at runtime in \texttt{matrix\_kernel.py} and \texttt{run\_matrix.py}, and all 8 seeds terminated at exactly step 180. However, \texttt{train\_config.json} records module-level constants only and does not serialize these runtime parameters. This may create a misleading impression when inspecting saved artifacts. The execution matched the pre-registration; the config-file serialization did not. \emph{Seed overlap:} seeds 0 and 1 of the confirmatory set are bitwise re-runs of the pilot seeds (seed 0 fully; seed 1 through margin5). Six of eight confirmatory seeds were unseen at freeze time. The repository was first pushed publicly on 2026-10-18; the commit dates reflect local authorship and are not independently timestamped. \emph{Backend:} the pre-registration did not specify a quantization backend for any secondary. Secondary \#3 (held-out per-category margin) was computed under fp16 (Mac) and nf4 (Kaggle T4); the per-pair ordering is backend-dependent at the final checkpoint (\S\ref{sec:mechanism}).
 
-\textbf{C.3 Falsification chronology.} \emph{Design phase (before the confirmatory run):} (a)~A causal-clamp experiment was designed but dropped as confounded. Clamping the margin also alters the KL penalty and total optimization pressure, making ``margin magnitude $\to$ capability loss'' untestable. (b)~Router was initially the primary endpoint. It moved to a secondary with trajectory decomposition after pilot analysis revealed a non-monotonic transient. (c)~A targeted-displacement hypothesis was reformulated as ``selective deflation.'' A preliminary probe had found that controls fell more than gold, indicating global drift rather than targeted displacement. (d)~Three exploration-phase numbers lacking on-disk artifacts were re-measured or dropped. The 80-item baselines were re-derived from the 160-item suite, the router baseline was corrected from 0.950 to 0.938, and gate floors were re-derived (extraction 0.006, router 0.200, json 0.0125). (e)~The suite was expanded from 80 to 160 items per task to improve TOST power, and frozen before the confirmatory run. (f)~The GOLD\_PROTECTED threshold ($X = 0.05$) was frozen before a preliminary 12-item probe existed.
+\textbf{C.3 Falsification chronology.} \emph{Design phase (before the confirmatory run):} (a)~A causal-clamp experiment was designed but dropped as confounded. Clamping the margin also alters the KL penalty and total optimization pressure, making ``margin magnitude $\to$ capability loss'' untestable. (b)~Router was initially the sole primary endpoint. After pilot analysis revealed a non-monotonic transient, router's trajectory analysis became a secondary; router's final accuracy remained a primary TOST endpoint alongside json and extraction. (c)~A targeted-displacement hypothesis was reformulated as ``selective deflation.'' A preliminary probe had found that controls fell more than gold, indicating global drift rather than targeted displacement. (d)~Three exploration-phase numbers lacking on-disk artifacts were re-measured or dropped. The 80-item baselines were re-derived from the 160-item suite, the router baseline was corrected from 0.950 to 0.938, and gate floors were re-derived (extraction 0.006, router 0.200, json 0.0125). (e)~The suite was expanded from 80 to 160 items per task to improve TOST power, and frozen before the confirmatory run. (f)~The GOLD\_PROTECTED threshold ($X = 0.05$) was frozen before a preliminary 12-item probe existed. (g)~\textbf{Falsified:} the extraction collapse at margin ${\approx}3$. In the pilot, extraction accuracy at margin3 appeared to crash under the strict scorer (seed 0: 0.550); canonicalized scoring showed a surface-form register shift (0.981). The canonicalization rule was written and frozen in response, before the confirmatory run, and the strict-scorer measurement was discarded, not refined (Appendix~\ref{app:scorer}).
 
-\emph{Confirmatory-run phase:} \textbf{Falsified:} (i)~the bounded-null headline (json and router failed the $\pm5$ TOST); (ii)~the extraction collapse at margin ${\approx}3$ ($0.550 \to 0.981$ under canonicalization; the measurement was discarded, not refined); (iii)~style margin $>$ tool\_calling on held-out. Item (iii) is falsified under both backends: the prediction (style $>$ tool at every checkpoint) holds at 0/4 checkpoints under fp16 and 2/4 under nf4. Final-checkpoint per-pair ordering is backend-dependent. \textbf{Refined:} margin-independent early drop became a damage window at margin ${\approx}1$--3 with two distinct processes. ``Gold absolutely stable'' ($|\Delta_{\text{gold}}| \le 0.01$, nf4) became ``gold selectively protected but task-selectively deflates'' (fp16 revealed json $-1.04$, router $-1.47$, extraction $-0.15$).
+\emph{Confirmatory-run phase:} \textbf{Falsified:} (i)~the bounded-null headline (json and router failed the $\pm5$ TOST); (ii)~style margin $>$ tool\_calling on held-out. Item (ii) is falsified under both backends: the prediction (style $>$ tool at every checkpoint) holds at 0/4 checkpoints under fp16 and 2/4 under nf4. Final-checkpoint per-pair ordering is backend-dependent. \textbf{Refined:} margin-independent early drop became a damage window at margin ${\approx}1$--3 with two failure modes with distinct aggregate trajectories. ``Gold absolutely stable'' ($|\Delta_{\text{gold}}| \le 0.01$, nf4) became ``gold selectively protected but task-selectively deflates'' (fp16 revealed json $-1.04$, router $-1.47$, extraction $-0.15$).
 
 \section{Suite Hygiene}
 \label{app:hygiene}
-Source files: \url{data_eval/track1_{router,json,extraction}.jsonl}; leakage reference \url{kaggle_upload/training_data/dpo_pytorch.jsonl}; degeneracy floors \url{kaggle_upload/audit_eval.py:91}; gold self-consistency via \url{kaggle_upload/scorer.py}.
+Source files: \url{data_eval/track1_{router,json,extraction}.jsonl}; leakage references \url{kaggle_upload/training_data/dpo_pytorch.jsonl} (preference) and \url{training_data/sft_pytorch/{train,valid,test}.jsonl} (SFT); degeneracy floors \url{kaggle_upload/audit_eval.py:91}; gold self-consistency via \url{kaggle_upload/scorer.py}.
 
 \begin{table}[H]
 \centering
@@ -123,7 +123,8 @@ Property & extraction & json & router\\
 $n$ items & 160 & 160 & 160\\
 Unique prompts & 160 & 160 & 160\\
 Duplicate prompts & 0 & 0 & 0\\
-Verbatim leakage (eval $\cap$ train) & 0 & 0 & 0\\
+Verbatim leakage (eval $\cap$ preference) & 0 & 0 & 0\\
+Verbatim leakage (eval $\cap$ SFT) & 0 & 0 & 0\\
 Gold self-consistency (gold-as-output PASS) & 160/160 & 160/160 & 160/160\\
 Degeneracy floor (always-one-answer) & ${\sim}0.006$ & 0.0125 & 0.20\\
 \bottomrule
@@ -132,17 +133,17 @@ Degeneracy floor (always-one-answer) & ${\sim}0.006$ & 0.0125 & 0.20\\
 
 \textbf{Class balance.} \emph{router} (5 classes): COMPANY\_DEEP\_DIVE, FILING\_ANALYSIS, FILING\_DIFF, OUT\_OF\_SCOPE, SIMPLE\_QUERY $= 32$ each. \emph{json} (8 tool classes): analyst\_ratings, company\_metrics, company\_news, diff\_filing\_sections, get\_filing\_section, insider\_trades, search\_filings, stock\_price $= 20$ each. \emph{extraction} (6 section classes): Item 1 $=27$, Item 1A $=27$, Item 3 $=26$, Item 7 $=27$, Item 7A $=26$, Item 8 $=27$.
 
-Zero verbatim leakage: 0/160 eval prompts appear as a training \texttt{question} (exact-string match) for all three tasks. Gold self-consistency: 160/160 gold answers pass their own scorer. Zero duplicate prompts: 160 unique prompts / 160 items. Degeneracy floors (a constant always-one-answer policy): extraction $0.006$, router $0.20$ (5 balanced classes), json $0.0125$ ($2/160$). Extraction golds are unique (constant-output floor $1/160 \approx 0.006$); router has 5 balanced classes ($32/160 = 0.20$); json has 18 duplicate tool-call tuples ($2/160 = 0.0125$, maximum multiplicity 2).
+Zero verbatim leakage: 0/160 eval prompts appear as a preference-data \texttt{question} (exact-string match) for all three tasks, and 0/160 appear as an SFT user prompt (1{,}060 unique prompts across the SFT train/valid/test splits; exact-string and substring match). Gold self-consistency: 160/160 (each gold answer passes scorer v2; this establishes scorer compatibility, not independent factual verification). Zero duplicate prompts: 160 unique prompts / 160 items. Degeneracy floors (a constant always-one-answer policy): extraction $0.006$, router $0.20$ (5 balanced classes), json $0.0125$ ($2/160$). Extraction golds are unique (constant-output floor $1/160 \approx 0.006$); router has 5 balanced classes ($32/160 = 0.20$); json has 18 duplicate tool-call tuples ($2/160 = 0.0125$, maximum multiplicity 2).
 
 \section{Training Configuration and Hash Verification}
 \label{app:config}
-\textbf{SFT checkpoint:} hash \texttt{29a3794b\ldots585f02}, verified identical across all 8 seed runs; adapter weights loaded from \texttt{adapters/sft\_pytorch/adapter\_model.safetensors}. \textbf{Tokenizer and chat template:} the chat template is byte-identical across sources (SHA-256 hash comparison). For the tokenizer, tokenization is identical on all study inputs: the SFT adapter, DPO adapters, and base tokenizer configs differ in metadata (added-token count, pre-tokenizer regex) but produce identical token IDs on all 6{,}024 evaluation and preference strings, verified by direct token-ID comparison.
+\textbf{SFT checkpoint:} hash \texttt{29a3794b\ldots585f02}, verified identical across all 8 seed runs; adapter weights loaded from \texttt{adapters/sft\_pytorch/adapter\_model.safetensors}. The SFT adapter was trained with QLoRA (nf4, double quantization, fp16 compute) and the same LoRA configuration as below, for 4 epochs (lr $10^{-4}$, cosine schedule, 20 warmup steps, batch 1 $\times$ 8 gradient accumulation, max length 2048; \texttt{train\_sft\_kaggle.py}, saved \texttt{training\_args.bin}) on 862 training examples (108 validation, 108 test) in \texttt{training\_data/sft\_pytorch/}, generated by GPT-4o-mini. The 862 training examples comprise 365 analytical prose answers, 276 JSON tool calls, 130 router labels, and 91 answer-quality reviews (COMPLETE or NEEDS\_FOLLOW\_UP with a reason); none uses the extraction output format. DPO loads this adapter as trainable and continues training it; the frozen SFT adapter is the DPO reference. \textbf{Tokenizer and chat template:} the chat template is byte-identical across sources (SHA-256 hash comparison). For the tokenizer, tokenization is identical on all study inputs: the SFT adapter, DPO adapters, and base tokenizer configs differ in metadata (added-token count, pre-tokenizer regex) but produce identical token IDs on all 6{,}024 evaluation and preference strings, verified by direct token-ID comparison.
 
 \textbf{LoRA configuration:} $r = 8$, $\alpha = 16$, dropout $= 0.05$; \texttt{target\_modules} $=$ [q\_proj, k\_proj, v\_proj, o\_proj] (explicitly configured, not peft default); bias $=$ none; peft version 0.19.1. Injected layers: 3, 7, 11, 15, 19, 23, 27, 31 (the 8 full-attention layers in Qwen3.5-4B's hybrid architecture; 1.57M trainable parameters, 0.034\% of 4.66B total).
 
 \textbf{Training hyperparameters:} AdamW, lr $= 5\times10^{-5}$, constant schedule, weight\_decay $= 0.01$; gradient clipping 1.0; batch size 8 (gradient accumulation); $\beta$ (DPO) $= 0.5$; SFT retention weight $= 0.5$. Max optimizer steps are 180, enforced via a \texttt{matrix\_kernel.py} runtime parameter. Early stop is disabled (\texttt{no\_early\_stop=True} via \texttt{run\_matrix.py}). The divergence guard aborts if the loss is NaN or the smoothed margin exceeds 20.
 
-\textbf{Config-file note:} \texttt{train\_config.json} records module-level constants and does not serialize the runtime parameters \texttt{max\_opt\_steps} and \texttt{no\_early\_stop}; runtime enforcement was applied in \texttt{matrix\_kernel.py} and \texttt{run\_matrix.py}, confirmed by source-code inspection. All 8 seeds terminated at exactly step 180. \textbf{Checkpoint adapters on disk:} 8 seeds $\times$ 5 checkpoints $= 40$ adapter directories, all verified present with complete \texttt{adapter\_model.safetensors} files.
+\textbf{Config-file note:} \texttt{train\_config.json} records module-level constants and does not serialize the runtime parameters \texttt{max\_opt\_steps} and \texttt{no\_early\_stop}; runtime enforcement was applied in \texttt{matrix\_kernel.py} and \texttt{run\_matrix.py}, confirmed by source-code inspection. All 8 seeds terminated at exactly step 180. Seeds 0--4 and 5--7 were run in two separate Kaggle GPU quota periods. \textbf{Checkpoint adapters on disk:} 8 seeds $\times$ 5 checkpoints $= 40$ adapter directories, all verified present with complete \texttt{adapter\_model.safetensors} files.
 
 \section{Reward Decomposition and Held-Out Margin Per-Seed}
 \label{app:reward-data}
@@ -279,7 +280,29 @@ final & 7.919 & 4.753\\
 \begin{table}[H]
 \centering
 \small
-\caption{F.5: fp16 train reward decomposition, pooled per checkpoint (8-seed mean; 549 train pairs: 378 style, 171 tool\_calling; $\beta{=}0.5$, reference $=$ sft\_baseline). Chosen dips transiently at margin3 ($-0.173$) before recovering; rejected falls monotonically.}
+\caption{F.5: Held-out margin by category per checkpoint, per seed (nf4; 98 pairs: 69 style, 29 tool\_calling; $\beta{=}0.5$; source \texttt{kaggle\_result/val\_nf4\_98.json}). Tool\_calling margin exceeds style margin at margin1 and margin3 for all 8 seeds; style exceeds tool\_calling at margin5 and final for all 8 seeds.}
+\label{tab:heldout-nf4-perseed}
+\begin{tabular}{@{}lcccccccc@{}}
+\toprule
+ & \multicolumn{2}{c}{margin1} & \multicolumn{2}{c}{margin3} & \multicolumn{2}{c}{margin5} & \multicolumn{2}{c}{final}\\
+Seed & style & tool & style & tool & style & tool & style & tool\\
+\midrule
+0 & 0.757 & 1.518 & 2.420 & 3.118 & 6.107 & 3.951 & 8.027 & 4.923\\
+1 & 0.831 & 1.603 & 2.757 & 3.734 & 5.384 & 4.167 & 8.677 & 4.943\\
+2 & 0.719 & 1.544 & 2.361 & 3.466 & 5.943 & 3.912 & 9.166 & 4.596\\
+3 & 0.764 & 1.399 & 2.558 & 3.304 & 4.984 & 3.798 & 8.096 & 4.914\\
+4 & 0.829 & 1.643 & 2.701 & 3.510 & 4.501 & 3.974 & 6.728 & 4.696\\
+5 & 0.702 & 1.543 & 2.782 & 3.401 & 4.897 & 3.981 & 6.969 & 4.527\\
+6 & 0.820 & 1.201 & 2.545 & 3.381 & 6.277 & 4.187 & 7.315 & 4.667\\
+7 & 0.816 & 1.275 & 2.832 & 3.495 & 5.389 & 4.189 & 8.372 & 4.756\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\caption{F.6: fp16 train reward decomposition, pooled per checkpoint (8-seed mean; 549 train pairs: 378 style, 171 tool\_calling; $\beta{=}0.5$, reference $=$ sft\_baseline). Chosen dips transiently at margin3 ($-0.173$) before recovering; rejected falls monotonically.}
 \label{tab:fp16-train-pooled}
 \begin{tabular}{@{}lccc@{}}
 \toprule
@@ -295,7 +318,7 @@ final & $-0.028$ & $-5.928$ & 2.950\\
 
 \section{Gold-Logp Per-Seed Data, nf4 Cross-Check, and KL Trajectory}
 \label{app:gold}
-\textbf{G.1 fp16 same-backend $\Delta_{\text{gold}}$ (per-seed).} Source: \texttt{gold\_3task\_summary.json} (fp16\_mac, reference $=$ sft\_baseline). $\Delta_{\text{gold}} = \text{gold(final)} - \text{gold(sft)}$, per-token length-normalized. Bracketed values are per-seed bootstrap 95\% CI.
+\textbf{G.1 fp16 same-backend $\Delta_{\text{gold}}$ (per-seed).} Source: \texttt{gold\_3task\_summary.json} (fp16\_mac, reference $=$ sft\_baseline). $\Delta_{\text{gold}} = \text{gold(final)} - \text{gold(sft)}$, per-token length-normalized. Bracketed values are per-seed percentile bootstrap 95\% CIs over the 160 per-item differences (10{,}000 resamples); the across-seed CIs below bootstrap the eight per-seed means.
 
 \begin{table}[H]
 \centering
@@ -324,7 +347,7 @@ Across-seed means (8 seeds): extraction $-0.153\ [-0.182,-0.126]$, json $-1.036\
 \begin{table}[H]
 \centering
 \small
-\caption{G.2: nf4 $\Delta_{\text{gold}}$ (step 20$\to$final), 8-seed mean.}
+\caption{G.2: nf4 $\Delta_{\text{gold}}$ (step 20$\to$final; nats/token), 8-seed mean. 95\% CI: $t$-interval across the eight per-seed means (df $= 7$).}
 \begin{tabular}{@{}lccc@{}}
 \toprule
 Task & $\Delta_{\text{gold}}$ (nf4) & 95\% CI & $\Delta_{\text{gold}}$ (fp16) for comparison\\
@@ -356,9 +379,9 @@ Seed & extraction & json & router\\
 \end{tabular}
 \end{table}
 
-The task-selective ordering (extraction $\ll$ json $<$ router) is identical under both backends, with non-overlapping CIs. Absolute magnitudes diverge, reflecting both the quantization difference and the different baselines (fp16 uses the pure SFT adapter; nf4 uses step 20, which has absorbed 20 DPO steps). The divergence is itself task-selective: extraction's deflation nearly vanishes under nf4 (from $-0.15$ to $-0.008$), json compresses ${\sim}5\times$, while router's magnitude is essentially unchanged.
+The task-selective ordering (extraction $\ll$ json $<$ router) is identical under both backends, with non-overlapping CIs. Absolute magnitudes diverge. The comparison changes both the backend and the baseline (fp16 uses the pure SFT adapter; nf4 uses step 20, which has absorbed 20 DPO steps), so the divergence cannot be attributed to quantization alone. The divergence is itself task-selective: extraction's deflation nearly vanishes under nf4 (from $-0.15$ to $-0.008$), json compresses ${\sim}5\times$, while router's magnitude is essentially unchanged.
 
-\textbf{G.3 GOLD\_PROTECTED paired statistic (fp16, extraction, per-seed).} Source: \url{gold_controls_summary.json} (fp16 unquantized, paired stat $\Delta_{\text{gold}}-\Delta_{\text{mean}(A,B)}$, reference $=$ sft\_baseline, $X{=}0.05$). GOLD\_PROTECTED verdict when stat $\ge X$.
+\textbf{G.3 GOLD\_PROTECTED paired statistic (fp16, extraction, per-seed).} Source: \url{gold_controls_summary.json} (fp16 unquantized, paired stat $\Delta_{\text{gold}}-\Delta_{\text{mean}(A,B)}$, reference $=$ sft\_baseline, $X{=}0.05$). GOLD\_PROTECTED verdict when stat $\ge X$ and the 95\% bootstrap CI (over the 160 per-item paired differences) excludes zero.
 
 \begin{table}[H]
 \centering

@@ -36,8 +36,20 @@ GREEN = "#1b7837"   # extraction
 BLUE  = "#2166ac"   # json
 RED   = "#b2182b"   # router
 
-# margins used as the x-axis for Figure 1 (mean router checkpoint margins, Table 2)
-MARGINS = np.array([0.75, 1.09, 3.12, 5.13, 6.73])
+# per-seed smoothed training margin at each checkpoint (step20, margin1, margin3,
+# margin5, final), from kaggle_upload/matrix_adapters/seed*/checkpoints.json
+SEED_MARGINS = np.array([
+    [0.749, 1.112, 3.038, 5.175, 7.678],
+    [0.808, 1.173, 3.320, 5.077, 7.127],
+    [0.763, 1.072, 3.072, 5.003, 6.545],
+    [0.721, 1.038, 3.187, 5.156, 6.423],
+    [0.881, 1.192, 3.224, 5.108, 6.599],
+    [0.685, 1.090, 3.035, 5.173, 6.082],
+    [0.602, 1.018, 3.050, 5.306, 6.137],
+    [0.791, 1.025, 3.043, 5.049, 7.209],
+])
+# 8-seed mean checkpoint margins (Table 2), used for the mean lines
+MARGINS = SEED_MARGINS.mean(axis=0)
 
 # ---- Appendix A: per-seed semantic accuracy (step20, margin1, margin3, margin5, final) ----
 EXTRACTION = np.array([
@@ -77,18 +89,17 @@ def figure1():
     fig, ax = plt.subplots(figsize=(5.5, 3.2))
     series = [("extraction", EXTRACTION, GREEN), ("json", JSON, BLUE), ("router", ROUTER, RED)]
     for name, data, color in series:
-        for seed in data:
-            ax.plot(MARGINS, seed, color=color, alpha=0.28, linewidth=0.7, zorder=1)
+        for xs, seed in zip(SEED_MARGINS, data):
+            ax.plot(xs, seed, color=color, alpha=0.28, linewidth=0.7, zorder=1)
         ax.plot(MARGINS, data.mean(axis=0), color=color, linewidth=2.2, zorder=3,
                 solid_capstyle="round")
         ax.axhline(BASE[name], color=color, linestyle=(0, (4, 3)), linewidth=0.9,
                    alpha=0.7, zorder=2)
     ax.set_xlabel("Implicit reward margin ($\\beta$-scaled)")
     ax.set_ylabel("Semantic accuracy (%)")
-    ax.set_xlim(0.4, 7.0)
+    ax.set_xlim(0.4, 7.9)
     ax.set_ylim(40, 102)
-    ax.set_xticks(MARGINS)
-    ax.set_xticklabels([f"{m:.2f}" for m in MARGINS])
+    ax.set_xticks([1, 2, 3, 4, 5, 6, 7])
     legend_elems = [
         Line2D([0], [0], color=GREEN, lw=2.2, label="extraction (equivalent)"),
         Line2D([0], [0], color=BLUE, lw=2.2, label="json (small loss)"),
@@ -149,11 +160,11 @@ def figure2():
     ax.set_ylabel("Reward (per-token policy logp $-$ SFT logp)")
     ax.set_ylim(-17.5, 2.5)
     ax.legend(loc="lower left", frameon=False)
-    # label the flat chosen line on the LEFT (away from the right-side inset)
-    ax.annotate("chosen flat (nf4):\nretention term anchors", xy=(0.5, 0.0),
-                xytext=(0.15, -3.2), fontsize=7, color=GREEN,
+    # label the flat chosen line from above (away from the right-side inset)
+    ax.annotate("chosen flat (nf4)", xy=(0.6, -0.1),
+                xytext=(0.75, 1.3), fontsize=7, color=GREEN,
                 arrowprops=dict(arrowstyle="->", color=GREEN, lw=0.7))
-    ax.annotate("rejected collapse\ndrives full margin", xy=(2.0, -10.2),
+    ax.annotate("rejected collapse\ndrives $\\geq$96% of margin", xy=(2.0, -10.2),
                 xytext=(0.95, -13.8), fontsize=7, color=RED,
                 arrowprops=dict(arrowstyle="->", color=RED, lw=0.7))
     # inset: mean per-pair rejected reward by axis at final (clear upper-right zone,
@@ -195,7 +206,7 @@ def figure3():
                 color=RED, arrowprops=dict(arrowstyle="->", color=RED, lw=0.9))
     ax.set_xticks(x)
     ax.set_xticklabels([f"seed{i}" for i in range(8)])
-    ax.set_ylabel("Paired stat  $\\Delta_{\\rm gold}-\\Delta_{\\rm mean(A,B)}$")
+    ax.set_ylabel("Paired stat  $\\Delta_{\\rm gold}-\\Delta_{\\rm mean(A,B)}$\n(nats/token)")
     ax.set_xlabel("Seed")
     ax.set_ylim(0, 0.37)
     ax.set_title("GOLD_PROTECTED: 8/8 seeds (extraction, fp16)", fontsize=8.5)
