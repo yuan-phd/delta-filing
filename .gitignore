@@ -53,10 +53,6 @@ Qwen3.5-4B/
 hf_cache/
 **/tokenizer.json
 kaggle_runs/
-paper/latex/*.aux
-paper/latex/*.log
-paper/latex/*.bbl
-paper/latex/*.xdv
 # Duplicate adapter copies (identical to kaggle_result/final) and oversized probe dump
 kaggle_upload/matrix_adapters/
 kaggle_result/A3_seed0/adapters/
@@ -66,5 +62,10 @@ kaggle_result/A3_seed1/adapters/**
 kaggle_result/A1/register_probe_topk_nf4.jsonl
 !kaggle_result/A3_seed1/adapters/pref/track1_dpo_seed1/adapter_config.json
 
-# Internal editing instructions (kept local)
-paper/cc_*.md
+# Paper manuscript is published on arXiv, not in this repo (kept local only):
+# drafts, LaTeX source, PDFs, submission zip, editing notes, backups.
+paper/
+paper_backup_*/
+
+# Internal planning notes (kept local)
+REORG_PLAN.md
