@@ -19,6 +19,13 @@ Model-generated data.
   models (gpt-4o-mini; gpt-4o for router label adjudication) through the
   OpenAI API. Use of these outputs is also subject to OpenAI's terms.
 
+Instruction-following evaluation code.
+  third_party/instruction_following_eval/ contains code from the Google
+  Research IFEval library (https://github.com/google-research/google-research,
+  directory instruction_following_eval/), Copyright The Google Research
+  Authors, licensed under the Apache License, Version 2.0. The files are
+  included unmodified with their original license headers.
+
 SEC filings.
   Filing text used to generate the chosen completions was retrieved from
   the U.S. Securities and Exchange Commission's EDGAR system. EDGAR filings

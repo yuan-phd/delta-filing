@@ -93,6 +93,8 @@ The wrapper handles three subtleties of inference with a fine-tuned model:
 
 ## Local fine-tuning: five-method alignment ablation
 
+> **Note:** This ablation is a separate, earlier experiment from the paper. It used a different trainer and objective setup, a custom 87-test suite and a single seed. Its findings (including "Finding 1" below) are not the paper's results and are not superseded or confirmed by them. The paper studies length-normalized DPO with an assistant-only SFT retention term over 8 seeds with pre-registered TOST equivalence testing; its code and data are tagged `paper-v1`.
+
 To make on-device inference work at the system's quality bar, I trained and compared **five alignment methods** on real SEC 10-K data. All adapters are LoRA (rank 8, alpha 16, q/k/v/o_proj) on Qwen3.5-4B in 4-bit NF4.
 
 ### Final scores (custom 87-test evaluation suite)
@@ -203,7 +205,7 @@ Each test is hand-written with a hard-coded expected pattern. Judging is **rule-
 - **Inference speed**: 5.6 tokens/sec on M1 Max MPS (flash-attention not available for Qwen3.5 on Apple Silicon). Full deep-dive query takes 1–3 minutes. On A100 the same model runs at ~80 tok/s; via llama.cpp + GGUF on M1 Max, ~30–40 tok/s. The trained adapter is identical — only inference is slow.
 - **Tool role gap**: SFT training data has no `tool`-role messages. The wrapper handles this via `[Tool result]` prefix on user turns — works in practice but not the cleanest design.
 - **`tool_calling` ceiling effect**: SFT and GRPO both score 15/15, so the category can't differentiate top adapters. Would need ambiguous-intent cases to break the tie.
-- **SFT retention loss mask**: computes cross-entropy over the full sequence rather than just assistant tokens, diluting the retention signal. Likely amplified the IPO/cDPO alignment tax magnitudes. Not fixed in this version.
+- **SFT retention loss mask (five-method ablation only)**: the ablation's IPO/cDPO training code (`notebook/kaggle/delta-filing-dpo-training-ablation.ipynb`) computes the retention cross-entropy over the full sequence rather than just assistant tokens, diluting the retention signal. This likely amplified the IPO/cDPO alignment-tax magnitudes in the ablation, and it was not fixed there. This does not apply to the paper: the paper's trainer (`train_pref.py`) uses an assistant-only retention mask (system and user tokens masked with -100), recorded as `retention_mask` in each run's `train_config.json`.
 - **Single-seed results**: GRPO_v2's +10 over SFT is striking but a single seed. Multi-seed runs would bound the variance estimate.
 
 ---
@@ -255,6 +257,14 @@ delta-filing/
 ├── test_generator/              # 87-test suite generator + runner
 └── test/                        # Local pytest smoke suite
 ```
+
+---
+
+## License
+
+Everything in this repository is licensed under the [Apache License, Version 2.0](LICENSE): code, data (preference pairs, SFT data, evaluation suites), LoRA adapters and results.
+
+See [NOTICE](NOTICE) for third-party terms and attributions: the Qwen3.5-4B base model (not redistributed here; its own license applies to the base model and to any model derived from it with these adapters), the OpenAI-generated data (OpenAI's terms also apply), SEC EDGAR filings (public records; no SEC affiliation), and vendored third-party code.
 
 ---
 

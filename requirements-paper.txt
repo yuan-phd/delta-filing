@@ -1,0 +1,33 @@
+# Environment for reproducing the paper (arXiv v1, tag paper-v1).
+# The agent app uses requirements.txt; this file covers the study only.
+#
+# Provenance of each pin:
+#   - peft 0.19.1 is recorded in every DPO adapter's train_config.json and
+#     adapter_config.json (kaggle_result/final/seed*/...) and in Appendix E.
+#   - The other pins are the local Mac environment (.venv, Python 3.13.12) used
+#     for the fp16 measurements on the unquantized base (gold-logp, GOLD_PROTECTED,
+#     KL, fp16 reward decomposition and held-out margin). These packages were
+#     installed in April 2026 and not changed before the June 2026 runs.
+#   - Kaggle (nf4 training and behavioral evaluation, T4 GPU): torch and
+#     transformers came preinstalled in the Kaggle image, and kaggle/matrix_kernel.py
+#     installed bitsandbytes, peft, accelerate and datasets unpinned at run time.
+#     Only the peft version was recorded; the Kaggle versions of torch,
+#     transformers, accelerate and datasets are not recorded.
+
+peft==0.19.1
+torch==2.11.0
+transformers==5.5.4
+tokenizers==0.22.2
+safetensors==0.7.0
+accelerate==1.13.0
+datasets==4.8.4
+numpy==2.4.4
+scipy==1.17.1
+
+# Figures (scripts/make_figures.py)
+matplotlib==3.11.0
+
+# nf4 quantization (Kaggle only). Left unpinned on purpose: it was installed
+# unpinned via pip on Kaggle in June 2026 and the exact version was not recorded,
+# as disclosed in the paper (Section 3, "Reproducibility").
+bitsandbytes
