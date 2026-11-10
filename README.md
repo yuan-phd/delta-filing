@@ -1,5 +1,44 @@
 # Delta Filing
 
+## Paper
+
+**The Alignment Tax Is Graded: Task-Selective Capability Loss Under Length-Normalized DPO with SFT Retention**
+Ye Yuan. arXiv:2611.06476 [cs.LG], 2026. <https://arxiv.org/abs/2611.06476>
+
+This is an empirical characterization study. Qwen3.5-4B is fine-tuned with sparse LoRA and length-normalized DPO plus an SFT retention term (the RPO objective) on structured financial-filing tasks, and downstream capability is tracked as the implicit reward margin grows to ~7 β-scaled units. In a pre-registered study (8 seeds, 6 unseen at freeze) with artifact-aware scoring and TOST equivalence testing, the alignment tax is graded and task-selective: extraction is preserved (Δ = −0.55 pts, equivalent at ±5 pts), json loses little (Δ = −3.52 pts; equivalence fails on a clustered item-level interval), and router degrades severely (Δ = −30 pts), with the loss concentrated in a margin 1–3 damage window. The margin is accounted for almost entirely (≥ 96%) by suppression of rejected completions, gold-logp deflation is task-selective, and QLoRA reward margins differ up to 3.4× between nf4 training and unquantized fp16 measurement. Scope: one 4B model, sparse LoRA on 8/32 layers, easily-separable synthetic preferences, three structured tasks.
+
+```bibtex
+@misc{yuan2026alignmenttaxgradedtaskselective,
+      title={The Alignment Tax Is Graded: Task-Selective Capability Loss Under Length-Normalized DPO with SFT Retention},
+      author={Ye Yuan},
+      year={2026},
+      eprint={2611.06476},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2611.06476},
+}
+```
+
+The code and data state at submission is the tag [`paper-v1`](https://github.com/yuan-phd/delta-filing/tree/paper-v1). `main` additionally carries reproducibility files added after submission: `scripts/make_figures.py`, `requirements-paper.txt`, and this documentation. Known corrections to the paper are listed in [ERRATA.md](ERRATA.md).
+
+### Paper-to-file map
+
+| Paper component | Files |
+|---|---|
+| **Protocol** (pre-registration) | `PREREGISTRATION.md`; `notes/2026-06-11_note1_behavioral_branch_and_gate_rule.md` (Note 1); `notes/2026-06-18_note2_matrix_prereg_FROZEN.md` (Note 2, frozen; the earlier `..._DRAFT_UNFROZEN.md` is kept for comparison); `notes/2026-06-11_note3_chronology_and_disclosures.md` (chronology and disclosures); `register_decision.py` (frozen decision rule for the register probe) |
+| **Training** | `train_pref.py` (length-normalized DPO + SFT retention), `pref_losses.py` (losses and assistant-only retention mask), `run_matrix.py` (training + eval matrix with margin-crossing checkpoints), `kaggle/matrix_kernel.py`, `kaggle/matrix_parallel_kernel.py`, `kaggle/make_model_dataset.py`, `kaggle/RUNBOOK.md`; preference data `training_data/dpo_pytorch.jsonl` (647 pairs); SFT initialization and reference adapter `adapters/sft_pytorch/`; `kaggle_upload/` is the snapshot uploaded to Kaggle |
+| **Scoring** | `scorer_v2.py` (four-tier FORMAT_BREAK / PASS / SURFACE_FORM / SEMANTIC_ERROR), `eval_pref.py` (generation + scoring harness); step-0 baseline: `run_baseline_v2.py`, `kaggle/baseline_v2_kernel.py`, outputs in `kaggle_result/A2/` |
+| **Suites** | `data_eval/` (frozen 160-item extraction, json and router suites, Control C, provenance `.bak` files; see `data_eval/README.md`); generation and adjudication in `data_prep/` (`gen_track1_eval.py`, `gen_track1_more.py`, `expand_eval.py`, `adjudicate_router.py`, `gen_control_C.py`); hygiene audit `audit_eval_suite.py` → `results/hygiene_audit/` |
+| **Adapters** | 40 confirmatory checkpoints: `kaggle_result/final/seed{0..7}/adapters/pref/track1_dpo_seed*/` (`ckpt_step20/`, `ckpt_margin1/`, `ckpt_margin3/`, `ckpt_margin5/`, and final step 180 at the top level), with per-seed generations, scored results and logs in `kaggle_result/final/seed*/` |
+| **Analyses** | Primary TOST: `primary_analysis.py`; secondaries: `remaining_analyses.py`, `build_results.py`; gold-logp: `gold_replication.py`, `mac_gold_3task.py`, `mac_gold_controls.py`; reward decomposition: `mac_reward_decomposition.py`, `kaggle_upload/kaggle_reward_decomposition_kernel.py`, `kaggle_upload/kaggle_fp16_train_decomp.py`; backend sensitivity: `mac_val_nf4_check.py`, `kaggle_upload/kaggle_val_nf4_98.py`; supplementary: `mac_supplementary.py`; register probe: `probe_register_shift.py`, `kaggle/register_probe_kernel.py`. Outputs: `analysis_ws/` (incl. `PRIMARY_TOST.md`, `RESULTS.md`), `kaggle_result/reward_decomposition_kernel/`, `kaggle_result/*.json`, `kaggle_result/A1/`, `results/`, `RESULTS_track1_matrix.md` |
+| **Figures** | `scripts/make_figures.py` writes Figures 1–3 to `figures/paper/` (environment: `requirements-paper.txt`) |
+
+### Versioning
+
+Each arXiv version of the paper gets a matching git tag (`paper-v1` for arXiv v1). Corrections found after a release are logged in [ERRATA.md](ERRATA.md) and applied in the next arXiv version; tagged states and the history of `main` are never silently rewritten.
+
+---
+
 A SEC filing intelligence system built as a **multi-agent orchestrator with on-device LLM inference**. Routes user queries through specialized agents that call SEC EDGAR, market data, and a custom RAG component via MCP tools, then synthesizes the results — entirely without OpenAI dependency. Replaces GPT-4o-mini with a locally fine-tuned Qwen3.5-4B + LoRA adapter via a two-line drop-in.
 
 ## What it does

@@ -64,7 +64,7 @@ kaggle_result/A1/register_probe_topk_nf4.jsonl
 
 # Paper manuscript is published on arXiv, not in this repo (kept local only):
 # drafts, LaTeX source, PDFs, submission zip, editing notes, backups.
-paper/
+/paper/
 paper_backup_*/
 
 # Internal planning notes (kept local)

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper below."
+title: "Code and data for: The Alignment Tax Is Graded: Task-Selective Capability Loss Under Length-Normalized DPO with SFT Retention"
+type: software
+authors:
+  - family-names: Yuan
+    given-names: Ye
+repository-code: "https://github.com/yuan-phd/delta-filing"
+license: Apache-2.0
+preferred-citation:
+  type: article
+  title: "The Alignment Tax Is Graded: Task-Selective Capability Loss Under Length-Normalized DPO with SFT Retention"
+  authors:
+    - family-names: Yuan
+      given-names: Ye
+  year: 2026
+  journal: "arXiv preprint arXiv:2611.06476"
+  url: "https://arxiv.org/abs/2611.06476"
+  identifiers:
+    - type: url
+      value: "https://arxiv.org/abs/2611.06476"
+      description: "arXiv abstract page (arXiv:2611.06476 [cs.LG])"
