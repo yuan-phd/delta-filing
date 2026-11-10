@@ -69,3 +69,6 @@ paper_backup_*/
 
 # Internal planning notes (kept local)
 REORG_PLAN.md
+
+# Generated paper figures (scripts/make_figures.py output)
+/figures/paper/
