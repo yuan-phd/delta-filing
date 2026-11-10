@@ -19,7 +19,7 @@ This is an empirical characterization study. Qwen3.5-4B is fine-tuned with spars
 }
 ```
 
-The code and data state at submission is the tag [`paper-v1`](https://github.com/yuan-phd/delta-filing/tree/paper-v1). `main` additionally carries reproducibility files added after submission: `scripts/make_figures.py`, `requirements-paper.txt`, and this documentation. Known corrections to the paper are listed in [ERRATA.md](ERRATA.md).
+The code and data state at submission is the tag [`paper-v1`](https://github.com/yuan-phd/delta-filing/tree/paper-v1). `main` additionally carries reproducibility files added after submission: `scripts/make_figures.py`, `requirements-paper.txt`, and this documentation. arXiv v2 changes only the Acknowledgements, and its tag [`paper-v2`](https://github.com/yuan-phd/delta-filing/tree/paper-v2) contains the same code, data and results as `paper-v1`. Known corrections to the paper are listed in [ERRATA.md](ERRATA.md).
 
 ### Paper-to-file map
 
