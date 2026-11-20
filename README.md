@@ -318,3 +318,9 @@ See [NOTICE](NOTICE) for third-party terms and attributions: the Qwen3.5-4B base
 - GRPO reference: [DeepSeek-R1 paper](https://arxiv.org/abs/2501.12948)
 - Training infrastructure: Kaggle T4 (free tier)
 - Data source: SEC EDGAR
+
+---
+
+## Contact
+
+Ye Yuan: yuan.phd.ai@gmail.com
