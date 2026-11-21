@@ -2,6 +2,10 @@
 
 Details of the SEC filing agent system. The overview, architecture diagram, router and MCP tables, and quick start are in the [README](../README.md#agent-system).
 
+## Agent and tool loops
+
+Three nodes (`analyst`, `diff_agent`, `simple`) form agent and tool loops. The agent emits a JSON tool call, a `ToolNode` dispatches it to `mcp_edgar` over MCP, the result returns as a `ToolMessage`, and the agent decides whether to call another tool or write the final answer. LangGraph's `tools_condition` handles the routing. With the local model, `local_llm.py` writes a text answer once a `ToolMessage` is in the history, so in practice the agent makes no further tool calls after the first result.
+
 ## Human-in-the-loop review
 
 After the analyst finishes, a **review node** checks the output with the same local model acting as judge. If the analysis is judged shallow, the graph calls `interrupt()`:

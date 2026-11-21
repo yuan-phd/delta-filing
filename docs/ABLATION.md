@@ -18,13 +18,15 @@ To make on-device inference work at the system's quality bar, I trained and comp
 | cDPO | `-(1-ε)·logσ(m) - ε·logσ(-m)` | 69/87 (79%) | Label smoothing |
 | **GRPO** | RL with k3 KL estimator | **76/87 (87%)** ★ | Used by the agent in this repository |
 
+Only the DPO row currently has a result file in this repository, see [Recorded sources](#recorded-sources).
+
 Six loss functions implemented from scratch: DPO, IPO, cDPO, GRPO, InfoNCE (for embedding training), SFT retention.
 
 ## Observation 1: in this run, the size of the capability loss followed whether the objective was bounded
 
 The three preference-optimization methods (DPO, IPO, cDPO) train on **identical data** with **identical hyperparameters**; only the loss function differs. In this run their results fell in the following order:
 
-- **DPO** (unbounded `-logσ(β·margin)`): during training, the implicit reward margin grew from 0.02 at step 10 to **8.76 at step 520, a 440× increase**. The resulting model scored low on rigid-format tasks (Review 1/9, Refusal 3/6) while still scoring 8/8 on JSON tool parsing. This pattern is consistent with a shift in output style under the unbounded objective rather than a general loss of capability, but one seed cannot separate the two.
+- **DPO** (unbounded `-logσ(β·margin)`): during training, the implicit reward margin grew from 0.019 at step 10 to **8.76 at step 520**. The resulting model scored low on rigid-format tasks (Review 1/9, Refusal 3/6) while still scoring 8/8 on JSON tool parsing. This pattern is consistent with a shift in output style under the unbounded objective rather than a general loss of capability, but one seed cannot separate the two.
 - **IPO** (bounded `(margin - 1/(2β))²`): the margin stayed near the target value 1.0 (= `1/(2β)` with β=0.5). It lost 3 points on tool calling and kept Review at 7/9.
 - **cDPO** (label smoothing): extreme margins were partly limited; Review at 6/9.
 
@@ -113,6 +115,7 @@ Each test is hand-written with a hard-coded expected pattern. Judging is **rule-
 - GRPO v1 and v2 KL logs: `notebook/kaggle_output/grpo_v1/delta-filing-grpo-new-training.log` and `notebook/kaggle_output/grpo_v2/delta-filing-grpo-train2.log`.
 - The test code that matches the 87-test run (Router 11, alarm threshold 3) is in `notebook/kaggle/delta-filing-grpo-test-2.ipynb`. `test_generator/test_85_unified.py` is a different version of the suite.
 - The 87-test scores of SFT, IPO, cDPO, GRPO v1 and GRPO v2 have no result file in this repository.
+- `adapters/dpo_ablation/ablation_results.txt` records a separate 23-test evaluation of SFT, DPO, IPO and cDPO (β=0.5, SFT weight 0.5, epochs=1). It is not the 87-test run reported on this page.
 
 ## Limitations of the ablation
 

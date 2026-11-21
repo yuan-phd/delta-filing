@@ -64,6 +64,8 @@ A SEC filing intelligence system built as a **multi-agent orchestrator with on-d
 
 ![Delta Filing agentic architecture](delta-filing-agentic-structure.png)
 
+*The diagram shows all twelve tools dispatched over MCP. The current code connects only `mcp_edgar` (see the note under the MCP table), and the diagram will be redrawn to match.*
+
 | Node | Path | Behavior |
 |------|------|----------|
 | `analyst` | FILING_ANALYSIS | Loops with tool calls until enough EDGAR data retrieved; then synthesizes |
@@ -101,11 +103,11 @@ python build_index_from_sft.py         # ~1 min
 python app.py
 ```
 
-**Hardware and speed:** `local_llm.py` runs on Apple MPS, CUDA or CPU. Inference runs at ~5.6 tokens/sec on M1 Max MPS. Typical query latency: 30 seconds for routing, 1–3 minutes for a full multi-source analysis.
+**Hardware:** `local_llm.py` runs on Apple MPS, CUDA or CPU. Speed figures are under [Performance and limitations](#performance-and-limitations).
 
 ### Performance and limitations
 
-- **Inference speed**: 5.6 tokens/sec on M1 Max MPS (flash-attention not available for Qwen3.5 on Apple Silicon). On A100 the same model runs at ~80 tok/s; via llama.cpp + GGUF on M1 Max, ~30–40 tok/s. The trained adapter is identical; only inference is slow.
+- **Inference speed**: 5.6 tokens/sec on M1 Max MPS (flash-attention not available for Qwen3.5 on Apple Silicon). On A100 the same model runs at ~80 tok/s; via llama.cpp + GGUF on M1 Max, ~30–40 tok/s. The trained adapter is identical; only inference is slow. Typical query latency: 30 seconds for routing, 1–3 minutes for a full multi-source analysis.
 - **Tool role gap**: SFT training data has no `tool`-role messages. The wrapper handles this with a `[Tool result]` prefix on user turns. It works in practice but is not the cleanest design.
 
 ## Earlier ablation
@@ -122,9 +124,11 @@ Five alignment methods, LoRA (rank 8) on Qwen3.5-4B, scored on a custom 87-test 
 | cDPO | `-(1-ε)·logσ(m) - ε·logσ(-m)` | 69/87 (79%) | Label smoothing |
 | **GRPO** | RL with k3 KL estimator | **76/87 (87%)** ★ | Used by the agent in this repository |
 
+Only the DPO row currently has a result file in this repository, see [Recorded sources](docs/ABLATION.md#recorded-sources).
+
 These results come from one seed and 87 tests and are stated as observations:
 
-- **Observation 1:** with identical data and hyperparameters, the unbounded DPO objective showed the largest capability loss in this run (margin 0.02 → 8.76; Review 1/9 while Tool parsing stayed 8/8), and the bounded IPO and smoothed cDPO showed less.
+- **Observation 1:** with identical data and hyperparameters, the unbounded DPO objective showed the largest capability loss in this run (margin 0.019 → 8.76; Review 1/9 while Tool parsing stayed 8/8), and the bounded IPO and smoothed cDPO showed less.
 - **Observation 2:** the first GRPO run used the log-ratio as KL, which went negative (down to −0.8945) and scored 66/87; with the k3 estimator, the same setup scored 76/87.
 - **Observation 3:** alarm-word counts on healthy companies showed cDPO at about 2× SFT (7.3 vs 4.0), a difference binary pass/fail at ≤3 alarm words did not show.
 - **Single-seed results:** GRPO_v2's +10 over the buggy GRPO v1, and its lead over SFT, come from a single seed. Multi-seed runs would bound the variance estimate.
