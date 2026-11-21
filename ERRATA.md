@@ -2,7 +2,9 @@
 
 Corrections to the paper *The Alignment Tax Is Graded: Task-Selective Capability Loss Under Length-Normalized DPO with SFT Retention* (arXiv:2611.06476). Each entry names the arXiv version it applies to. Corrections are applied in a future arXiv version; the tagged code and data states are not rewritten.
 
-## arXiv v1 (tag `paper-v1`)
+## arXiv v1 to v4 (tags `paper-v1`, `paper-v2`)
+
+arXiv v2 to v4 change only the Acknowledgements and the author's email address, so the entries below apply to all four versions.
 
 ### 1. Section 3.2: router gold-label adjudication
 
