@@ -68,7 +68,7 @@ A SEC filing intelligence system built as a **multi-agent orchestrator with on-d
 
 | Node | Path | Behavior |
 |------|------|----------|
-| `analyst` | FILING_ANALYSIS | Loops with tool calls until enough EDGAR data retrieved; then synthesizes |
+| `analyst` | FILING_ANALYSIS | Calls an EDGAR tool through `mcp_edgar` (at most once with the local model), then writes the analysis |
 | `diff_agent` | FILING_DIFF | Calls `diff_filing_sections` tool, narrates the year-over-year changes |
 | `company_deep_dive` | COMPANY_DEEP_DIVE | **Subgraph**: parallel `financial` / `news` / `insider` nodes fan out, then `synthesis` agent merges |
 | `simple` | SIMPLE_QUERY | Quick lookup or short answer |
